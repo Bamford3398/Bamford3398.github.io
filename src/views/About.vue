@@ -91,7 +91,7 @@ const teamMembers = [
     id: 'david-thewsey',
     name: 'Dr David Thewsey',
     role: 'Chief Executive Officer',
-    image: null,
+    image: '/david-thewsey.png',
     paragraphs: [
       'David is a recognised leader in inline inspection (ILI) technology, with more than 15 years of senior leadership experience across some of the industry\'s leading inspection companies. His career has included roles as Chief Technology Officer, Technical Director, Executive Director and Managing Director, spanning technology development, commercial growth and international business leadership.',
       'He holds a PhD in Materials Science and Engineering, a first-class degree in Electronic Engineering and is a Chartered Engineer. Throughout his career, David has led the development and commercialisation of multiple inspection technologies, taking products from initial concept through to successful deployment in global markets.',
