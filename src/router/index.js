@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Integrity from '../views/Integrity.vue'
-import SmartPigging from '../views/SmartPigging.vue'
+import InlineInspection from '../views/InlineInspection.vue'
+import Ultrasight from '../views/Ultrasight.vue'
 import OtherServices from '../views/OtherServices.vue'
 import Technical from '../views/Technical.vue'
 import Contact from '../components/Contact.vue'
@@ -24,9 +25,18 @@ const routes = [
     component: Integrity
   },
   {
+    path: '/inline-inspection',
+    name: 'InlineInspection',
+    component: InlineInspection
+  },
+  {
     path: '/smart-pigging',
-    name: 'SmartPigging',
-    component: SmartPigging
+    redirect: '/inline-inspection'
+  },
+  {
+    path: '/ultrasight',
+    name: 'Ultrasight',
+    component: Ultrasight
   },
   {
     path: '/other-services',

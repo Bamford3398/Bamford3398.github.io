@@ -34,10 +34,21 @@
             <span class="nav-dropdown-chevron" :class="{ open: isServicesOpen }">▾</span>
           </button>
           <ul class="nav-dropdown-menu" :class="{ open: isServicesOpen }">
-            <li>
-              <router-link to="/smart-pigging" class="nav-dropdown-item" @click="handleNavClick">
-                Smart Pigging
+            <li
+              class="nav-dropdown-group"
+              @mouseenter="isInlineOpen = true"
+              @mouseleave="isInlineOpen = false"
+            >
+              <router-link to="/inline-inspection" class="nav-dropdown-item" @click="handleNavClick">
+                Inline Inspection
               </router-link>
+              <ul class="nav-dropdown-submenu" :class="{ open: isInlineOpen }">
+                <li>
+                  <router-link to="/ultrasight" class="nav-dropdown-item nav-dropdown-subitem" @click="handleNavClick">
+                    UltraSight
+                  </router-link>
+                </li>
+              </ul>
             </li>
             <li>
               <router-link to="/integrity" class="nav-dropdown-item" @click="handleNavClick">
@@ -63,6 +74,7 @@ import { ref } from 'vue'
 
 const isMenuOpen = ref(false)
 const isServicesOpen = ref(false)
+const isInlineOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -75,11 +87,7 @@ const toggleServices = () => {
 const handleNavClick = () => {
   isMenuOpen.value = false
   isServicesOpen.value = false
-}
-
-const handleServiceClick = (service) => {
-  console.log('Service clicked:', service)
-  handleNavClick()
+  isInlineOpen.value = false
 }
 </script>
 
@@ -240,6 +248,38 @@ const handleServiceClick = (service) => {
   padding-left: 1.5rem;
 }
 
+.nav-dropdown-group {
+  position: relative;
+}
+
+.nav-dropdown-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 180px;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background-color: #0a0a0a;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 11;
+}
+
+.nav-dropdown-group:hover .nav-dropdown-submenu,
+.nav-dropdown-submenu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-dropdown-subitem {
+  font-size: 0.9rem;
+}
+
 .burger-menu {
   display: none;
   flex-direction: column;
@@ -364,6 +404,31 @@ const handleServiceClick = (service) => {
 
   .nav-dropdown-item:hover {
     padding-left: 1.5rem;
+  }
+
+  .nav-dropdown-group {
+    width: 100%;
+  }
+
+  .nav-dropdown-submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .nav-dropdown-subitem {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
   }
   
   .logo-image {
