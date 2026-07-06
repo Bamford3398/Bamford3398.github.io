@@ -21,7 +21,7 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS A UT INSPECTION</router-link>
-        <router-link to="/contact" class="btn btn-secondary">SEND PIPE DETAILS</router-link>
+        <router-link to="/ultrasight" class="btn btn-secondary">OUR ULTRASIGHT TOOL</router-link>
       </div>
 
       <template #after>
@@ -178,6 +178,9 @@
           src="/inline-inspection/laptop-reporting.png"
           alt="WASP inspection report software displayed on a laptop"
           class="deliverables-image"
+          width="1024"
+          height="768"
+          decoding="async"
         />
       </div>
     </section>
@@ -831,6 +834,7 @@ const processSteps = [
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .process-section-grid {

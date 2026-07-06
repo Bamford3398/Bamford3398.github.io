@@ -1,7 +1,12 @@
 <template>
   <div class="ultrasight-page">
     <!-- 1. Hero -->
-    <HeroBackgroundLayout header-offset section-class="hero-section">
+    <HeroBackgroundLayout
+      header-offset
+      theme="light"
+      section-class="hero-section"
+      image-src="/ultrasight/hero-tool.png"
+    >
       <h1 class="hero-title">
         UltraSight
         <span class="hero-title-gold">Modular ILI Tool</span>
@@ -12,7 +17,7 @@
         A patented, modular inline inspection platform designed to adapt to challenging pipework,
         complex geometries and demanding inspection requirements.
       </p>
-      <p class="hero-text">
+      <p class="hero-body">
         UltraSight is WASP's adaptable inline inspection platform. Its modular construction allows
         the tool to be configured around the asset — including bore, bends, internal features, run
         length, location requirements and inspection objective — rather than forcing the asset to
@@ -21,12 +26,12 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS TOOL SUITABILITY</router-link>
-        <a href="#capabilities" class="btn btn-secondary">VIEW CAPABILITIES</a>
+        <a href="#capabilities" class="btn btn-secondary btn-secondary--dark">VIEW CAPABILITIES</a>
       </div>
     </HeroBackgroundLayout>
 
-    <!-- 2. Built to fit — light -->
-    <section class="section section--light built-section">
+    <!-- 2. Built to fit -->
+    <section class="section section--dark built-section">
       <div class="section-container built-grid">
         <div class="built-copy">
           <h2 class="section-heading">Built to fit the inspection, not the other way around.</h2>
@@ -55,7 +60,7 @@
     </section>
 
     <!-- 3. Modular architecture -->
-    <section id="capabilities" class="section section--dark modules-section">
+    <section id="capabilities" class="section section--light modules-section">
       <div class="section-container modules-layout">
         <div class="modules-intro">
           <span class="section-accent section-accent--top" aria-hidden="true"></span>
@@ -76,19 +81,18 @@
     </section>
 
     <!-- 4. Pipe geometries -->
-    <section class="section section--light geometries-section">
-      <div class="section-container">
-        <h2 class="section-heading section-heading--dark">Designed for difficult pipe geometries</h2>
+    <section class="section section--dark geometries-section">
+      <div class="section-container geometries-layout">
+        <h2 class="section-heading">Designed for difficult pipe geometries</h2>
         <span class="section-accent" aria-hidden="true"></span>
-        <p class="body-text body-text--dark geometries-intro">
+        <p class="body-text geometries-intro">
           UltraSight is intended for assets where conventional ILI tools may struggle with passage,
           centring or configuration.
         </p>
         <div class="geometries-grid">
           <article v-for="item in geometries" :key="item.title" class="geometry-item">
             <div class="geometry-media">
-              <div class="geometry-placeholder" aria-hidden="true"></div>
-              <img :src="item.icon" alt="" class="geometry-icon" aria-hidden="true" />
+              <img :src="item.image" alt="" class="geometry-image" aria-hidden="true" />
             </div>
             <h3 class="geometry-title">{{ item.title }}</h3>
             <p class="geometry-description">{{ item.description }}</p>
@@ -98,7 +102,7 @@
     </section>
 
     <!-- 5. Technical capability -->
-    <section class="section section--dark capability-section">
+    <section class="section section--light capability-section">
       <div class="section-container capability-grid">
         <div class="capability-specs">
           <h2 class="section-heading">Technical capability</h2>
@@ -130,11 +134,11 @@
     </section>
 
     <!-- 6. DeepPulse -->
-    <section class="section section--light deeppulse-section">
+    <section class="section section--dark deeppulse-section">
       <div class="section-container deeppulse-grid">
         <div class="deeppulse-copy">
           <span class="section-accent" aria-hidden="true"></span>
-          <h2 class="section-heading section-heading--dark">DeepPulse data processing</h2>
+          <h2 class="section-heading">DeepPulse data processing</h2>
           <p class="deeppulse-subheading">
             From raw inspection data to clear, actionable reporting.
           </p>
@@ -168,6 +172,9 @@
             src="/ultrasight/deeppulse-laptop.png"
             alt="DeepPulse inspection report displayed on laptop"
             class="deeppulse-laptop"
+            width="1024"
+            height="768"
+            decoding="async"
           />
         </div>
       </div>
@@ -216,22 +223,34 @@
     </section>
 
     <!-- 8. Footer CTA -->
-    <HeroBackgroundLayout section-class="cta-section">
-      <h2 class="section-heading section-heading--light">
-        Need an ILI tool configured for a difficult asset?
-      </h2>
-      <span class="section-accent" aria-hidden="true"></span>
-      <p class="body-text body-text--light">
-        Send us your pipe details, drawings or inspection objective and we'll advise how
-        UltraSight can be configured for the application.
-      </p>
-      <router-link to="/contact" class="btn btn-primary">DISCUSS ULTRASIGHT &gt;</router-link>
-    </HeroBackgroundLayout>
+    <section class="cta-section">
+      <div class="cta-layout">
+        <div class="cta-copy">
+          <h2 class="section-heading section-heading--light">
+            Need an ILI tool configured for a difficult asset?
+          </h2>
+          <span class="section-accent" aria-hidden="true"></span>
+          <p class="body-text body-text--light">
+            Send us your pipe details, drawings or inspection objective and we'll advise how
+            UltraSight can be configured for the application.
+          </p>
+          <router-link to="/contact" class="btn btn-primary">DISCUSS ULTRASIGHT &gt;</router-link>
+        </div>
+        <div class="cta-image-panel" aria-hidden="true">
+          <img
+            src="/ultrasight/cta-refinery.png"
+            alt=""
+            class="cta-image"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+
 const modules = [
   {
     title: 'Advanced IMU module',
@@ -257,27 +276,27 @@ const geometries = [
   {
     title: 'Short-radius 1D bends',
     description: 'Navigate tight bends with short centre-line radius.',
-    icon: '/ultrasight/geometry-short-radius-1d-bends.svg'
+    image: '/ultrasight/geometry-short-radius-1d-bends.png'
   },
   {
     title: 'Unbarred tees',
     description: 'Pass through unbarred tees in multiple orientations.',
-    icon: '/ultrasight/geometry-unbarred-tees.svg'
+    image: '/ultrasight/geometry-unbarred-tees.png'
   },
   {
     title: 'Back-to-back bends',
     description: 'Maintain stability through complex bend sequences.',
-    icon: '/ultrasight/geometry-back-to-back-bends.svg'
+    image: '/ultrasight/geometry-back-to-back-bends.png'
   },
   {
     title: 'Diameter changes',
     description: 'Handle reductions and increases in bore.',
-    icon: '/ultrasight/geometry-diameter-changes.svg'
+    image: '/ultrasight/geometry-diameter-changes.png'
   },
   {
     title: 'Bore restrictions',
     description: 'Inspect through localised bore restrictions.',
-    icon: '/ultrasight/geometry-bore-restrictions.svg'
+    image: '/ultrasight/geometry-bore-restrictions.png'
   }
 ]
 
@@ -501,15 +520,71 @@ const configRows = [
   background-color: rgba(255, 255, 255, 0.08);
 }
 
+.btn-secondary--dark {
+  color: #0a0a0a;
+  border-color: rgba(10, 10, 10, 0.85);
+}
+
+.btn-secondary--dark:hover {
+  background-color: rgba(10, 10, 10, 0.08);
+}
+
+.ultrasight-page > :deep(.hero-background .hero-text) {
+  padding: 24px 0 56px;
+}
+
+.ultrasight-page > :deep(.hero-layout) {
+  min-height: clamp(480px, 62vh, 700px);
+}
+
+.ultrasight-page > :deep(.hero-image) {
+  min-height: clamp(460px, 62vh, 700px);
+  object-fit: contain;
+  object-position: right center;
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+  mask-composite: intersect;
+}
+
+.ultrasight-page > :deep(.hero-image-wrap::after) {
+  background:
+    linear-gradient(to bottom, transparent 72%, rgba(255, 255, 255, 0.45) 90%, #ffffff 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 8%, transparent 20%);
+}
+
+@media (max-width: 768px) {
+  .ultrasight-page > :deep(.hero-layout) {
+    min-height: auto;
+  }
+
+  .ultrasight-page > :deep(.hero-background .hero-text) {
+    padding: 20px 0 40px;
+  }
+
+  .ultrasight-page > :deep(.hero-image) {
+    min-height: 300px;
+    -webkit-mask-image:
+      linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%),
+      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 12%, #000 30%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%),
+      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 12%, #000 30%);
+    mask-composite: intersect;
+  }
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0;
-  color: #ffffff;
-  text-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.9),
-    0 0 40px rgba(0, 0, 0, 0.6);
+  color: #0a0a0a;
 }
 
 .hero-title-gold {
@@ -530,17 +605,15 @@ const configRows = [
 .hero-lead {
   font-size: 1.1rem;
   line-height: 1.7;
-  margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  margin: 0 0 20px;
+  color: rgba(10, 10, 10, 0.9);
 }
 
-.hero-text {
+.hero-body {
   font-size: 1.02rem;
   line-height: 1.7;
-  margin-bottom: 28px;
-  color: rgba(255, 255, 255, 0.82);
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  margin: 0 0 40px;
+  color: rgba(10, 10, 10, 0.82);
 }
 
 .hero-actions {
@@ -549,19 +622,19 @@ const configRows = [
   gap: 16px;
 }
 
+.built-section .section-heading {
+  color: #ffffff;
+}
+
+.built-section .body-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .built-grid {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 48px;
   align-items: center;
-}
-
-.built-section .section-heading {
-  color: #0a0a0a;
-}
-
-.built-section .body-text {
-  color: rgba(10, 10, 10, 0.82);
 }
 
 .tool-diagram {
@@ -593,7 +666,7 @@ const configRows = [
 
 .module-card {
   padding: 0 24px;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(10, 10, 10, 0.12);
 }
 
 .module-card:first-of-type {
@@ -610,7 +683,7 @@ const configRows = [
 .module-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0a0a0a;
   margin: 0 0 12px;
   line-height: 1.35;
 }
@@ -618,8 +691,12 @@ const configRows = [
 .module-description {
   font-size: 0.88rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(10, 10, 10, 0.78);
   margin: 0;
+}
+
+.geometries-layout {
+  text-align: left;
 }
 
 .geometries-intro {
@@ -638,31 +715,26 @@ const configRows = [
 }
 
 .geometry-media {
-  position: relative;
   margin-bottom: 16px;
-}
-
-.geometry-placeholder {
-  aspect-ratio: 1;
-  background: linear-gradient(135deg, #e8e8e8 0%, #f4f4f4 50%, #e0e0e0 100%);
-  border: 1px solid rgba(10, 10, 10, 0.08);
+  background-color: #f2f2f2;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 4px;
+  overflow: hidden;
 }
 
-.geometry-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 56%;
-  height: 56%;
-  transform: translate(-50%, -50%);
+.geometry-image {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
   object-fit: contain;
+  object-position: center;
+  padding: 10px;
 }
 
 .geometry-title {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #0a0a0a;
+  color: #ffffff;
   margin: 0 0 8px;
   line-height: 1.35;
 }
@@ -670,7 +742,7 @@ const configRows = [
 .geometry-description {
   font-size: 0.82rem;
   line-height: 1.5;
-  color: rgba(10, 10, 10, 0.72);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
 }
 
@@ -683,7 +755,7 @@ const configRows = [
 
 .capability-accuracy {
   padding-left: 48px;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(10, 10, 10, 0.12);
 }
 
 .capability-section .spec-row {
@@ -691,19 +763,19 @@ const configRows = [
   grid-template-columns: 170px 1fr;
   gap: 12px;
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
   font-size: 0.875rem;
   line-height: 1.35;
 }
 
 .capability-section .spec-row dt {
   font-weight: 700;
-  color: #ffffff;
+  color: #0a0a0a;
 }
 
 .capability-section .spec-row dd {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(10, 10, 10, 0.78);
 }
 
 .capability-section .stats-grid {
@@ -728,21 +800,21 @@ const configRows = [
 .capability-section .stat-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0a0a0a;
   margin: 0 0 4px;
   line-height: 1.2;
 }
 
 .stat-subvalue {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(10, 10, 10, 0.65);
   margin: 0 0 6px;
   line-height: 1.3;
 }
 
 .capability-section .stat-label {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(10, 10, 10, 0.72);
   line-height: 1.4;
   margin: 0;
 }
@@ -751,7 +823,7 @@ const configRows = [
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 
 .deeppulse-copy .section-accent {
@@ -762,7 +834,7 @@ const configRows = [
   font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.5;
-  color: #0a0a0a;
+  color: rgba(255, 255, 255, 0.95);
   margin: 0 0 18px;
 }
 
@@ -795,19 +867,27 @@ const configRows = [
   object-fit: contain;
 }
 
+.deeppulse-section .pipeline-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .pipeline-label {
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: rgba(10, 10, 10, 0.75);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.3;
+}
+
+.deeppulse-section .pipeline-arrow {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .pipeline-arrow {
   align-self: center;
   margin-top: 12px;
   font-size: 0.85rem;
-  color: rgba(10, 10, 10, 0.35);
+  color: rgba(255, 255, 255, 0.35);
   line-height: 1;
 }
 
@@ -815,6 +895,10 @@ const configRows = [
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.deeppulse-section .body-text {
+  margin-bottom: 16px;
 }
 
 .deeppulse-laptop {
@@ -925,19 +1009,102 @@ const configRows = [
   color: rgba(10, 10, 10, 0.78);
 }
 
-.cta-section .section-heading--light {
-  text-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.9),
-    0 0 40px rgba(0, 0, 0, 0.6);
+.enables-section .enables-list li {
+  color: rgba(10, 10, 10, 0.82);
+}
+
+.cta-section {
+  background-color: #0a0a0a;
+  overflow: hidden;
+}
+
+.cta-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(0, 1.15fr);
+  min-height: 360px;
+}
+
+.cta-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 48px 60px max(32px, calc((100vw - 1400px) / 2 + 32px));
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
 }
 
 .cta-section .section-accent {
   margin-bottom: 24px;
 }
 
-.cta-section .body-text {
+.cta-copy .body-text {
   margin-bottom: 32px;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cta-copy .btn {
+  align-self: flex-start;
+}
+
+.cta-image-panel {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.cta-image-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(120px, 18%);
+  background: linear-gradient(
+    to right,
+    #0a0a0a 0%,
+    rgba(10, 10, 10, 0.85) 35%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .cta-layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .cta-copy {
+    max-width: none;
+    padding: 48px 32px 32px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .cta-image-panel {
+    min-height: 280px;
+  }
+
+  .cta-image-panel::before {
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(
+      to bottom,
+      #0a0a0a 0%,
+      rgba(10, 10, 10, 0.85) 35%,
+      transparent 100%
+    );
+  }
 }
 
 @media (max-width: 1024px) {
@@ -962,7 +1129,7 @@ const configRows = [
     padding-left: 0;
     border-left: none;
     padding-top: 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(10, 10, 10, 0.12);
   }
 
   .capability-section .stats-grid {
@@ -991,7 +1158,7 @@ const configRows = [
 
   .module-card:nth-of-type(3),
   .module-card:nth-of-type(4) {
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 1px solid rgba(10, 10, 10, 0.12);
   }
 
   .geometries-grid {
@@ -1023,7 +1190,7 @@ const configRows = [
     border-left: none;
     padding-left: 0;
     padding-right: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(10, 10, 10, 0.12);
     padding-top: 28px;
   }
 
@@ -1055,6 +1222,14 @@ const configRows = [
 
   .pipeline-flow {
     max-width: none;
+  }
+
+  .cta-copy {
+    padding: 48px 16px 24px;
+  }
+
+  .cta-image-panel {
+    min-height: 220px;
   }
 }
 </style>

@@ -1,5 +1,12 @@
 <template>
-  <section class="hero-background" :class="[{ 'hero-background--header-offset': headerOffset }, sectionClass]">
+  <section
+    class="hero-background"
+    :class="[
+      { 'hero-background--header-offset': headerOffset },
+      { 'hero-background--light': theme === 'light' },
+      sectionClass
+    ]"
+  >
     <div class="hero-layout">
       <div class="hero-image-wrap">
         <img
@@ -32,6 +39,11 @@ defineProps({
   imageSrc: {
     type: String,
     default: '/hero-background.png'
+  },
+  theme: {
+    type: String,
+    default: 'dark',
+    validator: (value) => ['dark', 'light'].includes(value)
   }
 })
 </script>
@@ -49,7 +61,7 @@ defineProps({
 }
 
 .hero-background--header-offset {
-  margin-top: 124px;
+  padding-top: 132px;
 }
 
 .hero-layout {
@@ -159,7 +171,7 @@ defineProps({
   }
 
   .hero-background--header-offset {
-    margin-top: 88px;
+    padding-top: 96px;
   }
 
   .hero-image {
@@ -176,5 +188,38 @@ defineProps({
   .hero-text {
     padding-bottom: 32px;
   }
+}
+
+.hero-background--light {
+  background-color: #ffffff;
+}
+
+.hero-background--light .hero-layout::before {
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 28%,
+    rgba(255, 255, 255, 0.92) 42%,
+    rgba(255, 255, 255, 0.7) 58%,
+    rgba(255, 255, 255, 0.35) 75%,
+    rgba(255, 255, 255, 0.08) 90%,
+    transparent 100%
+  );
+}
+
+.hero-background--light .hero-image-wrap::after {
+  background:
+    linear-gradient(to bottom, transparent 55%, rgba(255, 255, 255, 0.6) 80%, #ffffff 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 8%, transparent 20%);
+}
+
+.hero-background--light .hero-text::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    rgba(255, 255, 255, 0.2) 72%,
+    transparent 100%
+  );
 }
 </style>
