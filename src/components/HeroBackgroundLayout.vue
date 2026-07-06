@@ -50,7 +50,7 @@ defineProps({
 
 <style scoped>
 .hero-background {
-  --text-gutter: max(32px, calc((100vw - 1400px) / 2 + 32px));
+  --text-gutter: max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
   --text-width: min(700px, calc(100vw - 2 * var(--text-gutter)));
   --image-overlap: min(288px, calc(var(--text-width) * 0.42));
   --image-start: calc(var(--text-gutter) + var(--text-width) - var(--image-overlap));
@@ -165,7 +165,7 @@ defineProps({
 
 @media (max-width: 768px) {
   .hero-background {
-    --text-gutter: 16px;
+    --text-gutter: var(--site-gutter);
     --text-width: min(700px, 58vw);
     --image-overlap: min(128px, calc(var(--text-width) * 0.3));
   }

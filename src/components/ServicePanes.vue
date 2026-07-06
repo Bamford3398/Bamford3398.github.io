@@ -50,12 +50,12 @@ const panes = [
 <style scoped>
 .service-panes {
   background-color: #0a0a0a;
-  padding: 0 32px 80px;
+  padding: 0 var(--site-gutter) 80px;
   scroll-margin-top: 110px;
 }
 
 .service-panes-container {
-  max-width: 1400px;
+  max-width: var(--site-max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -64,7 +64,7 @@ const panes = [
 
 .service-pane {
   background-color: #141414;
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(231, 199, 58, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -84,9 +84,6 @@ const panes = [
   justify-content: center;
   background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #1a1a1a 100%);
   color: rgba(255, 255, 255, 0.35);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -98,34 +95,23 @@ const panes = [
 }
 
 .pane-title {
-  font-size: 1.15rem;
-  font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.04em;
-  line-height: 1.35;
-  margin-bottom: 16px;
 }
 
 .pane-description {
-  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.78);
-  line-height: 1.65;
   margin-bottom: 24px;
   flex: 1;
 }
 
 .pane-link {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #D4AF37;
-  text-decoration: none;
-  letter-spacing: 0.06em;
+  color: #e7c73a;
   transition: color 0.2s ease;
   align-self: flex-start;
 }
 
 .pane-link:hover {
-  color: #E5C158;
+  color: #e7c73a;
 }
 
 @media (max-width: 1024px) {
@@ -137,7 +123,7 @@ const panes = [
 
 @media (max-width: 768px) {
   .service-panes {
-    padding: 0 16px 64px;
+    padding-bottom: 64px;
   }
 
   .pane-body {

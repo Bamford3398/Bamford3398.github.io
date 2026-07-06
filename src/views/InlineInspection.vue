@@ -1,7 +1,7 @@
 <template>
   <div class="inline-inspection-page">
     <!-- Hero -->
-    <HeroBackgroundLayout header-offset section-class="hero-section">
+    <HeroBackgroundLayout header-offset section-class="hero-section" image-src="/inline-inspection/hero.png">
       <h1 class="hero-title">
         <span class="hero-title-accent" aria-hidden="true"></span>
         INLINE UT INSPECTION
@@ -9,7 +9,7 @@
 
       <p class="hero-lead">
         Adaptable ultrasonic inspection for pipework, pipelines and process assets where accurate
-        wall thickness data, <strong>AI Anomaly Detection</strong>, and integrity-ready reporting
+        wall thickness data, AI Anomaly Detection, and integrity-ready reporting
         are required.
       </p>
       <p class="hero-text">
@@ -82,10 +82,6 @@
         <div class="applications-grid">
           <article v-for="app in applications" :key="app.title" class="application-card">
             <div class="application-media">
-              <div class="application-photo-placeholder" aria-hidden="true">
-                <span>Image placeholder</span>
-              </div>
-              <div class="application-media-overlay" aria-hidden="true"></div>
               <img :src="app.icon" alt="" class="application-icon" aria-hidden="true" />
             </div>
             <div class="application-body">
@@ -112,7 +108,6 @@
             </p>
           </div>
           <article v-for="group in detectGroups" :key="group.title" class="detect-card">
-            <img :src="group.icon" alt="" class="detect-icon" aria-hidden="true" />
             <h3 class="detect-title">{{ group.title }}</h3>
             <ul class="check-list">
               <li v-for="item in group.items" :key="item">{{ item }}</li>
@@ -235,38 +230,37 @@ const applications = [
     title: 'Fired heaters',
     description:
       'Inspection of heater coils, bends and associated tubing where remaining wall thickness, localised degradation or fouling-related concerns need to be understood.',
-    icon: '/inline-inspection/fired-heaters.png'
+    icon: '/inline-inspection/applications/fired-heaters.png'
   },
   {
     title: 'Transfer lines',
     description:
       'Inspection support for process and utility transfer lines where external inspection access may be limited or where internal condition is uncertain.',
-    icon: '/inline-inspection/transfer-lines.png'
+    icon: '/inline-inspection/applications/transfer-lines.png'
   },
   {
     title: 'HRSG boilers',
     description:
       'Condition assessment support for boiler tubing and related assets where wall thickness information is required.',
-    icon: '/inline-inspection/hrsg-boilers.png'
+    icon: '/inline-inspection/applications/hrsg-boilers.png'
   },
   {
     title: 'Process piping',
     description:
       'Inspection of critical plant piping, spools and process lines to support maintenance planning and integrity review.',
-    icon: '/inline-inspection/process-piping.png'
+    icon: '/inline-inspection/applications/process-piping.png'
   },
   {
     title: 'Pipelines',
     description:
       'Inline inspection data for pipeline sections where anomaly detection, wall thickness measurement and practical integrity reporting are required.',
-    icon: '/inline-inspection/pipelines.png'
+    icon: '/inline-inspection/applications/pipelines.png'
   }
 ]
 
 const detectGroups = [
   {
     title: 'Metal loss and corrosion',
-    icon: '/inline-inspection/metal-loss-corrosion.png',
     items: [
       'Internal corrosion',
       'External corrosion',
@@ -278,7 +272,6 @@ const detectGroups = [
   },
   {
     title: 'Geometry and deformation',
-    icon: '/inline-inspection/geometry-deformation.png',
     items: [
       'Dents',
       'Ovality',
@@ -289,7 +282,6 @@ const detectGroups = [
   },
   {
     title: 'Operational and asset features',
-    icon: '/inline-inspection/operational-asset-features.png',
     items: [
       'Internal fouling or coke',
       'Historic repairs or inserts',
@@ -381,10 +373,6 @@ const processSteps = [
   background-color: #0a0a0a;
 }
 
-.section {
-  padding: 80px 32px;
-}
-
 .section--dark {
   background-color: #0a0a0a;
   color: #ffffff;
@@ -395,47 +383,23 @@ const processSteps = [
   color: #0a0a0a;
 }
 
-.section-container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
 .hero-title {
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.03em;
-  margin-bottom: 24px;
   color: #ffffff;
   text-shadow:
     0 2px 12px rgba(0, 0, 0, 0.9),
     0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-.hero-title-accent {
-  display: block;
-  width: 64px;
-  height: 5px;
-  background-color: #D4AF37;
-  margin-bottom: 18px;
-}
-
 .hero-lead {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 18px;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-lead strong {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .hero-text {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  margin-bottom: 28px;
   color: rgba(255, 255, 255, 0.82);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
@@ -446,38 +410,6 @@ const processSteps = [
   gap: 16px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 24px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.25s ease;
-}
-
-.btn-primary {
-  background-color: #D4AF37;
-  color: #0a0a0a;
-  border: 2px solid #D4AF37;
-}
-
-.btn-primary:hover {
-  background-color: #E5C158;
-  border-color: #E5C158;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
 .feature-bar {
   position: relative;
   z-index: 2;
@@ -486,9 +418,9 @@ const processSteps = [
 }
 
 .feature-bar-container {
-  max-width: 1400px;
+  max-width: var(--site-max-width);
   margin: 0 auto;
-  padding: 24px 40px;
+  padding: 24px var(--site-gutter);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 0;
@@ -521,39 +453,16 @@ const processSteps = [
   flex-direction: column;
   gap: 2px;
   margin: 0;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
   color: #ffffff;
-  line-height: 1.25;
-  text-transform: uppercase;
 }
 
 .eyebrow {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #D4AF37;
+  color: #e7c73a;
   margin-bottom: 12px;
-}
-
-.section-heading {
-  font-size: clamp(1.75rem, 3vw, 2.35rem);
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 16px;
 }
 
 .section-heading--dark {
   color: #0a0a0a;
-}
-
-.section-accent {
-  display: block;
-  width: 56px;
-  height: 5px;
-  background-color: #D4AF37;
-  margin-bottom: 28px;
 }
 
 .section-intro {
@@ -562,10 +471,8 @@ const processSteps = [
 }
 
 .body-text {
-  font-size: 1.02rem;
-  line-height: 1.75;
-  margin-bottom: 18px;
   color: rgba(255, 255, 255, 0.85);
+  line-height: var(--leading-copy);
 }
 
 .body-text--dark {
@@ -574,10 +481,6 @@ const processSteps = [
 
 .body-text:last-child {
   margin-bottom: 0;
-}
-
-.uncertainty-section {
-  padding: 80px 40px;
 }
 
 .uncertainty-grid {
@@ -609,52 +512,27 @@ const processSteps = [
 
 .application-card {
   background-color: #141414;
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(231, 199, 58, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
 .application-media {
-  position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  overflow: hidden;
-}
-
-.application-photo-placeholder {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #1a1a1a 100%);
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.application-media-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 10, 0.2) 0%,
-    rgba(10, 10, 10, 0.65) 100%
-  );
 }
 
 .application-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 72px;
-  height: 72px;
+  width: 72%;
+  height: 72%;
+  max-width: 160px;
+  max-height: 160px;
   object-fit: contain;
-  z-index: 1;
 }
 
 .application-body {
@@ -664,16 +542,11 @@ const processSteps = [
 }
 
 .application-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #D4AF37;
+  color: #e7c73a;
   margin-bottom: 10px;
-  line-height: 1.35;
 }
 
 .application-description {
-  font-size: 0.82rem;
-  line-height: 1.55;
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
 }
@@ -694,21 +567,9 @@ const processSteps = [
   border-left: 1px solid rgba(10, 10, 10, 0.12);
 }
 
-.detect-icon {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  margin-bottom: 18px;
-}
-
 .detect-title {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: #0a0a0a;
   margin-bottom: 16px;
-  line-height: 1.4;
 }
 
 .check-list {
@@ -721,8 +582,6 @@ const processSteps = [
   position: relative;
   padding-left: 22px;
   margin-bottom: 10px;
-  font-size: 0.92rem;
-  line-height: 1.5;
   color: rgba(10, 10, 10, 0.82);
 }
 
@@ -731,9 +590,7 @@ const processSteps = [
   position: absolute;
   left: 0;
   top: 0;
-  color: #D4AF37;
-  font-size: 0.85rem;
-  font-weight: 700;
+  color: #e7c73a;
 }
 
 .bullet-list {
@@ -746,8 +603,8 @@ const processSteps = [
   position: relative;
   padding-left: 18px;
   margin-bottom: 10px;
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: var(--text-caption);
+  line-height: var(--leading-relaxed);
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -759,7 +616,7 @@ const processSteps = [
   content: '•';
   position: absolute;
   left: 0;
-  color: #D4AF37;
+  color: #e7c73a;
   font-weight: 700;
 }
 
@@ -781,8 +638,8 @@ const processSteps = [
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   gap: 12px;
   min-width: 0;
 }
@@ -794,15 +651,11 @@ const processSteps = [
 }
 
 .workflow-title {
-  font-size: 1rem;
-  font-weight: 700;
   color: #ffffff;
   margin: 0;
 }
 
 .workflow-description {
-  font-size: 0.85rem;
-  line-height: 1.55;
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
 }
@@ -812,9 +665,7 @@ const processSteps = [
   align-self: center;
   padding: 0 10px;
   margin-top: 20px;
-  font-size: 1.35rem;
-  color: #D4AF37;
-  line-height: 1;
+  color: #e7c73a;
 }
 
 .deliverables-grid {
@@ -865,8 +716,8 @@ const processSteps = [
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .process-icon-wrap {
@@ -893,10 +744,8 @@ const processSteps = [
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: #D4AF37;
+  background-color: #e7c73a;
   color: #0a0a0a;
-  font-size: 0.85rem;
-  font-weight: 700;
 }
 
 .process-icon {
@@ -906,16 +755,11 @@ const processSteps = [
 }
 
 .process-title {
-  font-size: 0.9rem;
-  font-weight: 700;
   color: #ffffff;
   margin: 0 0 8px;
-  line-height: 1.35;
 }
 
 .process-description {
-  font-size: 0.78rem;
-  line-height: 1.5;
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
 }
@@ -923,7 +767,7 @@ const processSteps = [
 @media (max-width: 1100px) {
   .feature-bar-container {
     grid-template-columns: repeat(3, 1fr);
-    padding: 20px 24px;
+    padding: 20px var(--site-gutter);
   }
 
   .feature-item {
@@ -1001,17 +845,9 @@ const processSteps = [
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 48px 16px;
-  }
-
-  .uncertainty-section {
-    padding: 48px 16px;
-  }
-
   .feature-bar-container {
     grid-template-columns: repeat(2, 1fr);
-    padding: 16px;
+    padding: 16px var(--site-gutter);
   }
 
   .feature-item:nth-child(3n + 1) {

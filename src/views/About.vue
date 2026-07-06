@@ -134,33 +134,16 @@ const teamMembers = [
   padding: 64px 0 80px;
 }
 
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
 .page-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
   color: #ffffff;
-  line-height: 1.15;
-  margin-bottom: 32px;
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 3vw, 2rem);
-  font-weight: 700;
-  color: #D4AF37;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  color: #e7c73a;
 }
 
 .about-text {
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
-  margin-bottom: 20px;
 }
 
 .about-text:last-child {
@@ -181,9 +164,7 @@ const teamMembers = [
   position: relative;
   padding-left: 24px;
   margin-bottom: 16px;
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
 }
 
 .approach-list li::before {
@@ -194,7 +175,7 @@ const teamMembers = [
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #D4AF37;
+  background-color: #e7c73a;
 }
 
 .approach-list li:last-child {
@@ -228,17 +209,14 @@ const teamMembers = [
 }
 
 .team-member-name {
-  font-size: 1.35rem;
-  font-weight: 600;
   color: #ffffff;
-  line-height: 1.35;
   margin-bottom: 20px;
 }
 
 .team-member-image-wrap {
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(231, 199, 58, 0.2);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
   aspect-ratio: 3 / 4;
   background-color: #141414;
@@ -262,10 +240,7 @@ const teamMembers = [
 }
 
 .team-image-placeholder-text {
-  font-size: 0.95rem;
-  font-weight: 500;
   color: rgba(255, 255, 255, 0.45);
-  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -278,21 +253,12 @@ const teamMembers = [
     padding: 48px 0 64px;
   }
 
-  .about-container {
-    padding: 0 16px;
-  }
-
   .page-title {
     margin-bottom: 24px;
   }
 
   .content-section {
     margin-top: 40px;
-  }
-
-  .about-text,
-  .approach-list li {
-    font-size: 0.95rem;
   }
 
   .team-members {
@@ -313,10 +279,6 @@ const teamMembers = [
 
   .team-member-image-wrap {
     max-width: 360px;
-  }
-
-  .team-member-name {
-    font-size: 1.2rem;
   }
 }
 </style>

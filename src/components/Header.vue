@@ -111,15 +111,15 @@ const handleNavClick = () => {
   right: 0;
   width: 100%;
   height: 2px;
-  background: #D4AF37;
+  background: #e7c73a;
   z-index: 0;
   pointer-events: none;
 }
 
 .header-container {
-  max-width: 1400px;
+  max-width: var(--site-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--site-gutter);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,15 +157,13 @@ const handleNavClick = () => {
 .nav-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
   cursor: pointer;
 }
 
 .nav-link:hover {
-  color: #D4AF37;
+  color: #e7c73a;
 }
 
 .nav-link::after {
@@ -175,7 +173,7 @@ const handleNavClick = () => {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #D4AF37;
+  background-color: #e7c73a;
   transition: width 0.3s ease;
 }
 
@@ -198,7 +196,6 @@ const handleNavClick = () => {
 }
 
 .nav-dropdown-chevron {
-  font-size: 0.75rem;
   transition: transform 0.3s ease;
 }
 
@@ -216,7 +213,7 @@ const handleNavClick = () => {
   padding: 0.5rem 0;
   list-style: none;
   background-color: #0a0a0a;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(231, 199, 58, 0.25);
   border-radius: 8px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   opacity: 0;
@@ -237,14 +234,12 @@ const handleNavClick = () => {
   padding: 0.65rem 1.25rem;
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
   transition: color 0.2s ease, background-color 0.2s ease, padding-left 0.2s ease;
 }
 
 .nav-dropdown-item:hover {
-  color: #D4AF37;
-  background-color: rgba(212, 175, 55, 0.08);
+  color: #e7c73a;
+  background-color: rgba(231, 199, 58, 0.08);
   padding-left: 1.5rem;
 }
 
@@ -261,7 +256,7 @@ const handleNavClick = () => {
   padding: 0.5rem 0;
   list-style: none;
   background-color: #0a0a0a;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(231, 199, 58, 0.25);
   border-radius: 8px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   opacity: 0;
@@ -274,10 +269,6 @@ const handleNavClick = () => {
 .nav-dropdown-submenu.open {
   opacity: 1;
   visibility: visible;
-}
-
-.nav-dropdown-subitem {
-  font-size: 0.9rem;
 }
 
 .burger-menu {
@@ -316,7 +307,7 @@ const handleNavClick = () => {
 
 @media (max-width: 768px) {
   .header-container {
-    padding: 0 1rem;
+    padding: 0 var(--site-gutter);
     position: relative;
   }
   
@@ -338,7 +329,7 @@ const handleNavClick = () => {
     padding: 5rem 2rem 2rem;
     gap: 0;
     transition: right 0.3s ease;
-    border-left: 1px solid rgba(212, 175, 55, 0.2);
+    border-left: 1px solid rgba(231, 199, 58, 0.2);
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
   }
   
@@ -347,10 +338,9 @@ const handleNavClick = () => {
   }
   
   .nav-link {
-    font-size: 1.1rem;
     padding: 1rem 0;
     width: 100%;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(231, 199, 58, 0.1);
   }
   
   .nav-link::after {
@@ -358,7 +348,7 @@ const handleNavClick = () => {
   }
   
   .nav-link:hover {
-    color: #D4AF37;
+    color: #e7c73a;
     padding-left: 0.5rem;
   }
 
@@ -370,7 +360,7 @@ const handleNavClick = () => {
     width: 100%;
     justify-content: space-between;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(231, 199, 58, 0.1);
   }
 
   .nav-dropdown-trigger::after {
@@ -399,7 +389,7 @@ const handleNavClick = () => {
 
   .nav-dropdown-item {
     padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    border-bottom: 1px solid rgba(231, 199, 58, 0.08);
   }
 
   .nav-dropdown-item:hover {
@@ -427,8 +417,7 @@ const handleNavClick = () => {
 
   .nav-dropdown-subitem {
     padding-left: 2rem;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    border-bottom: 1px solid rgba(231, 199, 58, 0.08);
   }
   
   .logo-image {

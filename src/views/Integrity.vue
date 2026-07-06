@@ -2,7 +2,6 @@
   <div class="integrity-page">
     <section class="page-hero">
       <div class="page-container">
-        <p class="eyebrow">Services</p>
         <h1 class="page-title">Integrity</h1>
         <p class="page-tagline">
           Inspection tells you what condition your asset is in. Integrity assessment tells you what
@@ -137,46 +136,26 @@ const reportItems = [
   padding: 64px 0 0;
 }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
 .page-body {
   padding-bottom: 80px;
 }
 
 .eyebrow {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #D4AF37;
+  color: #e7c73a;
   margin-bottom: 16px;
 }
 
 .page-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
   color: #ffffff;
-  line-height: 1.15;
-  margin-bottom: 24px;
 }
 
 .page-tagline {
-  font-size: 1.25rem;
-  font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
-  line-height: 1.6;
-  margin-bottom: 24px;
   max-width: 760px;
 }
 
 .page-lead {
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
   max-width: 760px;
 }
 
@@ -185,18 +164,11 @@ const reportItems = [
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 3vw, 2rem);
-  font-weight: 700;
-  color: #D4AF37;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  color: #e7c73a;
 }
 
 .body-text {
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
-  margin-bottom: 20px;
 }
 
 .body-text:last-child {
@@ -205,7 +177,7 @@ const reportItems = [
 
 .level-label {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .bullet-list {
@@ -218,9 +190,7 @@ const reportItems = [
   position: relative;
   padding-left: 24px;
   margin-bottom: 16px;
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
 }
 
 .bullet-list li::before {
@@ -231,7 +201,7 @@ const reportItems = [
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #D4AF37;
+  background-color: #e7c73a;
 }
 
 .bullet-list li:last-child {
@@ -240,27 +210,6 @@ const reportItems = [
 
 .page-cta {
   margin-top: 56px;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #D4AF37;
-  color: #0a0a0a;
-  border: 2px solid #D4AF37;
-  padding: 16px 40px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
-
-.cta-button:hover {
-  background-color: #E5C158;
-  border-color: #E5C158;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -272,10 +221,6 @@ const reportItems = [
     padding-top: 48px;
   }
 
-  .page-container {
-    padding: 0 16px;
-  }
-
   .page-body {
     padding-bottom: 64px;
   }
@@ -284,21 +229,9 @@ const reportItems = [
     margin-top: 40px;
   }
 
-  .page-tagline {
-    font-size: 1.1rem;
-  }
-
-  .page-lead,
-  .body-text,
-  .bullet-list li {
-    font-size: 0.95rem;
-  }
-
   .cta-button {
     display: block;
-    text-align: center;
     padding: 14px 32px;
-    font-size: 1rem;
   }
 }
 </style>

@@ -29,7 +29,7 @@ const PipelineIcon = () => h('svg', {
 }, [
   h('path', {
     d: 'M20 50 L80 50',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '4',
     'stroke-linecap': 'round'
   }),
@@ -37,12 +37,12 @@ const PipelineIcon = () => h('svg', {
     cx: '50',
     cy: '50',
     r: '15',
-    fill: '#D4AF37',
+    fill: '#e7c73a',
     opacity: '0.3'
   }),
   h('path', {
     d: 'M35 50 L45 40 M45 40 L55 40 M55 40 L65 50',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     'stroke-linecap': 'round'
   })
@@ -58,13 +58,13 @@ const LearningIcon = () => h('svg', {
     cx: '50',
     cy: '50',
     r: '35',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     fill: 'none'
   }),
   h('path', {
     d: 'M50 30 L50 50 L65 60',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     'stroke-linecap': 'round',
     'stroke-linejoin': 'round',
@@ -74,7 +74,7 @@ const LearningIcon = () => h('svg', {
     cx: '50',
     cy: '50',
     r: '8',
-    fill: '#D4AF37'
+    fill: '#e7c73a'
   })
 ])
 
@@ -90,13 +90,13 @@ const ContactIcon = () => h('svg', {
     width: '50',
     height: '50',
     rx: '8',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     fill: 'none'
   }),
   h('path', {
     d: 'M35 45 L50 55 L65 45',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     'stroke-linecap': 'round',
     'stroke-linejoin': 'round',
@@ -106,7 +106,7 @@ const ContactIcon = () => h('svg', {
     cx: '50',
     cy: '50',
     r: '3',
-    fill: '#D4AF37'
+    fill: '#e7c73a'
   })
 ])
 
@@ -120,13 +120,13 @@ const IntegrityIcon = () => h('svg', {
     cx: '50',
     cy: '50',
     r: '30',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     fill: 'none'
   }),
   h('path', {
     d: 'M50 20 L50 50 L70 60',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     'stroke-linecap': 'round',
     'stroke-linejoin': 'round',
@@ -134,7 +134,7 @@ const IntegrityIcon = () => h('svg', {
   }),
   h('path', {
     d: 'M30 50 L50 50 L50 80',
-    stroke: '#D4AF37',
+    stroke: '#e7c73a',
     'stroke-width': '3',
     'stroke-linecap': 'round',
     'stroke-linejoin': 'round',
@@ -183,14 +183,14 @@ const handleCardClick = (route) => {
 <style scoped>
 .cards-section {
   background-color: #0a0a0a;
-  padding: 4rem 2rem;
+  padding: 64px var(--site-gutter);
   position: relative;
   z-index: 2;
   scroll-margin-top: 110px;
 }
 
 .cards-container {
-  max-width: 1400px;
+  max-width: var(--site-max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -199,22 +199,21 @@ const handleCardClick = (route) => {
 
 .card {
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(231, 199, 58, 0.2);
   border-radius: 12px;
-  padding: 2.5rem 2rem;
-  text-align: center;
+  padding: 40px 32px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.5rem;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.5);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+  border-color: rgba(231, 199, 58, 0.5);
+  box-shadow: 0 10px 30px rgba(231, 199, 58, 0.2);
   background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(15, 15, 15, 0.95) 100%);
 }
 
@@ -232,23 +231,19 @@ const handleCardClick = (route) => {
 }
 
 .card-title {
-  font-size: 1.3rem;
-  font-weight: 600;
   color: #ffffff;
   margin: 0;
 }
 
 .card-description {
-  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
   margin: 0;
   flex-grow: 1;
 }
 
 @media (max-width: 768px) {
   .cards-section {
-    padding: 3rem 1rem;
+    padding-block: 48px;
   }
   
   .cards-container {
@@ -264,14 +259,6 @@ const handleCardClick = (route) => {
     width: 70px;
     height: 70px;
   }
-  
-  .card-title {
-    font-size: 1.2rem;
-  }
-  
-  .card-description {
-    font-size: 0.9rem;
-  }
 }
 
 @media (min-width: 769px) {
@@ -282,14 +269,6 @@ const handleCardClick = (route) => {
   
   .card {
     padding: 2rem 1.25rem;
-  }
-  
-  .card-title {
-    font-size: 1.15rem;
-  }
-  
-  .card-description {
-    font-size: 0.85rem;
   }
 }
 </style>

@@ -25,7 +25,7 @@ const iconProps = {
   xmlns: 'http://www.w3.org/2000/svg'
 }
 
-const stroke = '#D4AF37'
+const stroke = '#e7c73a'
 
 const ReliableDataIcon = () => h('svg', iconProps, [
   h('circle', { cx: '32', cy: '32', r: '20', stroke, 'stroke-width': '2.5' }),
@@ -70,20 +70,16 @@ const gains = [
 <style scoped>
 .client-gains {
   background-color: #0a0a0a;
-  padding: 80px 32px;
-  text-align: center;
+  padding: 80px var(--site-gutter);
 }
 
 .client-gains-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #D4AF37;
+  color: #e7c73a;
   margin-bottom: 56px;
 }
 
 .client-gains-grid {
-  max-width: 1200px;
+  max-width: var(--site-max-width-narrow);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -94,7 +90,7 @@ const gains = [
 .gain-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 
@@ -112,10 +108,7 @@ const gains = [
 }
 
 .gain-label {
-  font-size: 0.95rem;
-  font-weight: 500;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.45;
   max-width: 180px;
 }
 
@@ -128,7 +121,7 @@ const gains = [
 
 @media (max-width: 640px) {
   .client-gains {
-    padding: 64px 16px;
+    padding-block: 64px;
   }
 
   .client-gains-title {
@@ -143,10 +136,6 @@ const gains = [
   .gain-icon {
     width: 60px;
     height: 60px;
-  }
-
-  .gain-label {
-    font-size: 0.85rem;
   }
 }
 </style>

@@ -3,15 +3,14 @@
     <!-- 1. Hero -->
     <HeroBackgroundLayout
       header-offset
-      theme="light"
       section-class="hero-section"
       image-src="/ultrasight/hero-tool.png"
     >
+      <span class="hero-title-accent" aria-hidden="true"></span>
       <h1 class="hero-title">
         UltraSight
         <span class="hero-title-gold">Modular ILI Tool</span>
       </h1>
-      <span class="hero-title-accent" aria-hidden="true"></span>
 
       <p class="hero-lead">
         A patented, modular inline inspection platform designed to adapt to challenging pipework,
@@ -26,12 +25,12 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS TOOL SUITABILITY</router-link>
-        <a href="#capabilities" class="btn btn-secondary btn-secondary--dark">VIEW CAPABILITIES</a>
+        <a href="#capabilities" class="btn btn-secondary">VIEW CAPABILITIES</a>
       </div>
     </HeroBackgroundLayout>
 
     <!-- 2. Built to fit -->
-    <section class="section section--dark built-section">
+    <section class="section section--light built-section">
       <div class="section-container built-grid">
         <div class="built-copy">
           <h2 class="section-heading">Built to fit the inspection, not the other way around.</h2>
@@ -60,7 +59,7 @@
     </section>
 
     <!-- 3. Modular architecture -->
-    <section id="capabilities" class="section section--light modules-section">
+    <section id="capabilities" class="section section--dark modules-section">
       <div class="section-container modules-layout">
         <div class="modules-intro">
           <span class="section-accent section-accent--top" aria-hidden="true"></span>
@@ -81,7 +80,7 @@
     </section>
 
     <!-- 4. Pipe geometries -->
-    <section class="section section--dark geometries-section">
+    <section class="section section--light geometries-section">
       <div class="section-container geometries-layout">
         <h2 class="section-heading">Designed for difficult pipe geometries</h2>
         <span class="section-accent" aria-hidden="true"></span>
@@ -102,7 +101,7 @@
     </section>
 
     <!-- 5. Technical capability -->
-    <section class="section section--light capability-section">
+    <section class="section section--dark capability-section">
       <div class="section-container capability-grid">
         <div class="capability-specs">
           <h2 class="section-heading">Technical capability</h2>
@@ -134,7 +133,7 @@
     </section>
 
     <!-- 6. DeepPulse -->
-    <section class="section section--dark deeppulse-section">
+    <section class="section section--light deeppulse-section">
       <div class="section-container deeppulse-grid">
         <div class="deeppulse-copy">
           <span class="section-accent" aria-hidden="true"></span>
@@ -152,7 +151,6 @@
             helps produce faster, more consistent reports that can be reviewed and acted on with
             confidence.
           </p>
-          <router-link to="/contact" class="btn btn-primary deeppulse-btn">EXPLORE DEEPPULSE &gt;</router-link>
           <div class="pipeline-flow">
             <template v-for="(step, index) in pipelineSteps" :key="step.label">
               <div class="pipeline-step">
@@ -181,11 +179,11 @@
     </section>
 
     <!-- 7. Enables & configure -->
-    <section class="section section--light enables-section">
+    <section class="section section--dark enables-section">
       <div class="section-container enables-grid">
         <div class="enables-copy">
           <span class="section-accent" aria-hidden="true"></span>
-          <h2 class="section-heading section-heading--dark">What UltraSight enables</h2>
+          <h2 class="section-heading">What UltraSight enables</h2>
           <ul class="check-list enables-list">
             <li v-for="item in enables" :key="item">
               <img src="/ultrasight/check-circle.png" alt="" class="check-icon" aria-hidden="true" />
@@ -195,7 +193,7 @@
         </div>
         <div class="configure-copy">
           <span class="section-accent" aria-hidden="true"></span>
-          <h2 class="section-heading section-heading--dark">How we configure UltraSight for your asset</h2>
+          <h2 class="section-heading">How we configure UltraSight for your asset</h2>
           <p class="body-text">
             Before confirming the inspection approach, WASP reviews the asset geometry, access
             conditions, operating constraints and inspection objective. This allows the tool
@@ -223,14 +221,14 @@
     </section>
 
     <!-- 8. Footer CTA -->
-    <section class="cta-section">
+    <section class="cta-section section--light">
       <div class="cta-layout">
         <div class="cta-copy">
-          <h2 class="section-heading section-heading--light">
+          <h2 class="section-heading section-heading--dark">
             Need an ILI tool configured for a difficult asset?
           </h2>
           <span class="section-accent" aria-hidden="true"></span>
-          <p class="body-text body-text--light">
+          <p class="body-text">
             Send us your pipe details, drawings or inspection objective and we'll advise how
             UltraSight can be configured for the application.
           </p>
@@ -400,11 +398,7 @@ const configRows = [
 
 <style scoped>
 .ultrasight-page {
-  background-color: #ffffff;
-}
-
-.section {
-  padding: 80px 32px;
+  background-color: #0a0a0a;
 }
 
 .section--light {
@@ -417,20 +411,8 @@ const configRows = [
   color: #ffffff;
 }
 
-.section-container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.section-heading {
-  font-size: clamp(1.75rem, 3vw, 2.35rem);
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 16px;
-}
-
 .section-heading--center {
-  text-align: center;
+  text-align: left;
 }
 
 .section-heading--dark {
@@ -441,16 +423,8 @@ const configRows = [
   color: #ffffff;
 }
 
-.section-accent {
-  display: block;
-  width: 56px;
-  height: 5px;
-  background-color: #D4AF37;
-  margin-bottom: 28px;
-}
-
 .section-accent--center {
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -460,15 +434,13 @@ const configRows = [
 }
 
 .section-intro--center {
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
 }
 
 .body-text {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  margin-bottom: 20px;
+  line-height: var(--leading-copy);
 }
 
 .section--light .body-text {
@@ -487,60 +459,22 @@ const configRows = [
   margin-bottom: 0;
 }
 
-
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.25s ease;
-}
-
-.btn-primary {
-  background-color: #D4AF37;
-  color: #0a0a0a;
-  border: 2px solid #D4AF37;
-}
-
-.btn-primary:hover {
-  background-color: #E5C158;
-  border-color: #E5C158;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.btn-secondary--dark {
-  color: #0a0a0a;
-  border-color: rgba(10, 10, 10, 0.85);
-}
-
-.btn-secondary--dark:hover {
-  background-color: rgba(10, 10, 10, 0.08);
-}
-
 .ultrasight-page > :deep(.hero-background .hero-text) {
   padding: 24px 0 56px;
 }
 
-.ultrasight-page > :deep(.hero-layout) {
+.ultrasight-page > :deep(.hero-background .hero-layout) {
   min-height: clamp(480px, 62vh, 700px);
 }
 
-.ultrasight-page > :deep(.hero-image) {
+.ultrasight-page > :deep(.hero-background .hero-image-wrap) {
+  margin-top: clamp(72px, 4.5rem + 2vw, 100px);
+}
+
+.ultrasight-page > :deep(.hero-background .hero-image) {
   min-height: clamp(460px, 62vh, 700px);
   object-fit: contain;
-  object-position: right center;
+  object-position: right 28%;
   -webkit-mask-image:
     linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
     linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
@@ -551,14 +485,14 @@ const configRows = [
   mask-composite: intersect;
 }
 
-.ultrasight-page > :deep(.hero-image-wrap::after) {
+.ultrasight-page > :deep(.hero-background .hero-image-wrap::after) {
   background:
-    linear-gradient(to bottom, transparent 72%, rgba(255, 255, 255, 0.45) 90%, #ffffff 100%),
-    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 8%, transparent 20%);
+    linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.45) 90%, #0a0a0a 100%),
+    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
 }
 
 @media (max-width: 768px) {
-  .ultrasight-page > :deep(.hero-layout) {
+  .ultrasight-page > :deep(.hero-background .hero-layout) {
     min-height: auto;
   }
 
@@ -566,7 +500,11 @@ const configRows = [
     padding: 20px 0 40px;
   }
 
-  .ultrasight-page > :deep(.hero-image) {
+  .ultrasight-page > :deep(.hero-background .hero-image-wrap) {
+    margin-top: clamp(48px, 18vw, 80px);
+  }
+
+  .ultrasight-page > :deep(.hero-background .hero-image) {
     min-height: 300px;
     -webkit-mask-image:
       linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%),
@@ -580,54 +518,32 @@ const configRows = [
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 0;
-  color: #0a0a0a;
+  color: #ffffff;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.6);
 }
 
 .hero-title-gold {
   display: block;
-  color: #D4AF37;
-  font-size: clamp(2rem, 4vw, 3rem);
+  color: #e7c73a;
   margin-top: 8px;
 }
 
-.hero-title-accent {
-  display: block;
-  width: 64px;
-  height: 5px;
-  background-color: #D4AF37;
-  margin: 18px 0 24px;
-}
-
 .hero-lead {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin: 0 0 20px;
-  color: rgba(10, 10, 10, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-body {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  margin: 0 0 40px;
-  color: rgba(10, 10, 10, 0.82);
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.built-section .section-heading {
-  color: #ffffff;
-}
-
-.built-section .body-text {
-  color: rgba(255, 255, 255, 0.85);
 }
 
 .built-grid {
@@ -660,13 +576,9 @@ const configRows = [
   padding-right: 40px;
 }
 
-.section-accent--top {
-  margin-bottom: 16px;
-}
-
 .module-card {
   padding: 0 24px;
-  border-left: 1px solid rgba(10, 10, 10, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .module-card:first-of-type {
@@ -680,18 +592,27 @@ const configRows = [
   margin-bottom: 18px;
 }
 
-.module-title {
-  font-size: 1rem;
-  font-weight: 700;
+.section--dark .module-title {
+  color: #ffffff;
+}
+
+.section--dark .module-description {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.section--light .module-title {
   color: #0a0a0a;
+}
+
+.section--light .module-description {
+  color: rgba(10, 10, 10, 0.78);
+}
+
+.module-title {
   margin: 0 0 12px;
-  line-height: 1.35;
 }
 
 .module-description {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: rgba(10, 10, 10, 0.78);
   margin: 0;
 }
 
@@ -711,15 +632,12 @@ const configRows = [
 }
 
 .geometry-item {
-  text-align: center;
+  text-align: left;
 }
 
 .geometry-media {
   margin-bottom: 16px;
   background-color: #f2f2f2;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 4px;
-  overflow: hidden;
 }
 
 .geometry-image {
@@ -728,21 +646,31 @@ const configRows = [
   display: block;
   object-fit: contain;
   object-position: center;
-  padding: 10px;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.section--dark .geometry-title {
+  color: #ffffff;
+}
+
+.section--dark .geometry-description {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.section--light .geometry-title {
+  color: #0a0a0a;
+}
+
+.section--light .geometry-description {
+  color: rgba(10, 10, 10, 0.72);
 }
 
 .geometry-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #ffffff;
   margin: 0 0 8px;
-  line-height: 1.35;
 }
 
 .geometry-description {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
   margin: 0;
 }
 
@@ -755,7 +683,11 @@ const configRows = [
 
 .capability-accuracy {
   padding-left: 48px;
-  border-left: 1px solid rgba(10, 10, 10, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.section--light .capability-accuracy {
+  border-left-color: rgba(10, 10, 10, 0.12);
 }
 
 .capability-section .spec-row {
@@ -763,18 +695,28 @@ const configRows = [
   grid-template-columns: 170px 1fr;
   gap: 12px;
   padding: 6px 0;
-  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
-  font-size: 0.875rem;
-  line-height: 1.35;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section--light.capability-section .spec-row {
+  border-bottom-color: rgba(10, 10, 10, 0.1);
 }
 
 .capability-section .spec-row dt {
-  font-weight: 700;
-  color: #0a0a0a;
+  font-weight: var(--font-weight-bold);
+  color: #ffffff;
 }
 
 .capability-section .spec-row dd {
   margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.section--light.capability-section .spec-row dt {
+  color: #0a0a0a;
+}
+
+.section--light.capability-section .spec-row dd {
   color: rgba(10, 10, 10, 0.78);
 }
 
@@ -786,7 +728,7 @@ const configRows = [
 }
 
 .stat-item {
-  text-align: center;
+  text-align: left;
 }
 
 .stat-icon {
@@ -798,25 +740,30 @@ const configRows = [
 }
 
 .capability-section .stat-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0a0a0a;
+  color: #ffffff;
   margin: 0 0 4px;
-  line-height: 1.2;
+}
+
+.section--light.capability-section .stat-value {
+  color: #0a0a0a;
 }
 
 .stat-subvalue {
-  font-size: 0.78rem;
-  color: rgba(10, 10, 10, 0.65);
+  color: rgba(255, 255, 255, 0.65);
   margin: 0 0 6px;
-  line-height: 1.3;
+}
+
+.section--light.capability-section .stat-subvalue {
+  color: rgba(10, 10, 10, 0.65);
 }
 
 .capability-section .stat-label {
-  font-size: 0.82rem;
-  color: rgba(10, 10, 10, 0.72);
-  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
+}
+
+.section--light.capability-section .stat-label {
+  color: rgba(10, 10, 10, 0.72);
 }
 
 .deeppulse-grid {
@@ -826,16 +773,12 @@ const configRows = [
   align-items: start;
 }
 
-.deeppulse-copy .section-accent {
-  margin-bottom: 20px;
+.deeppulse-subheading {
+  color: rgba(10, 10, 10, 0.9);
 }
 
-.deeppulse-subheading {
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.5;
+.section--dark .deeppulse-subheading {
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 18px;
 }
 
 .deeppulse-btn {
@@ -867,34 +810,29 @@ const configRows = [
   object-fit: contain;
 }
 
-.deeppulse-section .pipeline-label {
-  color: rgba(255, 255, 255, 0.85);
-}
-
 .pipeline-label {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.3;
+  color: rgba(10, 10, 10, 0.82);
 }
 
-.deeppulse-section .pipeline-arrow {
-  color: rgba(255, 255, 255, 0.35);
+.section--dark .pipeline-label {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .pipeline-arrow {
   align-self: center;
   margin-top: 12px;
-  font-size: 0.85rem;
+  color: rgba(10, 10, 10, 0.35);
+}
+
+.section--dark .pipeline-arrow {
   color: rgba(255, 255, 255, 0.35);
-  line-height: 1;
 }
 
 .deeppulse-visual {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f2f2f2;
 }
 
 .deeppulse-section .body-text {
@@ -915,15 +853,6 @@ const configRows = [
   align-items: start;
 }
 
-.enables-copy .section-heading {
-  margin-bottom: 32px;
-}
-
-.enables-copy .section-accent,
-.configure-copy .section-accent {
-  margin-bottom: 20px;
-}
-
 .enables-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -932,8 +861,6 @@ const configRows = [
 }
 
 .enables-list li {
-  font-size: 1.1rem;
-  line-height: 1.6;
   margin-bottom: 20px;
 }
 
@@ -959,8 +886,13 @@ const configRows = [
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 16px;
-  font-size: 0.95rem;
-  line-height: 1.55;
+}
+
+.section--dark .check-list li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section--light .check-list li {
   color: rgba(10, 10, 10, 0.82);
 }
 
@@ -980,7 +912,6 @@ const configRows = [
 .config-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
 }
 
 .config-table th,
@@ -988,34 +919,63 @@ const configRows = [
   padding: 6px 12px;
   text-align: left;
   vertical-align: top;
-  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
-  line-height: 1.35;
 }
 
 .config-table thead th {
-  font-weight: 700;
-  color: #0a0a0a;
-  background-color: #f5f0e6;
+  font-weight: var(--font-weight-bold);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .config-table tbody th {
-  font-weight: 700;
-  color: #0a0a0a;
+  font-weight: var(--font-weight-bold);
+  color: #ffffff;
   width: 35%;
 }
 
 .config-table tbody td {
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.config-table th,
+.config-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section--light .config-table thead th {
+  color: #0a0a0a;
+  background-color: #f5f0e6;
+}
+
+.section--light .config-table tbody th {
+  color: #0a0a0a;
+}
+
+.section--light .config-table tbody td {
   color: rgba(10, 10, 10, 0.78);
 }
 
-.enables-section .enables-list li {
+.section--light .config-table th,
+.section--light .config-table td {
+  border-bottom-color: rgba(10, 10, 10, 0.1);
+}
+
+.section--dark .enables-list li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section--light .enables-list li {
   color: rgba(10, 10, 10, 0.82);
 }
 
 .cta-section {
-  background-color: #0a0a0a;
+  background-color: #f2f2f2;
   overflow: hidden;
+}
+
+.cta-section.section--light {
+  color: #0a0a0a;
 }
 
 .cta-layout {
@@ -1028,14 +988,10 @@ const configRows = [
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 64px 48px 60px max(32px, calc((100vw - 1400px) / 2 + 32px));
+  padding: 64px 48px 60px max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
   max-width: 620px;
   position: relative;
   z-index: 2;
-}
-
-.cta-section .section-accent {
-  margin-bottom: 24px;
 }
 
 .cta-copy .body-text {
@@ -1059,8 +1015,8 @@ const configRows = [
   width: min(120px, 18%);
   background: linear-gradient(
     to right,
-    #0a0a0a 0%,
-    rgba(10, 10, 10, 0.85) 35%,
+    #f2f2f2 0%,
+    rgba(242, 242, 242, 0.85) 35%,
     transparent 100%
   );
   z-index: 1;
@@ -1085,8 +1041,7 @@ const configRows = [
 
   .cta-copy {
     max-width: none;
-    padding: 48px 32px 32px;
-    text-align: left;
+    padding: 48px var(--site-gutter) 32px;
     align-items: flex-start;
   }
 
@@ -1100,8 +1055,8 @@ const configRows = [
     height: 80px;
     background: linear-gradient(
       to bottom,
-      #0a0a0a 0%,
-      rgba(10, 10, 10, 0.85) 35%,
+      #f2f2f2 0%,
+      rgba(242, 242, 242, 0.85) 35%,
       transparent 100%
     );
   }
@@ -1116,7 +1071,7 @@ const configRows = [
   }
 
   .pipeline-flow {
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px 4px;
   }
 
@@ -1129,7 +1084,11 @@ const configRows = [
     padding-left: 0;
     border-left: none;
     padding-top: 32px;
-    border-top: 1px solid rgba(10, 10, 10, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .section--light.capability-section .capability-accuracy {
+    border-top-color: rgba(10, 10, 10, 0.12);
   }
 
   .capability-section .stats-grid {
@@ -1158,7 +1117,7 @@ const configRows = [
 
   .module-card:nth-of-type(3),
   .module-card:nth-of-type(4) {
-    border-left: 1px solid rgba(10, 10, 10, 0.12);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .geometries-grid {
@@ -1176,10 +1135,6 @@ const configRows = [
     text-align: center;
   }
 
-  .section {
-    padding: 48px 16px;
-  }
-
   .modules-layout {
     grid-template-columns: 1fr;
   }
@@ -1190,7 +1145,7 @@ const configRows = [
     border-left: none;
     padding-left: 0;
     padding-right: 0;
-    border-top: 1px solid rgba(10, 10, 10, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding-top: 28px;
   }
 
@@ -1225,7 +1180,7 @@ const configRows = [
   }
 
   .cta-copy {
-    padding: 48px 16px 24px;
+    padding-bottom: 24px;
   }
 
   .cta-image-panel {

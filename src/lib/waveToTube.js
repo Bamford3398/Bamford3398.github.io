@@ -15,7 +15,7 @@ export function initWaveToTube(canvas) {
     flareChance: 0.012,
     flareDuration: 2.2,
     linkAlpha: 0.16,
-    gold: { r: 245, g: 192, b: 64 },
+    gold: { r: 231, g: 199, b: 58 },
     hot: { r: 255, g: 244, b: 214 },
   }
 

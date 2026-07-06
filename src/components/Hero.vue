@@ -21,21 +21,14 @@ import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
 
 <style scoped>
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
   color: #ffffff;
-  line-height: 1.2;
-  margin-bottom: 24px;
   text-shadow:
     0 2px 12px rgba(0, 0, 0, 0.9),
     0 0 40px rgba(0, 0, 0, 0.6);
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  margin-bottom: 40px;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -45,58 +38,7 @@ import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
   gap: 16px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.25s ease;
-}
-
-.btn-primary {
-  background-color: #D4AF37;
-  color: #0a0a0a;
-  border: 2px solid #D4AF37;
-}
-
-.btn-primary:hover {
-  background-color: #E5C158;
-  border-color: #E5C158;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 32px;
-  }
-
   .btn {
     width: 100%;
     text-align: center;

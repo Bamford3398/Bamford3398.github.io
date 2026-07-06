@@ -84,7 +84,6 @@ const formData = ref({
 })
 
 const handleSubmit = () => {
-  // Create mailto link with form data
   const subject = encodeURIComponent(formData.value.subject || 'Contact Form Submission')
   const body = encodeURIComponent(
     `Name: ${formData.value.name}\n` +
@@ -93,10 +92,8 @@ const handleSubmit = () => {
     `Message:\n${formData.value.message}`
   )
   
-  // Open email client
   window.location.href = `mailto:dave@wasp-eng.com?subject=${subject}&body=${body}`
   
-  // Reset form after a short delay
   setTimeout(() => {
     formData.value = {
       name: '',
@@ -117,9 +114,7 @@ const handleSubmit = () => {
 }
 
 .contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  padding-block: 64px;
 }
 
 .contact-content {
@@ -127,49 +122,39 @@ const handleSubmit = () => {
 }
 
 .contact-title {
-  font-size: 3rem;
-  font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1rem;
-  text-align: center;
+  margin-bottom: 16px;
 }
 
 .contact-subtitle {
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .form-label {
-  font-size: 1rem;
-  font-weight: 500;
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
 }
 
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 16px;
   background-color: #ffffff;
   color: #0a0a0a;
   border: 2px solid transparent;
   border-radius: 8px;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -181,8 +166,8 @@ const handleSubmit = () => {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #D4AF37;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  border-color: #e7c73a;
+  box-shadow: 0 0 0 3px rgba(231, 199, 58, 0.1);
 }
 
 .form-textarea {
@@ -191,51 +176,25 @@ const handleSubmit = () => {
 }
 
 .submit-button {
-  background-color: #D4AF37;
-  color: #0a0a0a;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-  font-family: 'Inter', sans-serif;
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
-.submit-button:hover {
-  background-color: #E5C158;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-}
-
-.submit-button:active {
-  transform: translateY(0);
+.contact-container {
+  padding-block: 64px;
 }
 
 @media (max-width: 768px) {
   .contact-container {
-    padding: 3rem 1rem;
+    padding-block: 48px;
   }
-  
-  .contact-title {
-    font-size: 2rem;
-  }
-  
-  .contact-subtitle {
-    font-size: 1rem;
-  }
-  
+
   .form-input,
   .form-textarea {
-    padding: 0.875rem;
+    padding: 14px;
   }
-  
+
   .submit-button {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
+    padding: 14px 32px;
   }
 }
 </style>

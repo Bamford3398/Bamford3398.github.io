@@ -2,7 +2,6 @@
   <div class="other-services-page">
     <section class="page-hero">
       <div class="page-container">
-        <p class="eyebrow">Services</p>
         <h1 class="page-title">Other Services</h1>
       </div>
     </section>
@@ -178,30 +177,17 @@ const whenToUse = [
   padding: 64px 0 0;
 }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
 .page-body {
   padding-bottom: 80px;
 }
 
 .eyebrow {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #D4AF37;
+  color: #e7c73a;
   margin-bottom: 16px;
 }
 
 .page-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
   color: #ffffff;
-  line-height: 1.15;
   margin-bottom: 0;
 }
 
@@ -210,11 +196,7 @@ const whenToUse = [
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 3vw, 2rem);
-  font-weight: 700;
-  color: #D4AF37;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  color: #e7c73a;
 }
 
 .platform-block {
@@ -227,11 +209,7 @@ const whenToUse = [
 
 .platform-title,
 .subsection-title {
-  font-size: 1.35rem;
-  font-weight: 600;
   color: #ffffff;
-  line-height: 1.35;
-  margin-bottom: 20px;
 }
 
 .subsection {
@@ -239,10 +217,7 @@ const whenToUse = [
 }
 
 .body-text {
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
-  margin-bottom: 20px;
 }
 
 .body-text:last-child {
@@ -259,9 +234,7 @@ const whenToUse = [
   position: relative;
   padding-left: 24px;
   margin-bottom: 16px;
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  line-height: 1.7;
 }
 
 .bullet-list li::before {
@@ -272,7 +245,7 @@ const whenToUse = [
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #D4AF37;
+  background-color: #e7c73a;
 }
 
 .bullet-list li:last-child {
@@ -281,27 +254,6 @@ const whenToUse = [
 
 .page-cta {
   margin-top: 56px;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #D4AF37;
-  color: #0a0a0a;
-  border: 2px solid #D4AF37;
-  padding: 16px 40px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
-
-.cta-button:hover {
-  background-color: #E5C158;
-  border-color: #E5C158;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -313,10 +265,6 @@ const whenToUse = [
     padding-top: 48px;
   }
 
-  .page-container {
-    padding: 0 16px;
-  }
-
   .page-body {
     padding-bottom: 64px;
   }
@@ -325,21 +273,9 @@ const whenToUse = [
     margin-top: 40px;
   }
 
-  .platform-title,
-  .subsection-title {
-    font-size: 1.2rem;
-  }
-
-  .body-text,
-  .bullet-list li {
-    font-size: 0.95rem;
-  }
-
   .cta-button {
     display: block;
-    text-align: center;
     padding: 14px 32px;
-    font-size: 1rem;
   }
 }
 </style>

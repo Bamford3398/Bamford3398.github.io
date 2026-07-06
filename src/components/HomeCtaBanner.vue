@@ -24,7 +24,7 @@
 
 <style scoped>
 .home-cta-banner {
-  background-color: #D4AF37;
+  background-color: #e7c73a;
   overflow: hidden;
 }
 
@@ -38,45 +38,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 64px 48px 64px max(32px, calc((100vw - 1400px) / 2 + 32px));
+  padding: 64px 48px 64px max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
   max-width: 620px;
   position: relative;
   z-index: 2;
 }
 
 .home-cta-title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
   color: #0a0a0a;
-  line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .home-cta-text {
-  font-size: 1.05rem;
   color: rgba(10, 10, 10, 0.85);
-  line-height: 1.65;
   margin-bottom: 32px;
-}
-
-.home-cta-button {
-  display: inline-block;
-  background-color: #0a0a0a;
-  color: #D4AF37;
-  border: 2px solid #0a0a0a;
-  padding: 16px 32px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.25s ease;
-  align-self: flex-start;
-}
-
-.home-cta-button:hover {
-  background-color: transparent;
-  color: #0a0a0a;
 }
 
 .home-cta-image-panel {
@@ -90,7 +65,7 @@
   position: absolute;
   inset: 0 auto 0 0;
   width: min(120px, 18%);
-  background: linear-gradient(to right, #D4AF37 0%, rgba(212, 175, 55, 0.85) 35%, transparent 100%);
+  background: linear-gradient(to right, #e7c73a 0%, rgba(231, 199, 58, 0.85) 35%, transparent 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -113,13 +88,11 @@
 
   .home-cta-content {
     max-width: none;
-    padding: 48px 32px 32px;
-    text-align: center;
-    align-items: center;
+    padding: 48px var(--site-gutter) 32px;
   }
 
   .home-cta-button {
-    align-self: center;
+    align-self: flex-start;
   }
 
   .home-cta-image-panel {
@@ -130,13 +103,13 @@
     inset: 0 0 auto 0;
     width: 100%;
     height: 80px;
-    background: linear-gradient(to bottom, #D4AF37 0%, rgba(212, 175, 55, 0.85) 35%, transparent 100%);
+    background: linear-gradient(to bottom, #e7c73a 0%, rgba(231, 199, 58, 0.85) 35%, transparent 100%);
   }
 }
 
 @media (max-width: 768px) {
   .home-cta-content {
-    padding: 48px 16px 24px;
+    padding-bottom: 24px;
   }
 
   .home-cta-image-panel {
