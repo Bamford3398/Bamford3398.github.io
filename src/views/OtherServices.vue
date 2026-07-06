@@ -111,6 +111,29 @@
         </div>
       </section>
 
+      <section class="content-section">
+        <h2 class="section-title">Software</h2>
+        <p class="body-text">
+          WASP develops its own inspection and pigging software, built in-house for real operational
+          use.
+        </p>
+        <p class="body-text">
+          DeepPulse is our proprietary data processing engine, handling everything from raw data
+          download through to automated report generation. It is the system behind every ULTRASIGHT
+          inspection report we produce.
+        </p>
+        <p class="body-text">
+          FlowSense is our mechanical pigging pressure and flow monitoring platform, tracking
+          operating pressures and flows, pig locations and valve status in real time during pigging
+          operations. FlowSense is available for licence to operators and pigging contractors running
+          their own programmes.
+        </p>
+        <p class="body-text">
+          We also undertake bespoke software development for pigging and inspection-related
+          applications, including pig sensors and tracking systems, on a project basis.
+        </p>
+      </section>
+
       <section class="content-section page-cta">
         <router-link to="/contact" class="cta-button">
           Contact us to discuss your project

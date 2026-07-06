@@ -31,17 +31,4 @@ import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-@media (max-width: 768px) {
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-}
 </style>

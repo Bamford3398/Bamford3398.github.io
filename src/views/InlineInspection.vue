@@ -404,10 +404,51 @@ const processSteps = [
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.inline-inspection-page > :deep(.hero-background .hero-image) {
+  object-position: right top;
+}
+
+@media (max-width: 768px) {
+  .inline-inspection-page > :deep(.hero-background .hero-text) {
+    padding-bottom: 12px;
+  }
+
+  .inline-inspection-page > :deep(.hero-background .hero-image-wrap) {
+    margin-top: -16px;
+  }
+
+  .inline-inspection-page > :deep(.hero-background .hero-image) {
+    object-position: top center;
+    max-height: min(48vh, 380px);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 5%,
+      #000 14%,
+      #000 86%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 5%,
+      #000 14%,
+      #000 86%,
+      transparent 100%
+    );
+  }
+
+  .inline-inspection-page > :deep(.hero-background .hero-image-wrap::after) {
+    background: linear-gradient(
+      to bottom,
+      #0a0a0a 0%,
+      rgba(10, 10, 10, 0.75) 6%,
+      transparent 16%,
+      transparent 72%,
+      rgba(10, 10, 10, 0.55) 90%,
+      #0a0a0a 100%
+    );
+  }
 }
 
 .feature-bar {
@@ -846,25 +887,22 @@ const processSteps = [
 
 @media (max-width: 768px) {
   .feature-bar-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     padding: 16px var(--site-gutter);
   }
 
-  .feature-item:nth-child(3n + 1) {
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .feature-item:nth-child(2n + 1) {
-    border-left: none;
-  }
-
   .feature-item {
-    padding: 16px 12px;
+    border-left: none !important;
+    justify-content: flex-start;
+    padding: 16px 0;
   }
 
-  .btn {
-    width: 100%;
-    text-align: center;
+  .feature-icon {
+    object-position: left center;
+  }
+
+  .feature-item + .feature-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .applications-grid,

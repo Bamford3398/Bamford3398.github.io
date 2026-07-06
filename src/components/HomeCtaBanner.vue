@@ -92,7 +92,9 @@
   }
 
   .home-cta-button {
-    align-self: flex-start;
+    align-self: stretch;
+    width: 100%;
+    text-align: center;
   }
 
   .home-cta-image-panel {

@@ -8,6 +8,9 @@
     ]"
   >
     <div class="hero-layout">
+      <div class="hero-text">
+        <slot />
+      </div>
       <div class="hero-image-wrap">
         <img
           :src="imageSrc"
@@ -15,9 +18,6 @@
           class="hero-image"
           aria-hidden="true"
         />
-      </div>
-      <div class="hero-text">
-        <slot />
       </div>
     </div>
     <div v-if="$slots.after" class="hero-after">
@@ -166,27 +166,55 @@ defineProps({
 @media (max-width: 768px) {
   .hero-background {
     --text-gutter: var(--site-gutter);
-    --text-width: min(700px, 58vw);
-    --image-overlap: min(128px, calc(var(--text-width) * 0.3));
+    --text-width: calc(100vw - 2 * var(--site-gutter));
+    --image-overlap: 0;
+    --image-start: var(--site-gutter);
   }
 
   .hero-background--header-offset {
     padding-top: 96px;
   }
 
-  .hero-image {
-    -webkit-mask-image:
-      linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%),
-      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 12%, #000 30%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%),
-      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 12%, #000 30%);
-    mask-composite: intersect;
+  .hero-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-layout::before {
+    display: none;
   }
 
   .hero-text {
-    padding-bottom: 32px;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    padding: 20px var(--site-gutter) 28px;
+    align-self: stretch;
+  }
+
+  .hero-text::before {
+    display: none;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    align-self: stretch;
+    justify-self: stretch;
+  }
+
+  .hero-image-wrap::after {
+    background: linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.55) 90%, #0a0a0a 100%);
+  }
+
+  .hero-image {
+    width: 100%;
+    max-height: min(52vh, 420px);
+    object-fit: contain;
+    object-position: center center;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
   }
 }
 
@@ -221,5 +249,11 @@ defineProps({
     rgba(255, 255, 255, 0.2) 72%,
     transparent 100%
   );
+}
+
+@media (max-width: 768px) {
+  .hero-background--light .hero-image-wrap::after {
+    background: linear-gradient(to bottom, transparent 72%, rgba(255, 255, 255, 0.55) 90%, #ffffff 100%);
+  }
 }
 </style>

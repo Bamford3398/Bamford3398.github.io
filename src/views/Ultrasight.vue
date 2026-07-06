@@ -152,17 +152,32 @@
             confidence.
           </p>
           <div class="pipeline-flow">
-            <template v-for="(step, index) in pipelineSteps" :key="step.label">
-              <div class="pipeline-step">
-                <img :src="step.icon" alt="" class="pipeline-icon" aria-hidden="true" />
-                <span class="pipeline-label">{{ step.label }}</span>
-              </div>
-              <span
-                v-if="index < pipelineSteps.length - 1"
-                class="pipeline-arrow"
-                aria-hidden="true"
-              >&gt;</span>
-            </template>
+            <div class="pipeline-row">
+              <template v-for="(step, index) in pipelineSteps.slice(0, 3)" :key="step.label">
+                <div class="pipeline-step">
+                  <img :src="step.icon" alt="" class="pipeline-icon" aria-hidden="true" />
+                  <span class="pipeline-label">{{ step.label }}</span>
+                </div>
+                <span
+                  v-if="index < 2"
+                  class="pipeline-arrow"
+                  aria-hidden="true"
+                >&gt;</span>
+              </template>
+            </div>
+            <div class="pipeline-row">
+              <template v-for="(step, index) in pipelineSteps.slice(3)" :key="step.label">
+                <div class="pipeline-step">
+                  <img :src="step.icon" alt="" class="pipeline-icon" aria-hidden="true" />
+                  <span class="pipeline-label">{{ step.label }}</span>
+                </div>
+                <span
+                  v-if="index < pipelineSteps.slice(3).length - 1"
+                  class="pipeline-arrow"
+                  aria-hidden="true"
+                >&gt;</span>
+              </template>
+            </div>
           </div>
         </div>
         <div class="deeppulse-visual">
@@ -464,17 +479,17 @@ const configRows = [
 }
 
 .ultrasight-page > :deep(.hero-background .hero-layout) {
-  min-height: clamp(480px, 62vh, 700px);
+  min-height: clamp(420px, 56vh, 620px);
 }
 
 .ultrasight-page > :deep(.hero-background .hero-image-wrap) {
-  margin-top: clamp(72px, 4.5rem + 2vw, 100px);
+  margin-top: clamp(48px, 3rem + 1vw, 72px);
 }
 
 .ultrasight-page > :deep(.hero-background .hero-image) {
-  min-height: clamp(460px, 62vh, 700px);
+  min-height: clamp(380px, 56vh, 580px);
   object-fit: contain;
-  object-position: right 28%;
+  object-position: right top;
   -webkit-mask-image:
     linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
     linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
@@ -497,23 +512,19 @@ const configRows = [
   }
 
   .ultrasight-page > :deep(.hero-background .hero-text) {
-    padding: 20px 0 40px;
+    padding: 20px var(--site-gutter) 28px;
   }
 
   .ultrasight-page > :deep(.hero-background .hero-image-wrap) {
-    margin-top: clamp(48px, 18vw, 80px);
+    margin-top: 0;
   }
 
   .ultrasight-page > :deep(.hero-background .hero-image) {
-    min-height: 300px;
-    -webkit-mask-image:
-      linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%),
-      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 12%, #000 30%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%),
-      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 12%, #000 30%);
-    mask-composite: intersect;
+    min-height: 0;
+    max-height: min(52vh, 420px);
+    object-position: top center;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
   }
 }
 
@@ -538,12 +549,6 @@ const configRows = [
 .hero-body {
   color: rgba(255, 255, 255, 0.82);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
 .built-grid {
@@ -795,6 +800,10 @@ const configRows = [
   margin-top: 32px;
 }
 
+.pipeline-row {
+  display: contents;
+}
+
 .pipeline-step {
   display: flex;
   flex-direction: column;
@@ -999,7 +1008,7 @@ const configRows = [
 }
 
 .cta-copy .btn {
-  align-self: flex-start;
+  align-self: stretch;
 }
 
 .cta-image-panel {
@@ -1121,7 +1130,7 @@ const configRows = [
   }
 
   .geometries-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .tool-diagram {
@@ -1130,11 +1139,6 @@ const configRows = [
 }
 
 @media (max-width: 768px) {
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
   .modules-layout {
     grid-template-columns: 1fr;
   }
@@ -1159,11 +1163,33 @@ const configRows = [
   }
 
   .geometries-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .capability-section .stats-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .stat-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    text-align: left;
+  }
+
+  .stat-icon {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    margin: 0;
+    object-position: left top;
+  }
+
+  .stat-value,
+  .stat-subvalue,
+  .stat-label {
+    grid-column: 2;
   }
 
   .capability-section .spec-row {
@@ -1176,7 +1202,19 @@ const configRows = [
   }
 
   .pipeline-flow {
-    max-width: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .pipeline-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px 4px;
+    flex-wrap: nowrap;
   }
 
   .cta-copy {

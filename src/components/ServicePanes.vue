@@ -123,7 +123,7 @@ const panes = [
 
 @media (max-width: 768px) {
   .service-panes {
-    padding-bottom: 64px;
+    padding-bottom: 24px;
   }
 
   .pane-body {

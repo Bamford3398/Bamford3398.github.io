@@ -1,55 +1,13 @@
 <template>
-  <div class="technical-page">
+  <div class="partners-page">
     <section class="page-hero">
       <div class="page-container">
-        <h1 class="page-title">Technical Services</h1>
+        <h1 class="page-title">Partners</h1>
       </div>
     </section>
 
     <div class="page-container page-body">
       <section class="content-section">
-        <h2 class="section-title">Advisory</h2>
-        <p class="body-text">
-          WASP's team has been at the sharp end of intelligent pigging and pipeline operations for
-          decades. That experience is available to clients directly, as independent technical advice.
-        </p>
-        <p class="body-text">
-          Whether you are planning an intelligent pigging programme for the first time, reviewing an
-          existing inspection strategy, or trying to understand what your data is actually telling
-          you, we can help. Advisory engagements range from a single consultation through to ongoing
-          technical support across a full inspection campaign.
-        </p>
-        <p class="body-text we-cover-label">We cover:</p>
-        <ul class="bullet-list">
-          <li v-for="item in advisoryItems" :key="item">{{ item }}</li>
-        </ul>
-      </section>
-
-      <section class="content-section">
-        <h2 class="section-title">Software</h2>
-        <p class="body-text">
-          WASP develops its own inspection and pigging software, built in-house for real operational
-          use.
-        </p>
-        <p class="body-text">
-          DeepPulse is our proprietary data processing engine, handling everything from raw data
-          download through to automated report generation. It is the system behind every ULTRASIGHT
-          inspection report we produce.
-        </p>
-        <p class="body-text">
-          FlowSense is our mechanical pigging pressure and flow monitoring platform, tracking
-          operating pressures and flows, pig locations and valve status in real time during pigging
-          operations. FlowSense is available for licence to operators and pigging contractors running
-          their own programmes.
-        </p>
-        <p class="body-text">
-          We also undertake bespoke software development for pigging and inspection-related
-          applications, including pig sensors and tracking systems, on a project basis.
-        </p>
-      </section>
-
-      <section class="content-section">
-        <h2 class="section-title">Our Partners</h2>
         <p class="body-text">
           WASP works with a select group of established industry partners to deliver seamless,
           end-to-end project support for our clients. Every partner is chosen for their technical
@@ -61,7 +19,7 @@
           :key="partner.name"
           class="partner-block"
         >
-          <h3 class="partner-name">{{ partner.name }}</h3>
+          <h2 class="partner-name">{{ partner.name }}</h2>
           <p class="body-text">{{ partner.description }}</p>
           <div class="partner-contact">
             <a
@@ -98,14 +56,6 @@
 </template>
 
 <script setup>
-const advisoryItems = [
-  'Intelligent pigging strategy and pig technology selection',
-  'Pipeline and furnace cleaning programme design',
-  'Run planning and operational specifications',
-  'Data interpretation and defect assessment',
-  'Vendor-neutral ILI procurement advice'
-]
-
 const partners = [
   {
     name: 'USA DeBusk',
@@ -149,7 +99,7 @@ const partners = [
 </script>
 
 <style scoped>
-.technical-page {
+.partners-page {
   min-height: 100vh;
   background-color: #0a0a0a;
   padding-top: 80px;
@@ -172,47 +122,11 @@ const partners = [
   margin-top: 48px;
 }
 
-.section-title {
-  color: #e7c73a;
-}
-
 .body-text {
   color: rgba(255, 255, 255, 0.88);
 }
 
 .body-text:last-child {
-  margin-bottom: 0;
-}
-
-.we-cover-label {
-  margin-bottom: 16px;
-}
-
-.bullet-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.bullet-list li {
-  position: relative;
-  padding-left: 24px;
-  margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.bullet-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #e7c73a;
-}
-
-.bullet-list li:last-child {
   margin-bottom: 0;
 }
 
@@ -264,7 +178,7 @@ const partners = [
 }
 
 @media (max-width: 768px) {
-  .technical-page {
+  .partners-page {
     padding-top: 70px;
   }
 

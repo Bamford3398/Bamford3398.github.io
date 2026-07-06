@@ -581,6 +581,12 @@ h6 {
   background-color: rgba(10, 10, 10, 0.08);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .cta-button,
 .submit-button {
   padding: 16px 40px;
@@ -671,6 +677,37 @@ h6 {
     padding-block: 48px;
   }
 
+  /* Stack multi-column layout grids on mobile */
+  .built-grid,
+  .capability-grid,
+  .deeppulse-grid,
+  .integrity-grid,
+  .uncertainty-grid,
+  .deliverables-grid,
+  .process-section-grid,
+  .enables-grid,
+  .home-cta-layout,
+  .cta-layout,
+  .team-member {
+    grid-template-columns: 1fr;
+  }
+
+  .applications-grid,
+  .detect-grid,
+  .geometries-grid,
+  .modules-layout,
+  .process-flow,
+  .deliverables-lists,
+  .enables-list,
+  .feature-bar-container,
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-section .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
   .page-title,
   .contact-title {
     font-size: clamp(32px, 8vw, 40px);
@@ -704,6 +741,30 @@ h6 {
 
   .hero-text > p:last-of-type {
     margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .btn,
+  .cta-button,
+  .submit-button,
+  .home-cta-button {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    align-self: stretch;
   }
 
   .btn {

@@ -76,6 +76,7 @@ const gains = [
 .client-gains-title {
   color: #e7c73a;
   margin-bottom: 56px;
+  text-align: center;
 }
 
 .client-gains-grid {
@@ -119,18 +120,34 @@ const gains = [
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .client-gains {
-    padding-block: 64px;
+    padding: 40px var(--site-gutter) 64px;
   }
 
   .client-gains-title {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .client-gains-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 16px;
+    gap: 28px 20px;
+  }
+
+  .gain-item {
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .gain-label {
+    max-width: none;
+  }
+
+  .gain-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 11rem;
+    margin-inline: auto;
   }
 
   .gain-icon {
