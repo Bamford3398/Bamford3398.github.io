@@ -157,43 +157,28 @@
 
     <section class="section section--dark about-team">
       <div class="section-container">
-        <div class="about-team-intro">
-          <p class="eyebrow">MEET THE TEAM</p>
-          <h2 class="section-heading">Meet the team</h2>
-          <span class="section-accent" aria-hidden="true"></span>
-          <p class="body-text about-team-lead">
-            WASP is a new company. The people behind it are not.
-          </p>
-          <p class="body-text">
-            Our leadership team has held senior positions at the highest levels of the global
-            intelligent pigging industry, and played a direct role in developing the technology and
-            operational standards the sector relies on today.
+        <div class="about-team-header">
+          <div class="about-team-heading">
+            <p class="eyebrow">MEET THE TEAM</p>
+            <h2 class="section-heading">Experienced people behind the inspection.</h2>
+            <span class="section-accent" aria-hidden="true"></span>
+          </div>
+          <p class="body-text about-team-intro-text">
+            WASP is built around people with direct experience in inspection technology, field
+            delivery, engineering assessment and operational project management. Our leadership team
+            has held senior technical, operational and commercial roles across the intelligent
+            pigging industry.
           </p>
         </div>
 
-        <div class="team-members">
-          <article
-            v-for="(member, index) in teamMembers"
-            :key="member.id"
-            class="team-member"
-            :class="{ 'team-member--reversed': index % 2 === 1 }"
-          >
-            <div class="team-member-content">
-              <h3 class="team-member-name">
-                {{ member.name }} — {{ member.role }}
-              </h3>
-              <p
-                v-for="(paragraph, paragraphIndex) in member.paragraphs"
-                :key="paragraphIndex"
-                class="about-text"
-              >
-                {{ paragraph }}
-              </p>
+        <div class="about-team-cards">
+          <article v-for="member in teamMembers" :key="member.id" class="about-team-card">
+            <div class="about-team-avatar" aria-hidden="true">
+              <span class="about-team-initials">{{ member.initials }}</span>
             </div>
-
-            <div class="team-member-image-wrap team-image-placeholder" aria-hidden="true">
-              <span class="team-image-placeholder-text">Image placeholder</span>
-            </div>
+            <h3 class="about-team-name">{{ member.name }}</h3>
+            <p class="about-team-role">{{ member.role }}</p>
+            <p class="about-team-bio">{{ member.bio }}</p>
           </article>
         </div>
       </div>
@@ -391,33 +376,27 @@ const engineeringStandards = [
 const teamMembers = [
   {
     id: 'david-thewsey',
+    initials: 'DT',
     name: 'Dr David Thewsey',
     role: 'Chief Executive Officer',
-    paragraphs: [
-      'David is a recognised leader in inline inspection (ILI) technology, with more than 15 years of senior leadership experience across some of the industry\'s leading inspection companies. His career has included roles as Chief Technology Officer, Technical Director, Executive Director and Managing Director, spanning technology development, commercial growth and international business leadership.',
-      'He holds a PhD in Materials Science and Engineering, a first-class degree in Electronic Engineering and is a Chartered Engineer. Throughout his career, David has led the development and commercialisation of multiple inspection technologies, taking products from initial concept through to successful deployment in global markets.',
-      'At WASP, David leads the company\'s strategic direction, commercial activities and technology vision, working closely with clients and partners to deliver innovative inspection solutions.'
-    ]
+    bio:
+      'David is a recognised leader in inline inspection technology, with senior leadership experience across specialist inspection companies. He holds a PhD in Materials Science and Engineering, a first-class degree in Electronic Engineering and is a Chartered Engineer. At WASP, David leads strategic direction, commercial development and technology vision.'
   },
   {
     id: 'ryan-caird',
+    initials: 'RC',
     name: 'Ryan Caird',
     role: 'Chief Operating Officer',
-    paragraphs: [
-      'Ryan combines extensive international field experience with deep expertise in intelligent pig design, mechanical engineering and asset integrity. Over his career, he has been directly involved in more than 100 inspection operations across 40+ countries, giving him a practical understanding of the challenges faced by operators in a wide range of industries and environments.',
-      'Alongside his operational experience, Ryan has played a central role in the design, development and deployment of multiple ILI systems. His expertise spans mechanical design, structural modelling, engineering analysis and technology development, ensuring that inspection tools are engineered not only to perform in theory, but to deliver reliable results in the field.',
-      'At WASP, Ryan leads engineering, technology development and operational execution, ensuring every solution is designed to meet the highest technical standards.'
-    ]
+    bio:
+      'Ryan combines international field experience with specialist knowledge in intelligent pig design, mechanical engineering and asset integrity. He has been directly involved in more than 100 inspection operations across 40+ countries. At WASP, Ryan leads engineering, technology development and operational execution.'
   },
   {
     id: 'gray-dessington',
+    initials: 'GD',
     name: 'Gray Dessington',
     role: 'Business Operations Manager',
-    paragraphs: [
-      'Gray brings more than 12 years of inline inspection experience, having progressed from field technician to senior leadership positions within one of the industry\'s leading specialist inspection providers. During his career, he has been involved in 200+ inspection operations across five continents, supporting projects in the refining, petrochemical, power generation and pipeline sectors.',
-      'In addition to extensive field experience, Gray spent several years leading inspection operations, overseeing project planning, resource management, client liaison, personnel development and technical delivery. As Inspection Business Lead, he was responsible for the day-to-day management of the inspection department, ensuring projects were executed safely, efficiently and to specification.',
-      'At WASP, Gray is responsible for business operations and project delivery, ensuring that every project is properly planned, resourced and executed from initial enquiry through to final reporting.'
-    ]
+    bio:
+      'Gray brings more than 12 years of inline inspection experience, progressing from field technician to senior operational leadership. He has been involved in more than 200 inspection operations across five continents. At WASP, Gray is responsible for business operations and project delivery.'
   }
 ]
 </script>
@@ -551,6 +530,10 @@ const teamMembers = [
   background-color: #0a0a0a;
 }
 
+.section--light .body-text {
+  color: rgba(10, 10, 10, 0.82);
+}
+
 .body-text--dark {
   color: rgba(10, 10, 10, 0.82);
 }
@@ -593,7 +576,7 @@ const teamMembers = [
   margin-bottom: var(--gap-heading-to-accent);
 }
 
-.body-text {
+.section--dark .body-text {
   color: rgba(255, 255, 255, 0.85);
   line-height: var(--leading-copy);
 }
@@ -741,75 +724,85 @@ const teamMembers = [
   margin: 0;
 }
 
-.about-team-intro {
-  max-width: 820px;
+.about-team-header {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px 64px;
+  align-items: start;
   margin-bottom: 56px;
 }
 
-.about-team-lead {
-  font-weight: var(--font-weight-semibold);
+.about-team-heading .section-heading {
+  max-width: 520px;
 }
 
-.about-team-intro .body-text + .body-text {
-  margin-top: 18px;
+.about-team-intro-text {
+  margin: 0;
+  max-width: 640px;
 }
 
-.team-members {
+.about-team-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-team-card {
+  background-color: #141414;
+  border: 1px solid rgba(231, 199, 58, 0.12);
+  padding: 36px 28px 32px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
-}
-
-.team-member {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
   align-items: center;
+  text-align: center;
 }
 
-.team-member--reversed .team-member-content {
-  order: 2;
-}
-
-.team-member--reversed .team-member-image-wrap {
-  order: 1;
-}
-
-.team-member-name {
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.team-member-image-wrap {
-  aspect-ratio: 3 / 4;
-  min-height: 320px;
-}
-
-.team-image-placeholder {
+.about-team-avatar {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #e7c73a;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  border: 1px dashed rgba(255, 255, 255, 0.22);
+  margin-bottom: 24px;
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
 }
 
-.team-image-placeholder-text {
-  font-family: var(--font-body);
-  font-size: var(--text-tiny);
-  font-weight: var(--font-weight-medium);
+.about-team-initials {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-pane);
+  color: #e7c73a;
+}
+
+.about-team-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-subsection);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-normal);
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.about-team-role {
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-feature);
+  line-height: var(--leading-normal);
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: #e7c73a;
+  margin: 0 0 20px;
 }
 
-.about-text {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.about-text:last-child {
-  margin-bottom: 0;
+.about-team-bio {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
 }
 
 .about-cta {
@@ -931,6 +924,15 @@ const teamMembers = [
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .about-team-header {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-team-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -986,27 +988,8 @@ const teamMembers = [
     padding: 28px 24px;
   }
 
-  .about-team-intro {
+  .about-team-header {
     margin-bottom: 40px;
-  }
-
-  .team-members {
-    gap: 48px;
-  }
-
-  .team-member,
-  .team-member--reversed {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .team-member--reversed .team-member-content,
-  .team-member--reversed .team-member-image-wrap {
-    order: unset;
-  }
-
-  .team-member-image-wrap {
-    max-width: 360px;
   }
 
   .about-cta-layout {
