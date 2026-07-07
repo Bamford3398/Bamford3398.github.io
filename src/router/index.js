@@ -5,7 +5,7 @@ import Integrity from '../views/Integrity.vue'
 import InlineInspection from '../views/InlineInspection.vue'
 import Ultrasight from '../views/Ultrasight.vue'
 import OtherServices from '../views/OtherServices.vue'
-import Advisory from '../views/Advisory.vue'
+import Technical from '../views/Technical.vue'
 import Partners from '../views/Partners.vue'
 import Contact from '../components/Contact.vue'
 
@@ -45,18 +45,18 @@ const routes = [
     component: OtherServices
   },
   {
+    path: '/technical',
+    name: 'Technical',
+    component: Technical
+  },
+  {
     path: '/advisory',
-    name: 'Advisory',
-    component: Advisory
+    redirect: '/technical'
   },
   {
     path: '/partners',
     name: 'Partners',
     component: Partners
-  },
-  {
-    path: '/technical',
-    redirect: '/partners'
   },
   {
     path: '/contact',

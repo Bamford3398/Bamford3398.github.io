@@ -12,18 +12,20 @@
   background-color: #0a0a0a;
   margin-top: -72px;
   padding: 48px var(--site-gutter) 40px;
+  text-align: center;
 }
 
 .clarity-accent {
   width: 48px;
   height: 4px;
   background-color: #e7c73a;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
 }
 
 .clarity-title {
   color: #ffffff;
   max-width: 900px;
+  margin-inline: auto;
 }
 
 @media (max-width: 768px) {
@@ -33,7 +35,7 @@
   }
 
   .clarity-accent {
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header--hidden': !isHeaderVisible }">
     <div class="header-accent-line"></div>
     <div class="header-container">
       <router-link to="/" class="logo-section" @click="handleNavClick">
@@ -57,8 +57,8 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/advisory" class="nav-dropdown-item" @click="handleNavClick">
-                  Advisory
+                <router-link to="/technical" class="nav-dropdown-item" @click="handleNavClick">
+                  Technical
                 </router-link>
               </li>
               <li>
@@ -114,8 +114,8 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/advisory" class="mobile-subnav-link" @click="handleNavClick">
-                  Advisory
+                <router-link to="/technical" class="mobile-subnav-link" @click="handleNavClick">
+                  Technical
                 </router-link>
               </li>
               <li>
@@ -132,12 +132,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMenuOpen = ref(false)
 const isServicesOpen = ref(false)
 const isInlineOpen = ref(false)
 const mobilePanel = ref('main')
+const isHeaderVisible = ref(true)
+const lastScrollY = ref(0)
 
 const resetMobilePanel = () => {
   mobilePanel.value = 'main'
@@ -147,6 +149,8 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
   if (!isMenuOpen.value) {
     resetMobilePanel()
+  } else {
+    isHeaderVisible.value = true
   }
 }
 
@@ -164,6 +168,35 @@ const handleNavClick = () => {
   isInlineOpen.value = false
   resetMobilePanel()
 }
+
+const handleScroll = () => {
+  const currentY = window.scrollY
+
+  if (isMenuOpen.value) {
+    isHeaderVisible.value = true
+    lastScrollY.value = currentY
+    return
+  }
+
+  if (currentY <= 0) {
+    isHeaderVisible.value = true
+  } else if (currentY > lastScrollY.value && currentY > 72) {
+    isHeaderVisible.value = false
+  } else if (currentY < lastScrollY.value) {
+    isHeaderVisible.value = true
+  }
+
+  lastScrollY.value = currentY
+}
+
+onMounted(() => {
+  lastScrollY.value = window.scrollY
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <style scoped>
@@ -177,6 +210,13 @@ const handleNavClick = () => {
   z-index: 1000;
   padding: 10px 0;
   overflow: visible;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .header-accent-line {

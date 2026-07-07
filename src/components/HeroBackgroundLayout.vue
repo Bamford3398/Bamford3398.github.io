@@ -4,6 +4,7 @@
     :class="[
       { 'hero-background--header-offset': headerOffset },
       { 'hero-background--light': theme === 'light' },
+      { 'hero-background--no-image': hideImage },
       sectionClass
     ]"
   >
@@ -11,7 +12,7 @@
       <div class="hero-text">
         <slot />
       </div>
-      <div class="hero-image-wrap">
+      <div v-if="!hideImage" class="hero-image-wrap">
         <img
           :src="imageSrc"
           alt=""
@@ -44,6 +45,10 @@ defineProps({
     type: String,
     default: 'dark',
     validator: (value) => ['dark', 'light'].includes(value)
+  },
+  hideImage: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
@@ -161,6 +166,11 @@ defineProps({
 .hero-after {
   position: relative;
   z-index: 4;
+}
+
+.hero-background--no-image .hero-layout::before,
+.hero-background--no-image .hero-text::before {
+  display: none;
 }
 
 @media (max-width: 768px) {
