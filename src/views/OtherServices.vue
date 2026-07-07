@@ -5,15 +5,12 @@
       section-class="hero-section"
       image-src="/other-services/hero.png"
     >
-      <p class="eyebrow">Inspection Readiness Services</p>
       <h1 class="hero-title">
         <span class="hero-title-accent" aria-hidden="true"></span>
-        Other Services
+        OTHER
+        <span class="hero-title-gold">SERVICES</span>
       </h1>
       <p class="hero-lead hero-lead--tagline">
-        Prepare the asset. Verify the condition. Inspect with confidence.
-      </p>
-      <p class="hero-text">
         Practical support for cleaning, visual investigation and inspection readiness. WASP manages
         the practical work required to make inspection possible, using pigging expertise, trusted
         industrial partners and visual verification tools.
@@ -476,6 +473,14 @@ const processSteps = [
     0 0 40px rgba(0, 0, 0, 0.6);
 }
 
+.hero-title-gold {
+  display: block;
+  color: #e7c73a;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.6);
+}
+
 .hero-lead {
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -589,7 +594,7 @@ const processSteps = [
 .readiness-service-title {
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: var(--text-label);
+  font-size: var(--text-subheading-sm);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-normal);
   letter-spacing: 0.05em;
@@ -651,7 +656,7 @@ const processSteps = [
 .when-used-title {
   color: #0a0a0a;
   font-family: var(--font-heading);
-  font-size: var(--text-label);
+  font-size: var(--text-subheading-sm);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-normal);
   letter-spacing: 0.04em;
@@ -698,7 +703,7 @@ const processSteps = [
 .os-process-title {
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: var(--text-label);
+  font-size: var(--text-subheading-sm);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-normal);
   letter-spacing: 0.05em;
@@ -767,7 +772,7 @@ const processSteps = [
   align-self: flex-start;
   padding: 16px 28px;
   font-family: var(--font-body);
-  font-size: var(--text-caption);
+  font-size: var(--text-button);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-button);
   text-decoration: none;
@@ -1104,7 +1109,7 @@ const processSteps = [
 .service-feature-title {
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: var(--text-label);
+  font-size: var(--text-subheading-sm);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-normal);
   letter-spacing: 0.04em;
@@ -1410,7 +1415,7 @@ const processSteps = [
     max-height: min(48vh, 360px);
   }
 
-  .other-services-page > :deep(.hero-background .hero-text) {
+  .other-services-page > :deep(.hero-background .hero-layout > .hero-copy) {
     padding-bottom: 12px;
   }
 

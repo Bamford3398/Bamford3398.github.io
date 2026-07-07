@@ -4,13 +4,15 @@
     <section class="tech-hero">
       <div class="tech-hero-container">
         <div class="tech-hero-copy">
-          <p class="eyebrow">Technical Services</p>
           <h1 class="hero-title">
             <span class="hero-title-accent" aria-hidden="true"></span>
-            Inspection expertise, data tools and
-            <span class="hero-title-gold">custom software.</span>
+            TECHNICAL
+            <span class="hero-title-gold">SERVICES</span>
           </h1>
-          <p class="hero-lead">
+          <p class="hero-lead hero-lead--tagline">
+            Inspection expertise, data tools and custom software.
+          </p>
+          <p class="hero-body">
             WASP provides technical support and software solutions that help operators plan
             inspections, interpret results and manage data with confidence. From one-off advice to
             bespoke client platforms, our services are built around the real-world challenges of
@@ -18,18 +20,13 @@
           </p>
           <div class="hero-actions">
             <router-link to="/contact" class="btn btn-primary btn-with-icon">
-              Discuss a technical requirement
+              DISCUSS A TECHNICAL REQUIREMENT
               <ArrowIcon class="btn-icon" />
             </router-link>
           </div>
         </div>
-        <div class="tech-hero-art" aria-hidden="true">
-          <img
-            src="/technical/hero-laptop-dashboard.png"
-            alt=""
-            class="tech-hero-image"
-            decoding="async"
-          />
+        <div class="tech-hero-art tech-image-placeholder tech-image-placeholder--dark" aria-hidden="true">
+          <span class="tech-image-placeholder-text">Image placeholder</span>
         </div>
       </div>
     </section>
@@ -38,12 +35,6 @@
     <section class="tech-support section section--light">
       <div class="tech-support-grid">
         <div class="tech-support-copy">
-          <img
-            src="/technical/icons/advisory-support.png"
-            alt=""
-            class="tech-section-icon"
-            aria-hidden="true"
-          />
           <h2 class="section-heading section-heading--dark">
             Technical support for inspection decisions
           </h2>
@@ -75,12 +66,6 @@
     <section class="tech-software section section--dark">
       <div class="section-container tech-software-grid">
         <div class="tech-software-intro">
-          <img
-            src="/technical/icons/inspection-data-review.png"
-            alt=""
-            class="tech-section-icon"
-            aria-hidden="true"
-          />
           <h2 class="section-heading">Software built around inspection data</h2>
           <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text">
@@ -96,22 +81,16 @@
             reporting requirements and asset structure.
           </p>
         </div>
-        <div class="tech-software-visual" aria-hidden="true">
-          <img
-            src="/technical/software-dashboard-monitor.png"
-            alt=""
-            class="tech-software-image"
-            decoding="async"
-          />
+        <div class="tech-software-visual tech-image-placeholder tech-image-placeholder--dark" aria-hidden="true">
+          <span class="tech-image-placeholder-text">Image placeholder</span>
         </div>
         <div class="tech-feature-grid">
           <article
             v-for="feature in softwareFeatures"
-            :key="feature.label"
+            :key="feature"
             class="tech-feature"
           >
-            <img :src="feature.icon" alt="" class="tech-feature-icon" aria-hidden="true" />
-            <span class="card-title tech-feature-label">{{ feature.label }}</span>
+            <span class="tech-feature-label">{{ feature }}</span>
           </article>
         </div>
       </div>
@@ -121,12 +100,6 @@
     <section class="tech-process section section--dark">
       <div class="section-container tech-process-grid">
         <div class="tech-process-intro">
-          <img
-            src="/technical/icons/bespoke-software.png"
-            alt=""
-            class="tech-section-icon"
-            aria-hidden="true"
-          />
           <h2 class="section-heading">From inspection data to usable information</h2>
           <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text">
@@ -140,7 +113,6 @@
         <div class="tech-steps">
           <template v-for="(step, index) in processSteps" :key="step.title">
             <article class="tech-step">
-              <img :src="step.icon" alt="" class="tech-step-icon" aria-hidden="true" />
               <h3 class="process-title tech-step-title">{{ step.title }}</h3>
               <p class="process-description tech-step-text">{{ step.description }}</p>
             </article>
@@ -168,12 +140,6 @@
     <section class="tech-custom section section--light">
       <div class="section-container tech-custom-grid">
         <div class="tech-custom-copy">
-          <img
-            src="/technical/icons/specific-problems.png"
-            alt=""
-            class="tech-section-icon"
-            aria-hidden="true"
-          />
           <h2 class="section-heading section-heading--dark">Built for specific inspection problems</h2>
           <span class="section-accent section-accent--dark" aria-hidden="true"></span>
           <p class="body-text body-text--dark">
@@ -185,42 +151,19 @@
             a complete platform for managing inspection outputs across assets or sites.
           </p>
         </div>
-        <div class="tech-drawing-area" aria-hidden="true">
-          <img
-            src="/technical/fired-heater-ga-drawing.png"
-            alt=""
-            class="tech-drawing"
-            decoding="async"
-          />
-          <div class="tech-callout tech-callout--top">
-            <div class="tech-callout-line" aria-hidden="true"></div>
-            <div class="tech-callout-content">
-              <strong class="detect-title tech-callout-title">Custom reporting</strong>
-              <span class="type-caption tech-callout-text">Built around your data and workflows.</span>
-            </div>
-          </div>
-          <div class="tech-callout tech-callout--bottom">
-            <div class="tech-callout-line" aria-hidden="true"></div>
-            <div class="tech-callout-content">
-              <strong class="detect-title tech-callout-title">Client-specific tools</strong>
-              <span class="type-caption tech-callout-text">Designed to solve real inspection challenges.</span>
-            </div>
-          </div>
+        <div class="tech-drawing-area tech-image-placeholder tech-image-placeholder--light" aria-hidden="true">
+          <span class="tech-image-placeholder-text">Image placeholder</span>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="tech-cta">
-      <img
-        src="/technical/refinery-processing-unit.png"
-        alt=""
-        class="tech-cta-plant"
-        aria-hidden="true"
-      />
+      <div class="tech-cta-visual tech-image-placeholder tech-image-placeholder--cta" aria-hidden="true">
+        <span class="tech-image-placeholder-text">Image placeholder</span>
+      </div>
       <div class="tech-cta-container">
         <div class="tech-cta-content">
-          <img src="/logo.png" alt="" class="tech-cta-logo" aria-hidden="true" />
           <h2 class="home-cta-title">Need technical support or inspection software?</h2>
           <p class="home-cta-text tech-cta-text">
             Whether you need help planning an inspection, reviewing data, improving reporting, or
@@ -278,58 +221,31 @@ const supportBullets = [
 ]
 
 const softwareFeatures = [
-  {
-    label: 'Inspection data review tools',
-    icon: '/technical/icons/inspection-data-review.png'
-  },
-  {
-    label: 'Reporting interfaces & automated reports',
-    icon: '/technical/icons/reporting-interfaces.png'
-  },
-  {
-    label: 'Wall thickness & ID data visualisation',
-    icon: '/technical/icons/wall-thickness-visualisation.png'
-  },
-  {
-    label: 'Client-specific dashboards',
-    icon: '/technical/icons/client-dashboards.png'
-  },
-  {
-    label: 'Defect tables & anomaly tracking',
-    icon: '/technical/icons/defect-tracking.png'
-  },
-  {
-    label: 'Custom workflows for fired heater or pipeline inspection data',
-    icon: '/technical/icons/custom-workflows.png'
-  },
-  {
-    label: 'Comparison of repeat inspection results',
-    icon: '/technical/icons/comparison-results.png'
-  },
-  {
-    label: 'Bespoke software for unusual inspection requirements',
-    icon: '/technical/icons/bespoke-software.png'
-  }
+  'Inspection data review tools',
+  'Reporting interfaces & automated reports',
+  'Wall thickness & ID data visualisation',
+  'Client-specific dashboards',
+  'Defect tables & anomaly tracking',
+  'Custom workflows for fired heater or pipeline inspection data',
+  'Comparison of repeat inspection results',
+  'Bespoke software for unusual inspection requirements'
 ]
 
 const processSteps = [
   {
     title: 'Review',
     description:
-      'Data is reviewed using specialist tools and engineering judgement. Coverage, confidence and anomalies are assessed.',
-    icon: '/technical/icons/review.png'
+      'Data is reviewed using specialist tools and engineering judgement. Coverage, confidence and anomalies are assessed.'
   },
   {
     title: 'Interpret',
     description:
-      'Findings are interpreted in the context of the asset, operating conditions and integrity requirements.',
-    icon: '/technical/icons/interpret.png'
+      'Findings are interpreted in the context of the asset, operating conditions and integrity requirements.'
   },
   {
     title: 'Advise',
     description:
-      'Clear reporting and practical recommendations support maintenance, repair or further assessment.',
-    icon: '/technical/icons/advise.png'
+      'Clear reporting and practical recommendations support maintenance, repair or further assessment.'
   }
 ]
 </script>
@@ -379,7 +295,7 @@ const processSteps = [
     radial-gradient(circle at 77% 22%, rgba(231, 199, 58, 0.12), transparent 21%),
     linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 42%, #080808 100%);
   border-bottom: 1px solid #222;
-  padding-top: 132px;
+  padding-top: var(--site-header-height);
 }
 
 .tech-hero .hero-title {
@@ -392,13 +308,24 @@ const processSteps = [
   color: #e7c73a;
 }
 
-.tech-hero .hero-lead {
+.tech-hero .hero-lead--tagline {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   max-width: 690px;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tech-hero .hero-body {
+  max-width: 690px;
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .tech-hero .hero-actions {
-  margin-top: var(--gap-hero-to-actions);
+  margin-top: 0;
 }
 
 .tech-hero::before {
@@ -430,36 +357,48 @@ const processSteps = [
 .tech-hero-copy {
   position: relative;
   z-index: 5;
+  max-width: none;
 }
 
 .tech-hero-art {
   position: relative;
   min-height: 400px;
+  z-index: 2;
+  background-color: #0a0a0a;
+}
+
+.tech-image-placeholder {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  z-index: 2;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
 }
 
-.tech-hero-art::before {
-  content: '';
-  position: absolute;
-  z-index: 3;
-  pointer-events: none;
-  left: -18%;
-  top: -60px;
-  bottom: -60px;
-  width: 43%;
-  background: linear-gradient(90deg, #0a0a0a 0%, rgba(10, 10, 10, 0.9) 52%, transparent 100%);
+.tech-image-placeholder-text {
+  font-family: var(--font-body);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-pane);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
 }
 
-.tech-hero-image {
-  position: relative;
-  z-index: 1;
-  width: min(920px, 120%);
-  max-width: none;
-  transform: translateX(24px) translateY(8px);
-  filter: drop-shadow(0 44px 40px rgba(0, 0, 0, 0.58));
+.tech-image-placeholder--light {
+  border-color: rgba(10, 10, 10, 0.18);
+  background-color: #f5f5f5;
+}
+
+.tech-image-placeholder--light .tech-image-placeholder-text {
+  color: rgba(10, 10, 10, 0.38);
+}
+
+.tech-image-placeholder--cta {
+  border-color: rgba(10, 10, 10, 0.22);
+  background-color: rgba(10, 10, 10, 0.06);
+}
+
+.tech-image-placeholder--cta .tech-image-placeholder-text {
+  color: rgba(10, 10, 10, 0.42);
 }
 
 /* Support */
@@ -470,21 +409,18 @@ const processSteps = [
 .tech-support-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 560px;
+  align-items: stretch;
 }
 
 .tech-support-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 700px;
   width: 100%;
-  justify-self: end;
-  padding: 72px 48px 72px max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
-}
-
-.tech-section-icon {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  margin-bottom: 18px;
+  justify-self: start;
+  padding: 80px 48px 80px
+    max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
 }
 
 .tech-support-intro {
@@ -523,32 +459,29 @@ const processSteps = [
 
 .tech-support-visual {
   position: relative;
-  min-height: 560px;
-  background: radial-gradient(circle at 54% 35%, #303438, #090909 64%);
+  min-height: 100%;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  border-left: 1px solid #ddd;
+  background-color: #1a1a1a;
 }
 
 .tech-support-visual::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(242, 242, 238, 0.12), transparent 35%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.52), transparent 48%);
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(242, 242, 242, 0.28), transparent 22%);
   pointer-events: none;
 }
 
 .tech-support-image {
-  position: relative;
-  z-index: 1;
-  width: 111%;
-  max-width: none;
-  transform: translateX(-1%) translateY(2%);
-  filter: drop-shadow(0 34px 38px rgba(0, 0, 0, 0.5));
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: drop-shadow(0 34px 38px rgba(0, 0, 0, 0.35));
 }
 
 /* Software */
@@ -572,27 +505,7 @@ const processSteps = [
 
 .tech-software-visual {
   min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-}
-
-.tech-software-visual::before {
-  content: '';
-  position: absolute;
-  width: 94%;
-  height: 72%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(231, 199, 58, 0.09), transparent 62%);
-  filter: blur(20px);
-}
-
-.tech-software-image {
-  position: relative;
-  width: 114%;
-  max-width: none;
-  filter: drop-shadow(0 38px 42px rgba(0, 0, 0, 0.62));
 }
 
 .tech-feature-grid {
@@ -602,27 +515,24 @@ const processSteps = [
 }
 
 .tech-feature {
-  min-height: 94px;
+  min-height: 72px;
   background: linear-gradient(180deg, #181818, #121212);
   border: 1px solid #333;
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 15px;
+  display: flex;
   align-items: center;
-  padding: 17px;
+  padding: 14px 16px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.tech-feature-icon {
-  width: 39px;
-  height: 39px;
-  object-fit: contain;
-  justify-self: center;
-}
-
 .tech-feature-label {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: #f4f4ee;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /* Process */
@@ -661,7 +571,7 @@ const processSteps = [
   display: grid;
   grid-template-columns: 0.86fr 1.45fr;
   gap: 64px;
-  align-items: start;
+  align-items: center;
 }
 
 .tech-process-intro .body-text + .body-text {
@@ -670,21 +580,14 @@ const processSteps = [
 
 .tech-steps {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 20px;
-  padding-top: 8px;
+  align-self: center;
 }
 
 .tech-step {
   flex: 1;
   min-width: 0;
-}
-
-.tech-step-icon {
-  width: 62px;
-  height: 62px;
-  object-fit: contain;
-  margin-bottom: 20px;
 }
 
 .tech-step-title {
@@ -703,7 +606,7 @@ const processSteps = [
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 48px;
+  align-self: center;
   color: #e7c73a;
 }
 
@@ -711,7 +614,7 @@ const processSteps = [
 .tech-custom {
   padding-top: 72px;
   padding-bottom: 64px;
-  background-color: #f8f8f5;
+  background-color: #ffffff;
 }
 
 .tech-custom-grid {
@@ -728,68 +631,6 @@ const processSteps = [
 .tech-drawing-area {
   position: relative;
   min-height: 388px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tech-drawing {
-  width: 88%;
-  opacity: 0.88;
-  filter: contrast(1.05);
-}
-
-.tech-callout {
-  position: absolute;
-  right: 1%;
-  width: min(330px, 42%);
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 12px;
-  align-items: start;
-}
-
-.tech-callout--top {
-  top: 52px;
-}
-
-.tech-callout--bottom {
-  bottom: 64px;
-}
-
-.tech-callout-line {
-  position: relative;
-  height: 3px;
-  background: #e7c73a;
-  margin-top: 17px;
-}
-
-.tech-callout-line::after {
-  content: '';
-  position: absolute;
-  right: -6px;
-  top: -3.5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #e7c73a;
-}
-
-.tech-callout-content {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.tech-callout-title {
-  display: block;
-  margin-bottom: 0;
-  color: #0a0a0a;
-}
-
-.tech-callout-text {
-  display: block;
-  color: #333;
 }
 
 /* CTA */
@@ -803,33 +644,12 @@ const processSteps = [
   align-items: center;
 }
 
-.tech-cta::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    #e7c73a 0%,
-    #e7c73a 34%,
-    rgba(231, 199, 58, 0.94) 48%,
-    rgba(231, 199, 58, 0.62) 64%,
-    rgba(231, 199, 58, 0.18) 82%,
-    transparent 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-.tech-cta-plant {
+.tech-cta-visual {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   width: min(64%, 860px);
-  height: 100%;
-  object-fit: contain;
-  object-position: right center;
-  pointer-events: none;
   z-index: 1;
 }
 
@@ -848,14 +668,6 @@ const processSteps = [
 
 .tech-cta .home-cta-title {
   color: #0a0a0a;
-}
-
-.tech-cta-logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  margin-bottom: 14px;
-  filter: brightness(0);
 }
 
 .tech-cta-text {
@@ -880,16 +692,6 @@ const processSteps = [
 
   .tech-hero-art {
     min-height: 320px;
-    justify-content: center;
-  }
-
-  .tech-hero-image {
-    width: min(860px, 100%);
-    transform: none;
-  }
-
-  .tech-hero-art::before {
-    display: none;
   }
 
   .tech-support-grid {
@@ -902,20 +704,16 @@ const processSteps = [
   }
 
   .tech-support-visual {
-    min-height: 400px;
+    min-height: 360px;
   }
 
   .tech-support-image {
-    width: min(920px, 105%);
+    object-position: center 30%;
   }
 
   .tech-software-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-
-  .tech-software-image {
-    width: min(720px, 100%);
   }
 
   .tech-process::before {
@@ -944,41 +742,18 @@ const processSteps = [
   }
 
   .tech-drawing-area {
-    min-height: auto;
-    display: block;
+    min-height: 280px;
   }
 
-  .tech-drawing {
-    width: 100%;
-  }
-
-  .tech-callout {
-    position: static;
-    width: auto;
-    max-width: 430px;
-    margin: 18px 0 0 auto;
-  }
-
-  .tech-cta-plant {
+  .tech-cta-visual {
     width: min(92%, 640px);
     right: -8%;
-    opacity: 0.92;
-  }
-
-  .tech-cta::after {
-    background: linear-gradient(
-      180deg,
-      #e7c73a 0%,
-      #e7c73a 42%,
-      rgba(231, 199, 58, 0.88) 68%,
-      rgba(231, 199, 58, 0.45) 100%
-    );
   }
 }
 
 @media (max-width: 768px) {
   .tech-hero {
-    padding-top: 96px;
+    padding-top: var(--site-header-height-mobile);
   }
 
   .tech-hero-container {
@@ -1010,19 +785,15 @@ const processSteps = [
     padding: 40px var(--site-gutter);
   }
 
-  .tech-cta-plant {
-    right: -18%;
-    width: 115%;
-    opacity: 0.55;
-  }
-
-  .tech-cta::after {
-    background: linear-gradient(
-      180deg,
-      #e7c73a 0%,
-      rgba(231, 199, 58, 0.92) 58%,
-      rgba(231, 199, 58, 0.35) 100%
-    );
+  .tech-cta-visual {
+    position: absolute;
+    right: -12%;
+    bottom: 0;
+    top: auto;
+    width: 85%;
+    height: 50%;
+    min-height: 160px;
+    margin-top: 0;
   }
 }
 </style>

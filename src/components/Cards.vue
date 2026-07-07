@@ -186,7 +186,7 @@ const handleCardClick = (route) => {
   padding: 64px var(--site-gutter);
   position: relative;
   z-index: 2;
-  scroll-margin-top: 110px;
+  scroll-margin-top: var(--site-header-height);
 }
 
 .cards-container {

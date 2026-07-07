@@ -51,7 +51,7 @@
         <div class="tool-diagram">
           <img
             src="/ultrasight/modular-tool.png"
-            alt="UltraSight modular tool showing interchangeable carriage sections"
+            alt="UltraSight modular inline inspection tool with brush drive sections and central sensor array"
             class="tool-diagram-image"
           />
         </div>
@@ -474,7 +474,7 @@ const configRows = [
   margin-bottom: 0;
 }
 
-.ultrasight-page > :deep(.hero-background .hero-text) {
+.ultrasight-page > :deep(.hero-background .hero-layout > .hero-copy) {
   padding: 24px 0 56px;
 }
 
@@ -511,7 +511,7 @@ const configRows = [
     min-height: auto;
   }
 
-  .ultrasight-page > :deep(.hero-background .hero-text) {
+  .ultrasight-page > :deep(.hero-background .hero-layout > .hero-copy) {
     padding: 20px var(--site-gutter) 28px;
   }
 

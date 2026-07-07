@@ -1,5 +1,5 @@
 <template>
-  <HeroBackgroundLayout header-offset>
+  <HeroBackgroundLayout header-offset section-class="home-hero">
     <h1 class="hero-title">ADAPTABLE INLINE INSPECTION</h1>
     <p class="hero-subtitle">
       Specialist inline inspection services for pipelines and process assets. Delivering

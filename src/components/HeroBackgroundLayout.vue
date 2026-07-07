@@ -5,20 +5,28 @@
       { 'hero-background--header-offset': headerOffset },
       { 'hero-background--light': theme === 'light' },
       { 'hero-background--no-image': hideImage },
-      sectionClass
+      { 'home-hero': sectionClass === 'home-hero' }
     ]"
   >
     <div class="hero-layout">
-      <div class="hero-text">
+      <div class="hero-copy">
         <slot />
       </div>
-      <div v-if="!hideImage" class="hero-image-wrap">
+      <div
+        v-if="!hideImage"
+        class="hero-image-wrap"
+        :class="{ 'hero-image-wrap--placeholder': imagePlaceholder }"
+      >
         <img
+          v-if="!imagePlaceholder"
           :src="imageSrc"
           alt=""
           class="hero-image"
           aria-hidden="true"
         />
+        <div v-else class="hero-image-placeholder" aria-hidden="true">
+          <span class="hero-image-placeholder-text">Image placeholder</span>
+        </div>
       </div>
     </div>
     <div v-if="$slots.after" class="hero-after">
@@ -49,6 +57,10 @@ defineProps({
   hideImage: {
     type: Boolean,
     default: false
+  },
+  imagePlaceholder: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
@@ -66,7 +78,7 @@ defineProps({
 }
 
 .hero-background--header-offset {
-  padding-top: 132px;
+  padding-top: var(--site-header-height);
 }
 
 .hero-layout {
@@ -134,7 +146,7 @@ defineProps({
   mask-composite: intersect;
 }
 
-.hero-text {
+.hero-copy {
   grid-column: 1;
   grid-row: 1;
   align-self: start;
@@ -145,7 +157,7 @@ defineProps({
   padding: 48px 0 48px;
 }
 
-.hero-text::before {
+.hero-copy::before {
   content: '';
   position: absolute;
   top: -24px;
@@ -163,14 +175,73 @@ defineProps({
   pointer-events: none;
 }
 
+.hero-image-wrap--placeholder::after {
+  display: none;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  min-height: clamp(380px, 56vh, 580px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  background-color: #111111;
+}
+
+.hero-image-placeholder-text {
+  font-family: var(--font-body);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-pane);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
 .hero-after {
   position: relative;
   z-index: 4;
 }
 
 .hero-background--no-image .hero-layout::before,
-.hero-background--no-image .hero-text::before {
+.hero-background--no-image .hero-copy::before {
   display: none;
+}
+
+/* Homepage hero — 800px image, top-right, content layers above */
+.hero-background.home-hero {
+  --image-overlap: min(327px, calc(var(--text-width) * 0.465));
+  overflow: visible;
+}
+
+.hero-background.home-hero .hero-layout {
+  position: static;
+}
+
+.hero-background.home-hero .hero-copy {
+  padding: 32px 0 40px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-background.home-hero .hero-image-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(800px, calc(100vw - var(--site-gutter)));
+  z-index: 1;
+  grid-column: unset;
+  grid-row: unset;
+  align-self: unset;
+  justify-self: unset;
+}
+
+.hero-background.home-hero .hero-image {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  object-fit: contain;
+  object-position: right top;
 }
 
 @media (max-width: 768px) {
@@ -181,8 +252,31 @@ defineProps({
     --image-start: var(--site-gutter);
   }
 
+  .hero-background.home-hero {
+    overflow: hidden;
+  }
+
+  .hero-background.home-hero .hero-layout {
+    position: relative;
+  }
+
+  .hero-background.home-hero .hero-image-wrap {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+  }
+
+  .hero-background.home-hero .hero-image {
+    width: 100%;
+    max-width: none;
+    transform: none;
+    object-position: center center;
+    max-height: min(52vh, 420px);
+  }
+
   .hero-background--header-offset {
-    padding-top: 96px;
+    padding-top: var(--site-header-height-mobile);
   }
 
   .hero-layout {
@@ -194,7 +288,7 @@ defineProps({
     display: none;
   }
 
-  .hero-text {
+  .hero-copy {
     width: 100%;
     max-width: none;
     margin-left: 0;
@@ -202,7 +296,7 @@ defineProps({
     align-self: stretch;
   }
 
-  .hero-text::before {
+  .hero-copy::before {
     display: none;
   }
 
@@ -225,6 +319,10 @@ defineProps({
     object-position: center center;
     -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
     mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+  }
+
+  .hero-image-placeholder {
+    min-height: min(52vh, 420px);
   }
 }
 
@@ -251,7 +349,7 @@ defineProps({
     linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.15) 8%, transparent 20%);
 }
 
-.hero-background--light .hero-text::before {
+.hero-background--light .hero-copy::before {
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.85) 0%,

@@ -4,7 +4,8 @@
     <HeroBackgroundLayout header-offset section-class="hero-section" image-src="/inline-inspection/hero.png">
       <h1 class="hero-title">
         <span class="hero-title-accent" aria-hidden="true"></span>
-        INLINE UT INSPECTION
+        INLINE
+        <span class="hero-title-gold">INSPECTION</span>
       </h1>
 
       <p class="hero-lead">
@@ -12,7 +13,7 @@
         wall thickness data, AI Anomaly Detection, and integrity-ready reporting
         are required.
       </p>
-      <p class="hero-text">
+      <p class="hero-body">
         WASP provides inline ultrasonic inspection services to help operators understand the
         internal condition of critical assets. Our inspection approach is designed to capture
         reliable wall thickness data, identify relevant anomalies and provide reporting that
@@ -20,8 +21,8 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/contact" class="btn btn-primary">DISCUSS A UT INSPECTION</router-link>
-        <router-link to="/ultrasight" class="btn btn-secondary">OUR ULTRASIGHT TOOL</router-link>
+        <router-link to="/ultrasight" class="btn btn-primary">OUR ULTRASIGHT TOOL</router-link>
+        <a href="#" class="btn btn-secondary">DOWNLOAD BROCHURE</a>
       </div>
 
       <template #after>
@@ -390,6 +391,14 @@ const processSteps = [
     0 0 40px rgba(0, 0, 0, 0.6);
 }
 
+.hero-title-gold {
+  display: block;
+  color: #e7c73a;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.6);
+}
+
 .hero-lead {
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -399,55 +408,75 @@ const processSteps = [
   font-weight: var(--font-weight-semibold);
 }
 
-.hero-text {
+.hero-body {
   color: rgba(255, 255, 255, 0.82);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
+.inline-inspection-page > :deep(.hero-background .hero-layout > .hero-copy) {
+  padding: 24px 0 56px;
+}
+
+.inline-inspection-page > :deep(.hero-background .hero-layout > .hero-copy > .hero-title) {
+  margin-bottom: var(--gap-hero-title-to-lead);
+}
+
+.inline-inspection-page > :deep(.hero-background .hero-layout > .hero-copy > .hero-lead) {
+  margin-bottom: var(--gap-hero-to-actions);
+}
+
+.inline-inspection-page > :deep(.hero-background .hero-layout > .hero-copy > .hero-body) {
+  margin-bottom: var(--gap-hero-to-actions);
+}
+
+.inline-inspection-page > :deep(.hero-background .hero-layout) {
+  min-height: clamp(420px, 56vh, 620px);
+}
+
+.inline-inspection-page > :deep(.hero-background .hero-image-wrap) {
+  margin-top: 0;
+  align-self: start;
+}
+
 .inline-inspection-page > :deep(.hero-background .hero-image) {
+  min-height: clamp(380px, 56vh, 580px);
+  object-fit: contain;
   object-position: right top;
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+  mask-composite: intersect;
+}
+
+.inline-inspection-page > :deep(.hero-background .hero-image-wrap::after) {
+  background:
+    linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.45) 90%, #0a0a0a 100%),
+    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
 }
 
 @media (max-width: 768px) {
-  .inline-inspection-page > :deep(.hero-background .hero-text) {
-    padding-bottom: 12px;
+  .inline-inspection-page > :deep(.hero-background .hero-layout) {
+    min-height: auto;
+  }
+
+  .inline-inspection-page > :deep(.hero-background .hero-layout > .hero-copy) {
+    padding: 20px var(--site-gutter) 28px;
   }
 
   .inline-inspection-page > :deep(.hero-background .hero-image-wrap) {
-    margin-top: -16px;
+    margin-top: 0;
   }
 
   .inline-inspection-page > :deep(.hero-background .hero-image) {
+    min-height: 0;
+    max-height: min(52vh, 420px);
     object-position: top center;
-    max-height: min(48vh, 380px);
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(0, 0, 0, 0.35) 5%,
-      #000 14%,
-      #000 86%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(0, 0, 0, 0.35) 5%,
-      #000 14%,
-      #000 86%,
-      transparent 100%
-    );
-  }
-
-  .inline-inspection-page > :deep(.hero-background .hero-image-wrap::after) {
-    background: linear-gradient(
-      to bottom,
-      #0a0a0a 0%,
-      rgba(10, 10, 10, 0.75) 6%,
-      transparent 16%,
-      transparent 72%,
-      rgba(10, 10, 10, 0.55) 90%,
-      #0a0a0a 100%
-    );
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
   }
 }
 

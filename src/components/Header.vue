@@ -208,7 +208,7 @@ onUnmounted(() => {
   background-color: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 10px 0;
+  padding: var(--site-header-padding-block) 0;
   overflow: visible;
   transform: translateY(0);
   transition: transform 0.3s ease;
@@ -256,7 +256,7 @@ onUnmounted(() => {
 }
 
 .logo-image {
-  height: 100px;
+  height: var(--site-header-logo-height);
   width: auto;
   object-fit: contain;
 }
@@ -619,7 +619,7 @@ onUnmounted(() => {
   }
 
   .logo-image {
-    height: 60px;
+    height: var(--site-header-logo-height-mobile);
   }
 }
 </style>

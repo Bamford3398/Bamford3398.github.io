@@ -24,7 +24,7 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS AN ASSESSMENT</router-link>
-        <router-link to="/contact" class="btn btn-secondary">SEND INSPECTION DATA</router-link>
+        <router-link to="/contact" class="btn btn-secondary">DOWNLOAD OUR BROCHURE</router-link>
       </div>
 
       <template #after>
@@ -492,7 +492,7 @@ const supportItems = [
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.integrity-page > :deep(.hero-background .hero-text) {
+.integrity-page > :deep(.hero-background .hero-layout > .hero-copy) {
   padding: 24px 0 56px;
 }
 
@@ -530,7 +530,7 @@ const supportItems = [
     min-height: auto;
   }
 
-  .integrity-page > :deep(.hero-background .hero-text) {
+  .integrity-page > :deep(.hero-background .hero-layout > .hero-copy) {
     padding: 20px var(--site-gutter) 12px;
   }
 
@@ -823,7 +823,7 @@ const supportItems = [
   display: block;
   color: #e7c73a;
   font-family: var(--font-body);
-  font-size: var(--text-caption);
+  font-size: var(--text-subheading-md);
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
   margin-bottom: 6px;
@@ -984,7 +984,7 @@ const supportItems = [
   align-self: flex-start;
   padding: 16px 32px;
   font-family: var(--font-body);
-  font-size: var(--text-caption);
+  font-size: var(--text-button);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-button);
   text-decoration: none;

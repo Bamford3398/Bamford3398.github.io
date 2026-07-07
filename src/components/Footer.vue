@@ -429,7 +429,7 @@ const LinkedInIcon = {
   margin: 0;
   color: #e7c73a;
   font-family: var(--font-heading);
-  font-size: var(--text-label);
+  font-size: var(--text-subheading-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;

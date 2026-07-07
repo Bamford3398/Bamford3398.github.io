@@ -1,6 +1,5 @@
 <template>
   <section class="client-gains">
-    <h2 class="client-gains-title">WHAT OUR CLIENTS GAIN</h2>
     <div class="client-gains-grid">
       <div
         v-for="item in gains"
@@ -70,7 +69,7 @@ const gains = [
 <style scoped>
 .client-gains {
   background-color: #0a0a0a;
-  padding: 80px var(--site-gutter);
+  padding: 0 var(--site-gutter) 80px;
 }
 
 .client-gains-title {
@@ -122,7 +121,7 @@ const gains = [
 
 @media (max-width: 768px) {
   .client-gains {
-    padding: 40px var(--site-gutter) 64px;
+    padding: 0 var(--site-gutter) 64px;
   }
 
   .client-gains-title {

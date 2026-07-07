@@ -7,9 +7,13 @@
         class="service-pane"
       >
         <div class="pane-image-wrap">
-          <div class="pane-image-placeholder" aria-hidden="true">
-            <span>Image placeholder</span>
-          </div>
+          <img
+            :src="pane.image"
+            :alt="pane.imageAlt"
+            class="pane-image"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div class="pane-body">
           <h3 class="pane-title">{{ pane.title }}</h3>
@@ -28,21 +32,27 @@ const panes = [
     title: 'INLINE UT INSPECTION',
     description:
       'Advanced and reliable ILI tooling producing comprehensive digital reports.',
-    to: '/inline-inspection'
+    to: '/inline-inspection',
+    image: '/inline-inspection/hero.png',
+    imageAlt: 'Inline UT inspection tool in pipeline'
   },
   {
     id: 'integrity',
     title: 'INTEGRITY ASSESSMENT',
     description:
       'Turning inspection data into engineering insight. We assess findings, identify significant concerns and provide practical recommendations.',
-    to: '/integrity'
+    to: '/integrity',
+    image: '/integrity/hero.png',
+    imageAlt: 'Integrity assessment and pipeline inspection'
   },
   {
     id: 'other',
     title: 'OTHER SERVICES',
     description:
       'Camera pigging, mechanical cleaning and decoking, pig tracking, software, and ILI consultancy.',
-    to: '/other-services'
+    to: '/other-services',
+    image: '/other-services/hero.png',
+    imageAlt: 'Other inline inspection support services'
   }
 ]
 </script>
@@ -50,8 +60,8 @@ const panes = [
 <style scoped>
 .service-panes {
   background-color: #0a0a0a;
-  padding: 0 var(--site-gutter) 80px;
-  scroll-margin-top: 110px;
+  padding: 16px var(--site-gutter) 80px;
+  scroll-margin-top: var(--site-header-height);
 }
 
 .service-panes-container {
@@ -74,17 +84,15 @@ const panes = [
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  background-color: #0a0a0a;
 }
 
-.pane-image-placeholder {
+.pane-image {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #1a1a1a 100%);
-  color: rgba(255, 255, 255, 0.35);
-  text-transform: uppercase;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .pane-body {
@@ -123,6 +131,7 @@ const panes = [
 
 @media (max-width: 768px) {
   .service-panes {
+    padding-top: 12px;
     padding-bottom: 24px;
   }
 
