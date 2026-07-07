@@ -9,10 +9,10 @@
             TECHNICAL
             <span class="hero-title-gold">SERVICES</span>
           </h1>
-          <p class="hero-lead hero-lead--tagline">
+          <p class="hero-lead">
             Inspection expertise, data tools and custom software.
           </p>
-          <p class="hero-body">
+          <p class="hero-text">
             WASP provides technical support and software solutions that help operators plan
             inspections, interpret results and manage data with confidence. From one-off advice to
             bespoke client platforms, our services are built around the real-world challenges of
@@ -25,8 +25,13 @@
             </router-link>
           </div>
         </div>
-        <div class="tech-hero-art tech-image-placeholder tech-image-placeholder--dark" aria-hidden="true">
-          <span class="tech-image-placeholder-text">Image placeholder</span>
+        <div class="tech-hero-art">
+          <img
+            src="/technical/hero-laptop-dashboard.png"
+            alt="WASP inline inspection software dashboard on laptop"
+            class="tech-hero-image"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
@@ -81,8 +86,13 @@
             reporting requirements and asset structure.
           </p>
         </div>
-        <div class="tech-software-visual tech-image-placeholder tech-image-placeholder--dark" aria-hidden="true">
-          <span class="tech-image-placeholder-text">Image placeholder</span>
+        <div class="tech-software-visual">
+          <img
+            src="/technical/software-dashboard-monitor.png"
+            alt="WASP inspection software dashboard showing fired heater coil corrosion map and anomaly data"
+            class="tech-software-image"
+            decoding="async"
+          />
         </div>
         <div class="tech-feature-grid">
           <article
@@ -151,16 +161,26 @@
             a complete platform for managing inspection outputs across assets or sites.
           </p>
         </div>
-        <div class="tech-drawing-area tech-image-placeholder tech-image-placeholder--light" aria-hidden="true">
-          <span class="tech-image-placeholder-text">Image placeholder</span>
+        <div class="tech-drawing-area">
+          <img
+            src="/technical/fired-heater-ga-drawing.png"
+            alt="Wireframe engineering model of a fired heater inspection asset"
+            class="tech-drawing-image"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="tech-cta">
-      <div class="tech-cta-visual tech-image-placeholder tech-image-placeholder--cta" aria-hidden="true">
-        <span class="tech-image-placeholder-text">Image placeholder</span>
+      <div class="tech-cta-visual" aria-hidden="true">
+        <img
+          src="/technical/cta-refinery-plant.png"
+          alt=""
+          class="tech-cta-image"
+          decoding="async"
+        />
       </div>
       <div class="tech-cta-container">
         <div class="tech-cta-content">
@@ -301,24 +321,26 @@ const processSteps = [
 .tech-hero .hero-title {
   color: #ffffff;
   max-width: 760px;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.6);
 }
 
 .tech-hero .hero-title-gold {
   display: block;
   color: #e7c73a;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-.tech-hero .hero-lead--tagline {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.tech-hero .hero-lead {
   max-width: 690px;
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.tech-hero .hero-body {
+.tech-hero .hero-text {
   max-width: 690px;
   color: rgba(255, 255, 255, 0.82);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -348,9 +370,9 @@ const processSteps = [
   margin: 0 auto;
   padding: 48px var(--site-gutter) 56px;
   display: grid;
-  grid-template-columns: 44% 56%;
+  grid-template-columns: minmax(300px, 0.94fr) minmax(0, 1.06fr);
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   min-height: clamp(480px, 56vh, 620px);
 }
 
@@ -364,7 +386,22 @@ const processSteps = [
   position: relative;
   min-height: 400px;
   z-index: 2;
-  background-color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.tech-hero-image {
+  width: 112%;
+  max-width: none;
+  height: auto;
+  max-height: min(540px, 54vh);
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  margin-left: -6%;
+  filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.55));
 }
 
 .tech-image-placeholder {
@@ -506,6 +543,19 @@ const processSteps = [
 .tech-software-visual {
   min-height: 300px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-software-image {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.45));
 }
 
 .tech-feature-grid {
@@ -631,6 +681,20 @@ const processSteps = [
 .tech-drawing-area {
   position: relative;
   min-height: 388px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.tech-drawing-image {
+  width: 500px;
+  height: 100%;
+  min-height: 388px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 /* CTA */
@@ -651,6 +715,22 @@ const processSteps = [
   bottom: 0;
   width: min(64%, 860px);
   z-index: 1;
+  overflow: hidden;
+  background-color: #e7c73a;
+}
+
+.tech-cta-image {
+  position: absolute;
+  right: -4%;
+  bottom: 0;
+  width: 112%;
+  max-width: none;
+  height: auto;
+  min-height: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  display: block;
+  pointer-events: none;
 }
 
 .tech-cta-container {
@@ -692,6 +772,13 @@ const processSteps = [
 
   .tech-hero-art {
     min-height: 320px;
+    justify-content: center;
+  }
+
+  .tech-hero-image {
+    width: 100%;
+    margin-left: 0;
+    object-position: center center;
   }
 
   .tech-support-grid {
