@@ -382,15 +382,15 @@ const standards = [
 const deliverablesLeft = [
   'Summary of significant findings',
   'Minimum wall and feature tables',
-  'Fitness-for-service screening where applicable',
-  'Repair, monitor or re-inspect recommendations',
-  'Recommended next steps'
+  'Damage mechanism identification and classification',
+  'Recommended inspection intervals and monitoring',
+  'Full methodology, inputs and results, structured for third-party audit'
 ]
 
 const deliverablesRight = [
   'Anomaly ranking and prioritisation',
-  'Integrity comments and assumptions',
-  'Remaining life comments where possible',
+  'Recommended operating conditions, including pressure/temperature derating where required',
+  'Calculated remaining strength and remaining life',
   'Limitations and data confidence notes',
   'Final assessment report'
 ]
