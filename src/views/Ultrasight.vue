@@ -17,10 +17,7 @@
         complex geometries and demanding inspection requirements.
       </p>
       <p class="hero-body">
-        UltraSight is WASP's adaptable inline inspection platform. Its modular construction allows
-        the tool to be configured around the asset — including bore, bends, internal features, run
-        length, location requirements and inspection objective — rather than forcing the asset to
-        fit a fixed tool design.
+        UltraSight is WASP’s adaptable inline inspection platform, designed to capture high-density ultrasonic data in pipelines, fired heaters and complex process assets. Its modular construction allows the tool to be configured around diameter, bend geometry, drive method, inspection length and reporting objective; giving clients reliable inspection data where standard tools may not be suitable.
       </p>
 
       <div class="hero-actions">
@@ -29,78 +26,7 @@
       </div>
     </HeroBackgroundLayout>
 
-    <!-- 2. Built to fit -->
-    <section class="section section--light built-section">
-      <div class="section-container built-grid">
-        <div class="built-copy">
-          <h2 class="section-heading">Built to fit the inspection, not the other way around.</h2>
-          <span class="section-accent" aria-hidden="true"></span>
-          <p class="body-text">
-            Pipeline geometry, access conditions and inspection objectives vary from asset to asset.
-            UltraSight's modular design allows the inspection platform to be configured using soft
-            alignment brushes, polymer discs or a combination of both, creating the right drive and
-            centring arrangement for the bore, bends and internal features of the pipe.
-          </p>
-          <p class="body-text">
-            Add-on modules can then extend capability for location accuracy, run time, battery
-            capacity or additional sensing requirements. This allows WASP to reconfigure between
-            runs without redesigning the entire inspection platform.
-          </p>
-        </div>
-
-        <div class="tool-diagram">
-          <img
-            src="/ultrasight/modular-tool.png"
-            alt="UltraSight modular inline inspection tool with brush drive sections and central sensor array"
-            class="tool-diagram-image"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Modular architecture -->
-    <section id="capabilities" class="section section--dark modules-section">
-      <div class="section-container modules-layout">
-        <div class="modules-intro">
-          <span class="section-accent section-accent--top" aria-hidden="true"></span>
-          <h2 class="section-heading">Modular architecture for changing inspection requirements</h2>
-          <p class="body-text">
-            UltraSight is designed around interchangeable modules that allow the inspection setup to
-            be tailored to the asset and inspection objective. The same platform can be adapted for
-            different drive, centring, battery, location and sensing requirements, reducing the need
-            for bespoke tool redesign between projects.
-          </p>
-        </div>
-        <article v-for="module in modules" :key="module.title" class="module-card">
-          <img :src="module.icon" alt="" class="module-icon" aria-hidden="true" />
-          <h3 class="module-title">{{ module.title }}</h3>
-          <p class="module-description">{{ module.description }}</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 4. Pipe geometries -->
-    <section class="section section--light geometries-section">
-      <div class="section-container geometries-layout">
-        <h2 class="section-heading">Designed for difficult pipe geometries</h2>
-        <span class="section-accent" aria-hidden="true"></span>
-        <p class="body-text geometries-intro">
-          UltraSight is intended for assets where conventional ILI tools may struggle with passage,
-          centring or configuration.
-        </p>
-        <div class="geometries-grid">
-          <article v-for="item in geometries" :key="item.title" class="geometry-item">
-            <div class="geometry-media">
-              <img :src="item.image" alt="" class="geometry-image" aria-hidden="true" />
-            </div>
-            <h3 class="geometry-title">{{ item.title }}</h3>
-            <p class="geometry-description">{{ item.description }}</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Technical capability -->
+    <!-- 2. Technical capability -->
     <section class="section section--dark capability-section">
       <div class="section-container capability-grid">
         <div class="capability-specs">
@@ -128,6 +54,69 @@
               <p class="stat-label">{{ stat.label }}</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Built to fit -->
+    <section class="section section--light built-section">
+      <div class="section-container built-grid">
+        <div class="built-copy">
+          <h2 class="section-heading">One run. The full picture.</h2>
+          <span class="section-accent" aria-hidden="true"></span>
+          <p class="body-text">
+            UltraSight swims untethered through 3–12" pipework, takes short-radius 1D bends, passes unbarred tees, and handles finned and studded tubes — geometry that stops conventional ILI tools at the launch door. It maps wall thickness to ±0.1mm, locates every reading to within 50mm, and runs bi-directionally so restricted access isn't a dead end.
+          </p>
+        </div>
+
+        <div class="tool-diagram">
+          <img
+            src="/ultrasight/modular-tool.png"
+            alt="UltraSight modular inline inspection tool with brush drive sections and central sensor array"
+            class="tool-diagram-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Modular architecture -->
+    <section id="capabilities" class="section section--dark modules-section">
+      <div class="section-container modules-layout">
+        <div class="modules-intro">
+          <span class="section-accent section-accent--top" aria-hidden="true"></span>
+          <h2 class="section-heading">Modular architecture for changing inspection requirements</h2>
+          <p class="body-text">
+            UltraSight is designed around interchangeable modules that allow the inspection setup to
+            be tailored to the asset and inspection objective. The same platform can be adapted for
+            different drive, centring, battery, location and sensing requirements, reducing the need
+            for bespoke tool redesign between projects.
+          </p>
+        </div>
+        <article v-for="module in modules" :key="module.title" class="module-card">
+          <img :src="module.icon" alt="" class="module-icon" aria-hidden="true" />
+          <h3 class="module-title">{{ module.title }}</h3>
+          <p class="module-description">{{ module.description }}</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Pipe geometries -->
+    <section class="section section--light geometries-section">
+      <div class="section-container geometries-layout">
+        <h2 class="section-heading">Designed for difficult pipe geometries</h2>
+        <span class="section-accent" aria-hidden="true"></span>
+        <p class="body-text geometries-intro">
+          UltraSight is intended for assets where conventional ILI tools may struggle with passage,
+          centring or configuration.
+        </p>
+        <div class="geometries-grid">
+          <article v-for="item in geometries" :key="item.title" class="geometry-item">
+            <div class="geometry-media">
+              <img :src="item.image" alt="" class="geometry-image" aria-hidden="true" />
+            </div>
+            <h3 class="geometry-title">{{ item.title }}</h3>
+            <p class="geometry-description">{{ item.description }}</p>
+          </article>
         </div>
       </div>
     </section>

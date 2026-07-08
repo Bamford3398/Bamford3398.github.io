@@ -10,14 +10,11 @@
 
       <p class="hero-lead">
         Adaptable ultrasonic inspection for pipework, pipelines and process assets where accurate
-        wall thickness data, AI Anomaly Detection, and integrity-ready reporting
+        wall thickness data, AI anomaly detection, and integrity-ready reporting
         are required.
       </p>
       <p class="hero-body">
-        WASP provides inline ultrasonic inspection services to help operators understand the
-        internal condition of critical assets. Our inspection approach is designed to capture
-        reliable wall thickness data, identify relevant anomalies and provide reporting that
-        supports maintenance, repair and integrity decisions.
+        WASP provides adaptable inline ultrasonic inspection for pipelines, fired heaters and process assets. Our inspection approach combines modular tooling, overlapping coverage, AI A-scan verification and digital reporting to deliver data that can be reviewed, trusted and acted on.
       </p>
 
       <div class="hero-actions">
@@ -39,6 +36,26 @@
         </div>
       </template>
     </HeroBackgroundLayout>
+
+    <!-- Typical applications -->
+    <section class="section section--dark">
+      <div class="section-container">
+        <p class="eyebrow">TYPICAL APPLICATIONS</p>
+        <h2 class="section-heading">Where inline UT inspection applies</h2>
+        <span class="section-accent" aria-hidden="true"></span>
+        <div class="applications-grid">
+          <article v-for="app in applications" :key="app.title" class="application-card">
+            <div class="application-media">
+              <img :src="app.icon" alt="" class="application-icon" aria-hidden="true" />
+            </div>
+            <div class="application-body">
+              <h3 class="application-title">{{ app.title }}</h3>
+              <p class="application-description">{{ app.description }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <!-- Uncertainty -->
     <section class="section section--light uncertainty-section">
@@ -74,26 +91,6 @@
       </div>
     </section>
 
-    <!-- Typical applications -->
-    <section class="section section--dark">
-      <div class="section-container">
-        <p class="eyebrow">TYPICAL APPLICATIONS</p>
-        <h2 class="section-heading">Where inline UT inspection applies</h2>
-        <span class="section-accent" aria-hidden="true"></span>
-        <div class="applications-grid">
-          <article v-for="app in applications" :key="app.title" class="application-card">
-            <div class="application-media">
-              <img :src="app.icon" alt="" class="application-icon" aria-hidden="true" />
-            </div>
-            <div class="application-body">
-              <h3 class="application-title">{{ app.title }}</h3>
-              <p class="application-description">{{ app.description }}</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- What we detect -->
     <section class="section section--light">
       <div class="section-container">
@@ -102,10 +99,7 @@
             <h2 class="section-heading section-heading--dark">What we detect and measure</h2>
             <span class="section-accent" aria-hidden="true"></span>
             <p class="body-text body-text--dark">
-              The specific features that can be detected depend on the inspection method, asset
-              geometry, cleanliness and data quality. Where suitable, inline UT inspection can support
-              detection, measurement and mapping of common degradation and geometry-related
-              features.
+              Inline UT inspection supports detection, measurement and mapping of the degradation and geometry features here. Exact detection capability depends on asset geometry, cleanliness and data quality.
             </p>
           </div>
           <article v-for="group in detectGroups" :key="group.title" class="detect-card">
@@ -118,91 +112,51 @@
       </div>
     </section>
 
-    <!-- Integrity decisions -->
-    <section class="section section--dark">
-      <div class="section-container integrity-grid">
-        <div class="integrity-copy">
-          <h2 class="section-heading">From inspection data to integrity decisions</h2>
+    <!-- Reporting -->
+    <section class="section section--dark reporting-section">
+      <div class="section-container">
+        <div class="reporting-intro">
           <span class="section-accent" aria-hidden="true"></span>
-          <p class="body-text">
-            Inspection data only has value when it can support the right engineering decision.
-          </p>
-          <p class="body-text">
-            Findings can then be used to assess remaining life, prioritise maintenance, define
-            required repair scope and support continued safe operation or further assessment where
-            needed.
+          <h2 class="section-heading">Reporting built for decision-making</h2>
+          <p class="body-text reporting-intro-text">
+            Inspection data only has value when it can be reviewed, understood and acted on. WASP
+            delivers rapid fired heater reporting, digital inspection outputs and cloud-held data
+            that supports repeat comparison and long-term asset history.
           </p>
         </div>
-        <div class="workflow-steps">
-          <template v-for="(step, index) in workflowSteps" :key="step.title">
-            <article class="workflow-step">
-              <img :src="step.icon" alt="" class="workflow-icon" aria-hidden="true" />
-              <h3 class="workflow-title">{{ step.title }}</h3>
-              <p class="workflow-description">{{ step.description }}</p>
-            </article>
-            <span
-              v-if="index < workflowSteps.length - 1"
-              class="workflow-arrow"
-              aria-hidden="true"
-            >→</span>
-          </template>
-        </div>
-      </div>
-    </section>
 
-    <!-- What clients receive -->
-    <section class="section section--light">
-      <div class="section-container deliverables-grid">
-        <div class="deliverables-copy">
-          <h2 class="section-heading section-heading--dark">What clients receive</h2>
-          <span class="section-accent" aria-hidden="true"></span>
-          <p class="body-text body-text--dark">
-            WASP reporting is designed to give inspection and integrity teams a clear understanding
-            of the asset condition and the confidence level of the inspection data. Reports should be
-            practical, transparent and useful for decision-making.
-          </p>
-        </div>
-        <div class="deliverables-lists">
-          <ul class="check-list">
-            <li v-for="item in deliverablesLeft" :key="item">{{ item }}</li>
-          </ul>
-          <ul class="check-list">
-            <li v-for="item in deliverablesRight" :key="item">{{ item }}</li>
-          </ul>
-        </div>
-        <img
-          src="/inline-inspection/laptop-reporting.png"
-          alt="WASP inspection report software displayed on a laptop"
-          class="deliverables-image"
-          width="1024"
-          height="768"
-          decoding="async"
-        />
-      </div>
-    </section>
-
-    <!-- How the inspection works -->
-    <section class="section section--dark">
-      <div class="section-container process-section-grid">
-        <div class="process-intro">
-          <h2 class="section-heading">How the inspection works</h2>
-          <span class="section-accent" aria-hidden="true"></span>
-          <p class="body-text">
-            Each inspection begins with a review of the asset, the inspection objective and the
-            practical conditions that may affect tool selection or data quality. This allows WASP to
-            recommend the most suitable approach before mobilisation.
-          </p>
-        </div>
-        <div class="process-flow">
-          <div class="process-track" aria-hidden="true"></div>
-          <article v-for="step in processSteps" :key="step.number" class="process-card">
-            <div class="process-icon-wrap">
-              <img :src="step.icon" alt="" class="process-icon" aria-hidden="true" />
-              <span class="process-number">{{ step.number }}</span>
-            </div>
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-description">{{ step.description }}</p>
+        <div class="reporting-blocks">
+          <article
+            v-for="block in reportingBlocks"
+            :key="block.title"
+            class="reporting-block"
+          >
+            <h3 class="reporting-block-title">{{ block.title }}</h3>
+            <p class="reporting-block-text">{{ block.description }}</p>
           </article>
+        </div>
+
+        <div class="reporting-deliverables">
+          <div class="reporting-list-panel">
+            <span class="section-accent" aria-hidden="true"></span>
+            <h3 class="reporting-list-heading">What clients receive</h3>
+            <div class="reporting-lists">
+              <ul class="check-list">
+                <li v-for="item in deliverablesLeft" :key="item">{{ item }}</li>
+              </ul>
+              <ul class="check-list">
+                <li v-for="item in deliverablesRight" :key="item">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="reporting-graph-panel">
+            <img
+              src="/inline-inspection/thickness-trend-comparison.png"
+              alt="Thickness trend comparison graph showing wall thickness over location across inspection years"
+              class="reporting-graph-image"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -293,22 +247,21 @@ const detectGroups = [
   }
 ]
 
-const workflowSteps = [
+const reportingBlocks = [
   {
-    title: 'Inspect',
-    description: 'Collect UT data from inside the asset using adaptable inspection tooling.',
-    icon: '/inline-inspection/inspect.png'
-  },
-  {
-    title: 'Interpret',
+    title: '24-hour fired heater reporting',
     description:
-      'Review wall thickness, anomalies, coverage and data confidence with experienced specialists.',
-    icon: '/inline-inspection/interpret.png'
+      'Rapid turnaround reporting to support time-critical shutdown and repair decisions.'
   },
   {
-    title: 'Advise',
-    description: 'Provide practical reporting and recommendations for next steps.',
-    icon: '/inline-inspection/advise.png'
+    title: 'Digital reporting & data control',
+    description:
+      'Structured digital outputs designed for review, sharing and clear decision-making.'
+  },
+  {
+    title: 'Cloud-held inspection history',
+    description:
+      "Previous years' data can be accessed, reviewed and compared with new inspection results."
   }
 ]
 
@@ -316,8 +269,8 @@ const deliverablesLeft = [
   'Wall thickness data',
   'Minimum wall readings',
   'Anomaly tables',
-  'C-scan or visual outputs (where applicable)',
-  'A-scan verification (where applicable)',
+  'C-scan or visual outputs',
+  'A-scan verification',
   'Location references'
 ]
 
@@ -328,44 +281,6 @@ const deliverablesRight = [
   'Integrity comments',
   'Recommended next steps',
   'Final inspection report'
-]
-
-const processSteps = [
-  {
-    number: 1,
-    title: 'Asset review',
-    description:
-      "We review drawings, pipe data, previous inspection history and the client's inspection objective.",
-    icon: '/inline-inspection/asset-review.png'
-  },
-  {
-    number: 2,
-    title: 'Method selection',
-    description:
-      'We confirm tool suitability, access requirements, cleaning needs and any operational constraints.',
-    icon: '/inline-inspection/method-selection.png'
-  },
-  {
-    number: 3,
-    title: 'Inspection planning',
-    description:
-      'We define the launch/retrieval approach, reporting requirements and inspection acceptance criteria.',
-    icon: '/inline-inspection/inspection-planning.png'
-  },
-  {
-    number: 4,
-    title: 'Tool deployment & data capture',
-    description:
-      'The inspection is carried out in accordance with the agreed method, with attention to safety, data quality and site practicality.',
-    icon: '/inline-inspection/tool-deployment.png'
-  },
-  {
-    number: 5,
-    title: 'Data review & reporting',
-    description:
-      'The data is reviewed, findings are assessed and the client receives a clear report with limitations and recommendations.',
-    icon: '/inline-inspection/data-review-step.png'
-  }
 ]
 </script>
 
@@ -690,148 +605,89 @@ const processSteps = [
   font-weight: 700;
 }
 
-.integrity-grid {
+.reporting-intro {
+  max-width: 820px;
+  margin-bottom: 40px;
+}
+
+.reporting-intro .section-accent {
+  margin-bottom: var(--gap-heading-to-accent);
+}
+
+.reporting-intro-text {
+  margin-top: 18px;
+  max-width: 760px;
+}
+
+.reporting-blocks {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.reporting-block {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 28px 24px;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.reporting-block-title {
+  margin: 0 0 14px;
+  font-family: var(--font-heading);
+  font-size: var(--text-pane-title);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-pane);
+  text-transform: uppercase;
+  color: #e7c73a;
+}
+
+.reporting-block-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.reporting-deliverables {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.15fr);
   gap: 48px;
   align-items: center;
 }
 
-.workflow-steps {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.workflow-step {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 12px;
-  min-width: 0;
-}
-
-.workflow-icon {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-
-.workflow-title {
+.reporting-list-heading {
+  margin: 0 0 24px;
+  font-family: var(--font-heading);
+  font-size: var(--text-subsection);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-pane);
+  text-transform: uppercase;
   color: #ffffff;
-  margin: 0;
 }
 
-.workflow-description {
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0;
-}
-
-.workflow-arrow {
-  flex-shrink: 0;
-  align-self: center;
-  padding: 0 10px;
-  margin-top: 20px;
-  color: #e7c73a;
-}
-
-.deliverables-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.deliverables-lists {
+.reporting-lists {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px 32px;
+  gap: 12px 32px;
 }
 
-.deliverables-image {
+.reporting-section .check-list li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.reporting-graph-panel {
+  width: 100%;
+}
+
+.reporting-graph-image {
   width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
-}
-
-.process-section-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 2.15fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.process-flow {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-}
-
-.process-track {
-  position: absolute;
-  top: 52px;
-  left: 10%;
-  right: 10%;
-  border-top: 1px dashed rgba(255, 255, 255, 0.22);
-  z-index: 0;
-}
-
-.process-card {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.process-icon-wrap {
-  position: relative;
-  width: 104px;
-  height: 104px;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 50%;
-  background-color: #0a0a0a;
-}
-
-.process-number {
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: #e7c73a;
-  color: #0a0a0a;
-}
-
-.process-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.process-title {
-  color: #ffffff;
-  margin: 0 0 8px;
-}
-
-.process-description {
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0;
 }
 
 @media (max-width: 1100px) {
@@ -883,34 +739,13 @@ const processSteps = [
     padding-left: 0;
     padding-right: 0;
   }
-  .integrity-grid,
-  .deliverables-grid,
-  .uncertainty-grid {
+  .uncertainty-grid,
+  .reporting-deliverables {
     grid-template-columns: 1fr;
   }
 
-  .workflow-steps {
-    flex-direction: column;
-    gap: 28px;
-    margin-top: 8px;
-  }
-
-  .workflow-arrow {
-    display: none;
-  }
-
-  .process-section-grid {
+  .reporting-blocks {
     grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .process-flow {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 20px;
-  }
-
-  .process-track {
-    display: none;
   }
 }
 
@@ -935,8 +770,7 @@ const processSteps = [
   }
 
   .applications-grid,
-  .detect-grid,
-  .process-flow {
+  .detect-grid {
     grid-template-columns: 1fr;
   }
 
@@ -952,7 +786,7 @@ const processSteps = [
     grid-column: auto;
   }
 
-  .deliverables-lists {
+  .reporting-lists {
     grid-template-columns: 1fr;
   }
 }

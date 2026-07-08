@@ -11,7 +11,7 @@
   z-index: 4;
   background: transparent;
   margin-top: -15px;
-  padding: 48px var(--site-gutter) 40px;
+  padding: 48px var(--site-gutter) 28px;
   text-align: center;
 }
 

@@ -58,10 +58,10 @@ const ReportingIcon = () => h('svg', iconProps, [
 ])
 
 const gains = [
-  { label: 'Reliable data', icon: ReliableDataIcon },
+  { label: 'Decision-ready data', icon: ReliableDataIcon },
   { label: '75+ years combined experience', icon: ExperienceIcon },
   { label: 'Reduced risk & downtime', icon: RiskIcon },
-  { label: 'Confidence in your assets', icon: ConfidenceIcon },
+  { label: 'Repeat-run comparison year on year', icon: ConfidenceIcon },
   { label: 'Clear reporting and recommendations', icon: ReportingIcon }
 ]
 </script>

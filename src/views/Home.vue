@@ -3,9 +3,11 @@
     <div class="home-intro">
       <Hero />
       <HomeClarity />
+      <HomeClarityFeatures />
       <ServicePanes class="home-service-panes" />
     </div>
     <ClientGains />
+    <HomeUltraSight />
     <HomeCtaBanner />
   </div>
 </template>
@@ -13,8 +15,10 @@
 <script setup>
 import Hero from '../components/Hero.vue'
 import HomeClarity from '../components/HomeClarity.vue'
+import HomeClarityFeatures from '../components/HomeClarityFeatures.vue'
 import ServicePanes from '../components/ServicePanes.vue'
 import ClientGains from '../components/ClientGains.vue'
+import HomeUltraSight from '../components/HomeUltraSight.vue'
 import HomeCtaBanner from '../components/HomeCtaBanner.vue'
 </script>
 
@@ -56,6 +60,11 @@ import HomeCtaBanner from '../components/HomeCtaBanner.vue'
   margin-top: 0;
   background: transparent !important;
   padding-top: 8px;
+}
+
+.home-intro :deep(.clarity-features) {
+  position: relative;
+  z-index: 4;
 }
 
 .home-intro :deep(.home-service-panes .service-pane) {

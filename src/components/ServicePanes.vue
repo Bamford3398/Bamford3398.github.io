@@ -31,7 +31,7 @@ const panes = [
     id: 'inline-ut',
     title: 'INLINE UT INSPECTION',
     description:
-      'Advanced and reliable ILI tooling producing comprehensive digital reports.',
+      'High-resolution ILI for fired heaters, HRSG boilers, transfer lines, process piping and pipelines. 30,000+ measurements per linear foot. Interactive 3D digital reports.',
     to: '/inline-inspection',
     image: '/inline-inspection/hero.png',
     imageAlt: 'Inline UT inspection tool in pipeline'
@@ -40,7 +40,7 @@ const panes = [
     id: 'integrity',
     title: 'INTEGRITY ASSESSMENT',
     description:
-      'Turning inspection data into engineering insight. We assess findings, identify significant concerns and provide practical recommendations.',
+      'Level 1, 2 and 3 FFS assessments to API 579 / ASME FFS-1, carried out by integrity and metallurgy specialists.',
     to: '/integrity',
     image: '/integrity/hero.png',
     imageAlt: 'Integrity assessment and pipeline inspection'

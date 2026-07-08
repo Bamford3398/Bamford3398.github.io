@@ -13,13 +13,10 @@
       </h1>
 
       <p class="hero-lead">
-        Turning inspection data into engineering decisions that support safe operation, repair
-        planning and remaining life assessment.
+        Level 1, 2 and 3 Fitness for Service assessments to API 579-1 / ASME FFS-1 - a clear, defensible answer on ageing or damaged equipment: run, repair, or replace.”
       </p>
       <p class="hero-text">
-        WASP reviews inspection findings in context — considering asset geometry, operating
-        conditions, data confidence and recognised assessment methods — to identify significant
-        concerns and provide practical, integrity-led recommendations.
+        Inspection tells you what condition your asset is in. Integrity assessment tells you what to do about it. WASP assesses whether ageing or damaged pressure equipment, piping and pipelines are fit for continued operation — and on what terms — backed by full engineering justification.
       </p>
 
       <div class="hero-actions">
@@ -56,9 +53,10 @@
             operating, what needs repair, and where further investigation is justified.
           </p>
           <p class="body-text body-text--dark">
-            WASP's integrity assessment service connects inspection data with practical engineering
-            judgement. We review the findings, consider the asset context and provide
-            recommendations that can be used by inspection, maintenance and integrity teams.
+            API 579 and ASME B31.3 were written for new construction — they were never intended to evaluate a pipe with decades of corrosion or a weld with a developing crack. Fitness for Service exists to bridge that gap: using real inspection data to determine whether ageing or damaged equipment remains safe to operate, and for how long.
+          </p>
+          <p>
+            An UltraSight inspection generates exactly the high-density data FFS analysis depends on — every defect captured in DeepPulse feeds the assessment with position and dimensions already established. Integrity is also available standalone: we routinely assess data from third-party pigging, handheld UT surveys and historical inspection records.
           </p>
         </div>
         <img
@@ -89,6 +87,11 @@
             <p class="service-card-description">{{ card.description }}</p>
           </article>
         </div>
+        <p class="damage-mechanisms-note">
+          Damage mechanisms assessed: general and local metal loss, pitting, gouges and dents, weld
+          misalignment and shell distortion, crack-like flaws, creep, hydrogen damage (HIC and SOHIC),
+          laminations, and fire damage.
+        </p>
       </div>
     </section>
 
@@ -123,19 +126,12 @@
     <section class="section section--dark assessment-section">
       <div class="section-container">
         <p class="eyebrow">FITNESS-FOR-SERVICE AND REMAINING LIFE</p>
-        <h2 class="section-heading">Engineering assessment aligned to recognised guidance.</h2>
+        <h2 class="section-heading">Level 1, 2, 3 – we carry out all three.</h2>
         <span class="section-accent" aria-hidden="true"></span>
         <div class="assessment-grid">
           <div class="assessment-copy">
             <p class="body-text">
-              Where applicable, WASP can support fitness-for-service screening, remaining life review
-              and defect acceptability assessment using recognised engineering standards and the
-              available inspection data.
-            </p>
-            <p class="body-text">
-              We are careful about confidence and limitations. If the data, assumptions or asset
-              information are not sufficient for a formal conclusion, the report should say that
-              clearly and identify what is required next.
+              Level 1 is a conservative screening using the code's standard tables — quick, and suited to straightforward damage. Level 2 applies detailed stress analysis where Level 1 can't give an acceptable result. Level 3 uses advanced numerical methods including finite element analysis, for complex damage or high-value assets where Levels 1 and 2 would be overly restrictive. We start with the most efficient level that fits the case and escalate only where the damage mechanism demands it.
             </p>
           </div>
           <dl class="assessment-questions">
@@ -215,8 +211,10 @@
         <div class="support-grid">
           <article v-for="item in supportItems" :key="item.title" class="support-card">
             <img :src="item.icon" alt="" class="support-icon" aria-hidden="true" />
-            <h3 class="support-title">{{ item.title }}</h3>
-            <p class="support-description">{{ item.description }}</p>
+            <h3 class="support-title">
+              {{ item.title }}
+              <span v-if="item.detail" class="support-title-detail">{{ item.detail }}</span>
+            </h3>
           </article>
         </div>
       </div>
@@ -248,7 +246,7 @@ import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
 
 const features = [
   {
-    lines: ['FITNESS-FOR-SERVICE', 'SCREENING'],
+    lines: ['LEVEL 1-3 FFS', 'ASSESSMENT'],
     icon: '/integrity/icons/fitness-for-service-screening.png'
   },
   {
@@ -265,7 +263,7 @@ const features = [
     icon: '/integrity/icons/data-confidence-review.png'
   },
   {
-    lines: ['CLEAR ENGINEERING', 'RECOMMENDATIONS'],
+    lines: ['RUN / REPAIR /', 'REPLACE'],
     icon: '/integrity/icons/clear-engineering-recommendations.png'
   }
 ]
@@ -286,7 +284,7 @@ const serviceCards = [
   {
     title: 'Remaining life',
     description:
-      'Where suitable data is available, findings can be used to support remaining life, reassessment interval and monitoring decisions.',
+      'Findings support remaining life, reassessment interval and monitoring decisions.',
     icon: '/integrity/icons/assessment-remaining-life.png'
   },
   {
@@ -432,21 +430,19 @@ const informationNeeded = [
 
 const supportItems = [
   {
-    title: 'Data interpreted in context',
-    description:
-      'We understand inspection coverage, signal quality, operational limitations and what those limitations mean for engineering decisions.',
+    title: 'Chartered-led team',
+    detail:
+      '(assessments led by Chartered Engineers with experience across all 14 parts of API 579-1 / ASME FFS-1)',
     icon: '/integrity/icons/data-interpreted-in-context.png'
   },
   {
-    title: 'Practical recommendations',
-    description:
-      'The output should help the client act — repair, monitor, re-inspect, investigate further or continue operation with defined assumptions.',
+    title: 'Materials and metallurgy depth',
+    detail:
+      '(decades of combined experience in materials science, metallurgy and structural integrity)',
     icon: '/integrity/icons/practical-recommendations.png'
   },
   {
-    title: 'Transparent confidence',
-    description:
-      'Reports should be clear about what the data supports, what it does not support, and where assumptions or further information are required.',
+    title: 'Judgement beyond the lookup chart',
     icon: '/integrity/icons/transparent-confidence.png'
   }
 ]
@@ -689,6 +685,17 @@ const supportItems = [
   margin: 0;
 }
 
+.damage-mechanisms-note {
+  margin: 32px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-body);
+  color: rgba(255, 255, 255, 0.78);
+}
+
 .process-section-grid {
   display: grid;
   grid-template-columns: minmax(240px, 0.85fr) minmax(0, 2.15fr);
@@ -730,10 +737,6 @@ const supportItems = [
   object-fit: contain;
 }
 
-.process-card--light .process-icon {
-  mix-blend-mode: screen;
-}
-
 .process-number {
   position: absolute;
   bottom: -8px;
@@ -773,9 +776,9 @@ const supportItems = [
 
 .assessment-row {
   display: grid;
-  grid-template-columns: minmax(140px, 0.9fr) 1fr;
-  gap: 20px;
-  padding: 20px 0;
+  grid-template-columns: 190px 1fr;
+  gap: 12px;
+  padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -893,9 +896,9 @@ const supportItems = [
 
 .info-row {
   display: grid;
-  grid-template-columns: minmax(140px, 0.75fr) 1fr;
-  gap: 20px;
-  padding: 18px 0;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -941,6 +944,16 @@ const supportItems = [
 .support-title {
   color: #ffffff;
   margin: 0;
+}
+
+.support-title-detail {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-body);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .support-description {
