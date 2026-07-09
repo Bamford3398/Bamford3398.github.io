@@ -4,8 +4,8 @@
     <section class="tech-hero">
       <div class="tech-hero-container">
         <div class="tech-hero-copy">
+          <span class="hero-title-accent" aria-hidden="true"></span>
           <h1 class="hero-title">
-            <span class="hero-title-accent" aria-hidden="true"></span>
             TECHNICAL
             <span class="hero-title-gold">SERVICES</span>
           </h1>
@@ -43,7 +43,7 @@
           <h2 class="section-heading section-heading--dark">
             Technical support for inspection decisions
           </h2>
-          <span class="section-accent section-accent--dark" aria-hidden="true"></span>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text body-text--dark">
             Not every inspection requirement is straightforward. Geometry, access, operating
             conditions and previous inspection history can all affect what is possible — and what the
@@ -151,7 +151,7 @@
       <div class="section-container tech-custom-grid">
         <div class="tech-custom-copy">
           <h2 class="section-heading section-heading--dark">Built for specific inspection problems</h2>
-          <span class="section-accent section-accent--dark" aria-hidden="true"></span>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text body-text--dark">
             Some requirements need focused support rather than a standard product.
           </p>
@@ -301,10 +301,6 @@ const processSteps = [
 
 .body-text--dark {
   color: rgba(10, 10, 10, 0.82);
-}
-
-.section-accent--dark {
-  background-color: #0a0a0a;
 }
 
 /* Hero */

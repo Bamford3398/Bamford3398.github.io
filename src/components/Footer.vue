@@ -14,15 +14,9 @@
           <span class="footer-accent" aria-hidden="true"></span>
           <ul class="footer-contact-quick">
             <li>
-              <a href="tel:+61749566100" class="footer-contact-link">
-                <PhoneIcon class="footer-icon" />
-                +61 7 4956 6100
-              </a>
-            </li>
-            <li>
-              <a href="mailto:info@wasp-pipe.com" class="footer-contact-link">
+              <a href="mailto:info@wasp-eng.com" class="footer-contact-link">
                 <EmailIcon class="footer-icon" />
-                info@wasp-pipe.com
+                info@wasp-eng.com
               </a>
             </li>
           </ul>
@@ -60,23 +54,19 @@
           <address class="footer-address">
             <LocationIcon class="footer-icon footer-icon--address" />
             <span>
-              WASP Pty Ltd<br />
-              10 Titanium Drive<br />
-              Paget QLD 4740<br />
-              Australia
+              WASP Engineering Ltd<br />
+              Barn 4, Dragon Hall<br />
+              Whitchurch Road<br />
+              Tattenhall<br />
+              CH3 9DU<br />
+              United Kingdom
             </span>
           </address>
           <ul class="footer-contact-details">
             <li>
-              <a href="mailto:info@wasp-pipe.com" class="footer-contact-link">
+              <a href="mailto:info@wasp-eng.com" class="footer-contact-link">
                 <EmailIcon class="footer-icon" />
-                info@wasp-pipe.com
-              </a>
-            </li>
-            <li>
-              <a href="tel:+61749566100" class="footer-contact-link">
-                <PhoneIcon class="footer-icon" />
-                +61 7 4956 6100
+                info@wasp-eng.com
               </a>
             </li>
           </ul>
@@ -87,7 +77,7 @@
             <h2 class="footer-heading">Certified Quality</h2>
             <img
               src="/qualitas-veritas.png"
-              alt="Qualitas Veritas ISO 9001-2015 certification"
+              alt="Qualitas Veritas ISO 9001:2015 certification"
               class="footer-cert-image"
               width="689"
               height="894"
@@ -109,7 +99,7 @@
     <div class="footer-bottom">
       <div class="footer-container footer-bottom-inner">
         <p class="footer-legal">
-          <span>&copy; {{ currentYear }} WASP Pty Ltd. All rights reserved.</span>
+          <span>&copy; {{ currentYear }} WASP Engineering Ltd. All rights reserved.</span>
           <span class="footer-legal-sep" aria-hidden="true">|</span>
           <a href="#" class="footer-legal-link">Privacy Policy</a>
           <span class="footer-legal-sep" aria-hidden="true">|</span>
@@ -129,11 +119,11 @@ import { h } from 'vue'
 const currentYear = new Date().getFullYear()
 
 const serviceLinks = [
-  { label: 'Intelligent Pigging (ILI)', to: '/inline-inspection' },
-  { label: 'Other Services', to: '/other-services' },
-  { label: 'Integrity Engineering', to: '/integrity' },
-  { label: 'Data Management', to: '/other-services' },
-  { label: 'Consulting', to: '/technical' }
+  { label: 'Inline UT Inspection', to: '/inline-inspection' },
+  { label: 'UltraSight', to: '/ultrasight' },
+  { label: 'Camera Pigging', to: '/camera-pigging' },
+  { label: 'Integrity', to: '/integrity' },
+  { label: 'Consultancy & Support', to: '/consultancy-support' }
 ]
 
 const aboutLinks = [
@@ -157,17 +147,6 @@ const iconProps = {
   fill: 'none',
   xmlns: 'http://www.w3.org/2000/svg',
   'aria-hidden': 'true'
-}
-
-const PhoneIcon = {
-  render() {
-    return h('svg', iconProps, [
-      h('path', {
-        d: 'M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z',
-        fill: 'currentColor'
-      })
-    ])
-  }
 }
 
 const EmailIcon = {

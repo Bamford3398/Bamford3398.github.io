@@ -1,5 +1,6 @@
 <template>
   <HeroBackgroundLayout header-offset section-class="home-hero">
+    <span class="hero-title-accent" aria-hidden="true"></span>
     <h1 class="hero-title">ADAPTABLE INLINE INSPECTION</h1>
     <p class="hero-subtitle">
       Specialist inline inspection for pipelines, fired heaters and process assets. WASP combines adaptable ultrasonic tooling, high-density data capture, AI-assisted review and digital reporting to help operators understand asset condition with confidence.

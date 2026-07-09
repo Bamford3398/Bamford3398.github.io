@@ -20,54 +20,64 @@
         <div class="desktop-nav">
           <router-link to="/" class="nav-link" @click="handleNavClick">Home</router-link>
           <router-link to="/about" class="nav-link" @click="handleNavClick">About</router-link>
+
           <div
             class="nav-dropdown"
-            @mouseenter="isServicesOpen = true"
-            @mouseleave="isServicesOpen = false"
+            @mouseenter="isInlineOpen = true"
+            @mouseleave="isInlineOpen = false"
+          >
+            <div class="nav-dropdown-split-trigger">
+              <router-link
+                to="/inline-inspection"
+                class="nav-link nav-dropdown-parent-link"
+                @click="handleNavClick"
+              >
+                Inline Inspection
+              </router-link>
+              <span class="nav-dropdown-chevron" :class="{ open: isInlineOpen }" aria-hidden="true">▾</span>
+            </div>
+            <ul class="nav-dropdown-menu" :class="{ open: isInlineOpen }">
+              <li>
+                <router-link to="/ultrasight" class="nav-dropdown-item" @click="handleNavClick">
+                  UltraSight
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/camera-pigging" class="nav-dropdown-item" @click="handleNavClick">
+                  Camera Pigging
+                </router-link>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="nav-dropdown"
+            @mouseenter="isOtherServicesOpen = true"
+            @mouseleave="isOtherServicesOpen = false"
           >
             <button
               type="button"
               class="nav-link nav-dropdown-trigger"
-              :aria-expanded="isServicesOpen"
+              :aria-expanded="isOtherServicesOpen"
               aria-haspopup="true"
             >
-              Services
-              <span class="nav-dropdown-chevron" :class="{ open: isServicesOpen }">▾</span>
+              Other Services
+              <span class="nav-dropdown-chevron" :class="{ open: isOtherServicesOpen }">▾</span>
             </button>
-            <ul class="nav-dropdown-menu" :class="{ open: isServicesOpen }">
-              <li
-                class="nav-dropdown-group"
-                @mouseenter="isInlineOpen = true"
-                @mouseleave="isInlineOpen = false"
-              >
-                <router-link to="/inline-inspection" class="nav-dropdown-item" @click="handleNavClick">
-                  Inline Inspection
-                </router-link>
-                <ul class="nav-dropdown-submenu" :class="{ open: isInlineOpen }">
-                  <li>
-                    <router-link to="/ultrasight" class="nav-dropdown-item nav-dropdown-subitem" @click="handleNavClick">
-                      UltraSight
-                    </router-link>
-                  </li>
-                </ul>
-              </li>
+            <ul class="nav-dropdown-menu" :class="{ open: isOtherServicesOpen }">
               <li>
                 <router-link to="/integrity" class="nav-dropdown-item" @click="handleNavClick">
                   Integrity
                 </router-link>
               </li>
               <li>
-                <router-link to="/technical" class="nav-dropdown-item" @click="handleNavClick">
-                  Technical
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/other-services" class="nav-dropdown-item" @click="handleNavClick">
-                  Other Services
+                <router-link to="/consultancy-support" class="nav-dropdown-item" @click="handleNavClick">
+                  Consultancy &amp; Support
                 </router-link>
               </li>
             </ul>
           </div>
+
           <router-link to="/partners" class="nav-link" @click="handleNavClick">Partners</router-link>
           <router-link to="/contact" class="nav-link" @click="handleNavClick">Contact</router-link>
         </div>
@@ -75,19 +85,39 @@
         <!-- Mobile -->
         <div
           class="mobile-nav-panels"
-          :class="{ 'services-open': mobilePanel === 'services' }"
+          :class="{ 'sub-open': mobilePanel !== 'main' }"
         >
           <div class="mobile-nav-panel mobile-nav-panel--main">
             <router-link to="/" class="nav-link" @click="handleNavClick">Home</router-link>
             <router-link to="/about" class="nav-link" @click="handleNavClick">About</router-link>
+
+            <div class="mobile-nav-split">
+              <router-link
+                to="/inline-inspection"
+                class="mobile-split-link"
+                @click="handleNavClick"
+              >
+                Inline Inspection
+              </router-link>
+              <button
+                type="button"
+                class="mobile-split-expand"
+                aria-label="Show Inline Inspection sub-menu"
+                @click="openMobilePanel('inline')"
+              >
+                <span class="mobile-nav-chevron" aria-hidden="true">›</span>
+              </button>
+            </div>
+
             <button
               type="button"
               class="nav-link mobile-services-trigger"
-              @click="openMobileServices"
+              @click="openMobilePanel('other')"
             >
-              Services
+              Other Services
               <span class="mobile-nav-chevron" aria-hidden="true">›</span>
             </button>
+
             <router-link to="/partners" class="nav-link" @click="handleNavClick">Partners</router-link>
             <router-link to="/contact" class="nav-link" @click="handleNavClick">Contact</router-link>
           </div>
@@ -95,32 +125,17 @@
           <div class="mobile-nav-panel mobile-nav-panel--sub">
             <button type="button" class="mobile-nav-back" @click="backToMainNav">
               <span class="mobile-nav-back-icon" aria-hidden="true">‹</span>
-              Services
+              {{ mobileSubmenuTitle }}
             </button>
             <ul class="mobile-subnav-list">
-              <li>
-                <router-link to="/inline-inspection" class="mobile-subnav-link" @click="handleNavClick">
-                  Inline Inspection
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/ultrasight" class="mobile-subnav-link mobile-subnav-link--child" @click="handleNavClick">
-                  ULTRASIGHT
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/integrity" class="mobile-subnav-link" @click="handleNavClick">
-                  Integrity
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/technical" class="mobile-subnav-link" @click="handleNavClick">
-                  Technical
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/other-services" class="mobile-subnav-link" @click="handleNavClick">
-                  Other Services
+              <li v-for="item in mobileSubmenuItems" :key="item.to">
+                <router-link
+                  :to="item.to"
+                  class="mobile-subnav-link"
+                  :class="{ 'mobile-subnav-link--child': item.child }"
+                  @click="handleNavClick"
+                >
+                  {{ item.label }}
                 </router-link>
               </li>
             </ul>
@@ -132,14 +147,38 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const isMenuOpen = ref(false)
-const isServicesOpen = ref(false)
 const isInlineOpen = ref(false)
+const isOtherServicesOpen = ref(false)
 const mobilePanel = ref('main')
 const isHeaderVisible = ref(true)
 const lastScrollY = ref(0)
+
+const mobileSubmenuTitle = computed(() => {
+  if (mobilePanel.value === 'inline') return 'Inline Inspection'
+  if (mobilePanel.value === 'other') return 'Other Services'
+  return ''
+})
+
+const mobileSubmenuItems = computed(() => {
+  if (mobilePanel.value === 'inline') {
+    return [
+      { label: 'UltraSight', to: '/ultrasight', child: true },
+      { label: 'Camera Pigging', to: '/camera-pigging', child: true }
+    ]
+  }
+
+  if (mobilePanel.value === 'other') {
+    return [
+      { label: 'Integrity', to: '/integrity', child: false },
+      { label: 'Consultancy & Support', to: '/consultancy-support', child: false }
+    ]
+  }
+
+  return []
+})
 
 const resetMobilePanel = () => {
   mobilePanel.value = 'main'
@@ -154,8 +193,8 @@ const toggleMenu = () => {
   }
 }
 
-const openMobileServices = () => {
-  mobilePanel.value = 'services'
+const openMobilePanel = (panel) => {
+  mobilePanel.value = panel
 }
 
 const backToMainNav = () => {
@@ -164,8 +203,8 @@ const backToMainNav = () => {
 
 const handleNavClick = () => {
   isMenuOpen.value = false
-  isServicesOpen.value = false
   isInlineOpen.value = false
+  isOtherServicesOpen.value = false
   resetMobilePanel()
 }
 
@@ -320,6 +359,16 @@ onUnmounted(() => {
   padding: 0;
 }
 
+.nav-dropdown-split-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-dropdown-parent-link {
+  display: inline-block;
+}
+
 .nav-dropdown-chevron {
   transition: transform 0.3s ease;
 }
@@ -368,32 +417,40 @@ onUnmounted(() => {
   padding-left: 1.5rem;
 }
 
-.nav-dropdown-group {
-  position: relative;
+.mobile-nav-split {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(231, 199, 58, 0.1);
 }
 
-.nav-dropdown-submenu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 180px;
-  margin: 0;
-  padding: 0.5rem 0;
-  list-style: none;
-  background-color: #0a0a0a;
-  border: 1px solid rgba(231, 199, 58, 0.25);
-  border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  z-index: 11;
+.mobile-split-link {
+  flex: 1;
+  display: block;
+  padding: 1rem 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-nav);
+  transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
-.nav-dropdown-group:hover .nav-dropdown-submenu,
-.nav-dropdown-submenu.open {
-  opacity: 1;
-  visibility: visible;
+.mobile-split-link:hover {
+  color: #e7c73a;
+  padding-left: 0.5rem;
+}
+
+.mobile-split-expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  padding: 0 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .burger-menu {
@@ -496,11 +553,11 @@ onUnmounted(() => {
     transform: translateX(100%);
   }
 
-  .mobile-nav-panels.services-open .mobile-nav-panel--main {
+  .mobile-nav-panels.sub-open .mobile-nav-panel--main {
     transform: translateX(-100%);
   }
 
-  .mobile-nav-panels.services-open .mobile-nav-panel--sub {
+  .mobile-nav-panels.sub-open .mobile-nav-panel--sub {
     transform: translateX(0);
   }
 

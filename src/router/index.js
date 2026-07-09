@@ -4,8 +4,8 @@ import About from '../views/About.vue'
 import Integrity from '../views/Integrity.vue'
 import InlineInspection from '../views/InlineInspection.vue'
 import Ultrasight from '../views/Ultrasight.vue'
-import OtherServices from '../views/OtherServices.vue'
-import Technical from '../views/Technical.vue'
+import CameraPigging from '../views/CameraPigging.vue'
+import ConsultancySupport from '../views/ConsultancySupport.vue'
 import Partners from '../views/Partners.vue'
 import Contact from '../components/Contact.vue'
 
@@ -40,18 +40,26 @@ const routes = [
     component: Ultrasight
   },
   {
+    path: '/camera-pigging',
+    name: 'CameraPigging',
+    component: CameraPigging
+  },
+  {
+    path: '/consultancy-support',
+    name: 'ConsultancySupport',
+    component: ConsultancySupport
+  },
+  {
     path: '/other-services',
-    name: 'OtherServices',
-    component: OtherServices
+    redirect: '/consultancy-support'
   },
   {
     path: '/technical',
-    name: 'Technical',
-    component: Technical
+    redirect: '/consultancy-support'
   },
   {
     path: '/advisory',
-    redirect: '/technical'
+    redirect: '/consultancy-support'
   },
   {
     path: '/partners',

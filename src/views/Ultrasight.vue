@@ -83,8 +83,8 @@
     <section id="capabilities" class="section section--dark modules-section">
       <div class="section-container modules-layout">
         <div class="modules-intro">
-          <span class="section-accent section-accent--top" aria-hidden="true"></span>
           <h2 class="section-heading">Modular architecture for changing inspection requirements</h2>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text">
             UltraSight is designed around interchangeable modules that allow the inspection setup to
             be tailored to the asset and inspection objective. The same platform can be adapted for
@@ -122,11 +122,11 @@
     </section>
 
     <!-- 6. DeepPulse -->
-    <section class="section section--light deeppulse-section">
+    <section class="section section--light deeppulse-section" id="deeppulse">
       <div class="section-container deeppulse-grid">
         <div class="deeppulse-copy">
-          <span class="section-accent" aria-hidden="true"></span>
           <h2 class="section-heading">DeepPulse data processing</h2>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="deeppulse-subheading">
             From raw inspection data to clear, actionable reporting.
           </p>
@@ -186,8 +186,8 @@
     <section class="section section--dark enables-section">
       <div class="section-container enables-grid">
         <div class="enables-copy">
-          <span class="section-accent" aria-hidden="true"></span>
           <h2 class="section-heading">What UltraSight enables</h2>
+          <span class="section-accent" aria-hidden="true"></span>
           <ul class="check-list enables-list">
             <li v-for="item in enables" :key="item">
               <img src="/ultrasight/check-circle.png" alt="" class="check-icon" aria-hidden="true" />
@@ -196,8 +196,8 @@
           </ul>
         </div>
         <div class="configure-copy">
-          <span class="section-accent" aria-hidden="true"></span>
           <h2 class="section-heading">How we configure UltraSight for your asset</h2>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text">
             Before confirming the inspection approach, WASP reviews the asset geometry, access
             conditions, operating constraints and inspection objective. This allows the tool

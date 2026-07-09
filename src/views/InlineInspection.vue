@@ -2,8 +2,8 @@
   <div class="inline-inspection-page">
     <!-- Hero -->
     <HeroBackgroundLayout header-offset section-class="hero-section" image-src="/inline-inspection/hero.png">
+      <span class="hero-title-accent" aria-hidden="true"></span>
       <h1 class="hero-title">
-        <span class="hero-title-accent" aria-hidden="true"></span>
         INLINE
         <span class="hero-title-gold">INSPECTION</span>
       </h1>
@@ -116,8 +116,8 @@
     <section class="section section--dark reporting-section">
       <div class="section-container">
         <div class="reporting-intro">
-          <span class="section-accent" aria-hidden="true"></span>
           <h2 class="section-heading">Reporting built for decision-making</h2>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text reporting-intro-text">
             Inspection data only has value when it can be reviewed, understood and acted on. WASP
             delivers rapid fired heater reporting, digital inspection outputs and cloud-held data
@@ -138,8 +138,8 @@
 
         <div class="reporting-deliverables">
           <div class="reporting-list-panel">
-            <span class="section-accent" aria-hidden="true"></span>
             <h3 class="reporting-list-heading">What clients receive</h3>
+            <span class="section-accent" aria-hidden="true"></span>
             <div class="reporting-lists">
               <ul class="check-list">
                 <li v-for="item in deliverablesLeft" :key="item">{{ item }}</li>
@@ -610,12 +610,8 @@ const deliverablesRight = [
   margin-bottom: 40px;
 }
 
-.reporting-intro .section-accent {
-  margin-bottom: var(--gap-heading-to-accent);
-}
-
 .reporting-intro-text {
-  margin-top: 18px;
+  margin-top: 0;
   max-width: 760px;
 }
 
@@ -659,7 +655,7 @@ const deliverablesRight = [
 }
 
 .reporting-list-heading {
-  margin: 0 0 24px;
+  margin: 0 0 var(--gap-heading-to-accent);
   font-family: var(--font-heading);
   font-size: var(--text-subsection);
   font-weight: var(--font-weight-bold);

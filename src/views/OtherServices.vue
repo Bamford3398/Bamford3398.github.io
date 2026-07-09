@@ -5,8 +5,8 @@
       section-class="hero-section"
       image-src="/other-services/hero.png"
     >
+      <span class="hero-title-accent" aria-hidden="true"></span>
       <h1 class="hero-title">
-        <span class="hero-title-accent" aria-hidden="true"></span>
         OTHER
         <span class="hero-title-gold">SERVICES</span>
       </h1>
@@ -264,7 +264,7 @@
       <div class="other-services-cta-layout">
         <div class="other-services-cta-content">
           <h2 class="other-services-cta-title">Need support before an inspection?</h2>
-          <span class="section-accent section-accent--dark" aria-hidden="true"></span>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="other-services-cta-text">
             Send us the asset details and inspection objective, and we'll recommend the most
             practical support approach.
@@ -621,10 +621,6 @@ const processSteps = [
 
 .body-text--dark {
   color: rgba(10, 10, 10, 0.82);
-}
-
-.section-accent--dark {
-  background-color: #0a0a0a;
 }
 
 .when-used-section {

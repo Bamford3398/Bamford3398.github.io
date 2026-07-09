@@ -1,8 +1,8 @@
 <template>
   <div class="about-page">
     <HeroBackgroundLayout header-offset section-class="hero-section" image-placeholder>
+      <span class="hero-title-accent" aria-hidden="true"></span>
       <h1 class="hero-title">
-        <span class="hero-title-accent" aria-hidden="true"></span>
         SPECIALIST INLINE INSPECTION.
         <span class="hero-title-gold">ENGINEERING-LED INTEGRITY INSIGHT.</span>
       </h1>
@@ -45,7 +45,7 @@
           <h2 class="section-heading section-heading--dark">
             Built by inspection specialists, not generalists.
           </h2>
-          <span class="section-accent section-accent--dark" aria-hidden="true"></span>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text body-text--dark">
             WASP brings together senior figures from the global inline inspection industry with
             hands-on experience in ultrasonic pigging, inspection technology development, field
@@ -125,7 +125,7 @@
             <component :is="QualityShieldIcon" />
           </div>
           <h2 class="section-heading section-heading--dark">Certified quality management.</h2>
-          <span class="section-accent section-accent--dark" aria-hidden="true"></span>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text body-text--dark">
             WASP is certified to <strong>BS EN ISO 9001:2015</strong> by
             <strong>Qualitas Veritas</strong>.
@@ -136,7 +136,7 @@
         </article>
         <div class="about-guidance">
           <h2 class="section-heading section-heading--dark">Recognised engineering guidance.</h2>
-          <span class="section-accent section-accent--dark" aria-hidden="true"></span>
+          <span class="section-accent" aria-hidden="true"></span>
           <p class="body-text body-text--dark about-guidance-intro">
             Our inspection and assessment work can be delivered in line with recognised industry
             standards and guidance where applicable.
@@ -524,10 +524,6 @@ const teamMembers = [
 
 .section-heading--dark {
   color: #0a0a0a;
-}
-
-.section-accent--dark {
-  background-color: #0a0a0a;
 }
 
 .section--light .body-text {

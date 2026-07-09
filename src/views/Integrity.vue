@@ -6,8 +6,8 @@
       section-class="hero-section"
       image-src="/integrity/hero.png"
     >
+      <span class="hero-title-accent" aria-hidden="true"></span>
       <h1 class="hero-title">
-        <span class="hero-title-accent" aria-hidden="true"></span>
         INTEGRITY
         <span class="hero-title-gold">ASSESSMENT</span>
       </h1>
@@ -234,7 +234,7 @@
           </router-link>
         </div>
         <div class="integrity-cta-image-panel" aria-hidden="true">
-          <img src="/integrity/cta-plant.png" alt="" class="integrity-cta-image" />
+          <img src="/home-cta-refinery.png" alt="" class="integrity-cta-image" />
         </div>
       </div>
     </section>
@@ -1020,18 +1020,24 @@ const supportItems = [
   background-color: #e7c73a;
 }
 
+.integrity-cta-image-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(120px, 18%);
+  background: linear-gradient(to right, #e7c73a 0%, rgba(231, 199, 58, 0.85) 35%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .integrity-cta-image {
   position: absolute;
-  right: -4%;
-  bottom: 0;
-  width: 112%;
-  max-width: none;
-  height: auto;
-  min-height: 100%;
-  object-fit: contain;
-  object-position: right bottom;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   display: block;
-  pointer-events: none;
 }
 
 @media (max-width: 1100px) {
@@ -1139,18 +1145,19 @@ const supportItems = [
 
   .integrity-cta-image-panel {
     min-height: 280px;
-    padding: 0 var(--site-gutter) 24px;
   }
 
-  .integrity-cta-image {
-    position: relative;
-    right: auto;
-    bottom: auto;
+  .integrity-cta-image-panel::before {
+    inset: 0 0 auto 0;
     width: 100%;
-    max-width: min(100%, 480px);
-    min-height: 0;
-    margin: 0 auto;
-    object-position: center bottom;
+    height: 80px;
+    background: linear-gradient(to bottom, #e7c73a 0%, rgba(231, 199, 58, 0.85) 35%, transparent 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .integrity-cta-image-panel {
+    min-height: 220px;
   }
 }
 </style>
