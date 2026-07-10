@@ -27,7 +27,7 @@ import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
 }
 
 .hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 </style>

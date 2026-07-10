@@ -78,7 +78,6 @@
             </ul>
           </div>
 
-          <router-link to="/partners" class="nav-link" @click="handleNavClick">Partners</router-link>
           <router-link to="/contact" class="nav-link" @click="handleNavClick">Contact</router-link>
         </div>
 
@@ -118,7 +117,6 @@
               <span class="mobile-nav-chevron" aria-hidden="true">›</span>
             </button>
 
-            <router-link to="/partners" class="nav-link" @click="handleNavClick">Partners</router-link>
             <router-link to="/contact" class="nav-link" @click="handleNavClick">Contact</router-link>
           </div>
 

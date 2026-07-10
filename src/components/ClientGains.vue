@@ -90,8 +90,9 @@ const gains = [
 .gain-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
+  text-align: center;
 }
 
 .gain-icon {
@@ -108,8 +109,9 @@ const gains = [
 }
 
 .gain-label {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
   max-width: 180px;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {

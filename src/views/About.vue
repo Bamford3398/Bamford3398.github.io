@@ -423,12 +423,12 @@ const teamMembers = [
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -500,7 +500,7 @@ const teamMembers = [
 
 .about-feature-stat {
   font-family: var(--font-heading);
-  font-size: clamp(22px, 2.2vw, 28px);
+  font-size: var(--text-section-title);
   font-weight: var(--font-weight-bold);
   line-height: 1.1;
   letter-spacing: 0.04em;
@@ -514,7 +514,7 @@ const teamMembers = [
   letter-spacing: var(--tracking-feature);
   line-height: 1.25;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
 }
 
 .section--light {
@@ -527,11 +527,11 @@ const teamMembers = [
 }
 
 .section--light .body-text {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .body-text--dark {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .about-specialists-grid {
@@ -573,7 +573,7 @@ const teamMembers = [
 }
 
 .section--dark .body-text {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
   line-height: var(--leading-copy);
 }
 
@@ -594,6 +594,8 @@ const teamMembers = [
   padding: 28px 24px 32px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 16px;
 }
 
@@ -601,6 +603,7 @@ const teamMembers = [
   width: 48px;
   height: 48px;
   object-fit: contain;
+  margin-inline: auto;
 }
 
 .about-service-card-title {
@@ -616,7 +619,7 @@ const teamMembers = [
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -651,7 +654,7 @@ const teamMembers = [
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -767,7 +770,7 @@ const teamMembers = [
 
 .about-team-initials {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: var(--text-section-title);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-pane);
   color: #e7c73a;
@@ -797,7 +800,7 @@ const teamMembers = [
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
@@ -829,7 +832,7 @@ const teamMembers = [
 }
 
 .about-cta-content .home-cta-text {
-  color: rgba(10, 10, 10, 0.85);
+  color: var(--color-text-muted-on-gold);
   margin-bottom: 32px;
 }
 

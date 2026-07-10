@@ -6,7 +6,6 @@ import InlineInspection from '../views/InlineInspection.vue'
 import Ultrasight from '../views/Ultrasight.vue'
 import CameraPigging from '../views/CameraPigging.vue'
 import ConsultancySupport from '../views/ConsultancySupport.vue'
-import Partners from '../views/Partners.vue'
 import Contact from '../components/Contact.vue'
 
 const routes = [
@@ -63,8 +62,7 @@ const routes = [
   },
   {
     path: '/partners',
-    name: 'Partners',
-    component: Partners
+    redirect: '/'
   },
   {
     path: '/contact',
@@ -75,7 +73,22 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+        top: 80
+      }
+    }
+
+    if (savedPosition) {
+      return savedPosition
+    }
+
+    return { top: 0, left: 0 }
+  }
 })
 
 export default router

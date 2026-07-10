@@ -249,7 +249,7 @@ const detectGroups = [
 
 const reportingBlocks = [
   {
-    title: '24-hour fired heater reporting',
+    title: '24-hour field reporting',
     description:
       'Rapid turnaround reporting to support time-critical shutdown and repair decisions.'
   },
@@ -315,7 +315,7 @@ const deliverablesRight = [
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -324,7 +324,7 @@ const deliverablesRight = [
 }
 
 .hero-body {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -456,12 +456,12 @@ const deliverablesRight = [
 }
 
 .body-text {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
   line-height: var(--leading-copy);
 }
 
 .body-text--dark {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .body-text:last-child {
@@ -522,7 +522,7 @@ const deliverablesRight = [
 
 .application-body {
   padding: 20px 18px 24px;
-  text-align: left;
+  text-align: center;
   flex: 1;
 }
 
@@ -532,7 +532,7 @@ const deliverablesRight = [
 }
 
 .application-description {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -567,7 +567,7 @@ const deliverablesRight = [
   position: relative;
   padding-left: 22px;
   margin-bottom: 10px;
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .check-list li::before {
@@ -590,7 +590,7 @@ const deliverablesRight = [
   margin-bottom: 10px;
   font-size: var(--text-caption);
   line-height: var(--leading-relaxed);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .bullet-list--dark li {
@@ -644,7 +644,7 @@ const deliverablesRight = [
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .reporting-deliverables {
@@ -672,7 +672,7 @@ const deliverablesRight = [
 }
 
 .reporting-section .check-list li {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
 }
 
 .reporting-graph-panel {

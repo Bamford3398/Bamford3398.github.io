@@ -206,7 +206,8 @@ const handleCardClick = (route) => {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 1.5rem;
 }
 
@@ -236,7 +237,7 @@ const handleCardClick = (route) => {
 }
 
 .card-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
   margin: 0;
   flex-grow: 1;
 }

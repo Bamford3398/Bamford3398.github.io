@@ -329,12 +329,12 @@ const whenUsedItems = [
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-body {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -394,11 +394,11 @@ const whenUsedItems = [
 }
 
 .body-text--light {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .body-text--dark {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .platforms-grid {
@@ -455,7 +455,7 @@ const whenUsedItems = [
 .platform-list li {
   position: relative;
   padding: 5px 0 5px 20px;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
 }
@@ -490,6 +490,7 @@ const whenUsedItems = [
   background-color: #0f0f0d;
   border: 1.5px solid #2e2e28;
   border-radius: 8px;
+  text-align: center;
 }
 
 .benefit-title {
@@ -503,7 +504,7 @@ const whenUsedItems = [
 }
 
 .benefit-text {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-caption);
   line-height: var(--leading-body);
   margin: 0;
@@ -524,7 +525,7 @@ const whenUsedItems = [
   gap: 12px;
   margin-bottom: 16px;
   padding-left: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .capability-list li::before {
@@ -655,7 +656,7 @@ const whenUsedItems = [
 
 .camera-cta-title {
   font-family: var(--font-heading);
-  font-size: var(--text-section-title);
+  font-size: var(--text-cta-title);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-title);
   color: #0a0a0a;
@@ -663,7 +664,7 @@ const whenUsedItems = [
 }
 
 .camera-cta-text {
-  color: rgba(10, 10, 10, 0.85);
+  color: var(--color-text-muted-on-gold);
   font-size: var(--text-lead);
   line-height: var(--leading-body);
   margin-bottom: 26px;

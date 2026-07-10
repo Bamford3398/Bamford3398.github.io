@@ -415,10 +415,6 @@ const configRows = [
   color: #ffffff;
 }
 
-.section-heading--center {
-  text-align: left;
-}
-
 .section-heading--dark {
   color: #0a0a0a;
 }
@@ -448,15 +444,15 @@ const configRows = [
 }
 
 .section--light .body-text {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .section--dark .body-text {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .body-text--light {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
 }
 
 .body-text:last-child {
@@ -531,12 +527,12 @@ const configRows = [
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-body {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -573,6 +569,7 @@ const configRows = [
 .module-card {
   padding: 0 24px;
   border-left: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
 }
 
 .module-card:first-of-type {
@@ -583,7 +580,7 @@ const configRows = [
   width: 56px;
   height: 56px;
   object-fit: contain;
-  margin-bottom: 18px;
+  margin: 0 auto 18px;
 }
 
 .section--dark .module-title {
@@ -591,7 +588,7 @@ const configRows = [
 }
 
 .section--dark .module-description {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .section--light .module-title {
@@ -626,7 +623,7 @@ const configRows = [
 }
 
 .geometry-item {
-  text-align: left;
+  text-align: center;
 }
 
 .geometry-media {
@@ -649,7 +646,7 @@ const configRows = [
 }
 
 .section--dark .geometry-description {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-legal);
 }
 
 .section--light .geometry-title {
@@ -703,7 +700,7 @@ const configRows = [
 
 .capability-section .spec-row dd {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .section--light.capability-section .spec-row dt {
@@ -752,7 +749,7 @@ const configRows = [
 }
 
 .capability-section .stat-label {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-legal);
   margin: 0;
 }
 
@@ -772,7 +769,7 @@ const configRows = [
 }
 
 .section--dark .deeppulse-subheading {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
 }
 
 .deeppulse-btn {
@@ -809,11 +806,11 @@ const configRows = [
 }
 
 .pipeline-label {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .section--dark .pipeline-label {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .pipeline-arrow {
@@ -887,11 +884,11 @@ const configRows = [
 }
 
 .section--dark .check-list li {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .section--light .check-list li {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .check-icon {
@@ -933,7 +930,7 @@ const configRows = [
 
 .config-table tbody td {
   font-weight: var(--font-weight-regular);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .config-table th,
@@ -960,11 +957,11 @@ const configRows = [
 }
 
 .section--dark .enables-list li {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
 }
 
 .section--light .enables-list li {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .cta-section {

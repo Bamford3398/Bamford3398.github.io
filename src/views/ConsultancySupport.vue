@@ -257,12 +257,12 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-body {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -332,7 +332,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
   position: relative;
   break-inside: avoid;
   padding: 8px 0 8px 20px;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-lead);
   line-height: var(--leading-body);
 }
@@ -388,7 +388,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 }
 
 .card-text {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
   margin: 0 0 14px;
@@ -472,7 +472,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
   right: -14px;
   top: 18px;
   color: #e7c73a;
-  font-size: 24px;
+  font-size: var(--text-stat);
   line-height: 1;
 }
 
@@ -515,7 +515,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
   padding: 18px 10px;
   border: 1.5px solid #2e2e28;
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-family: var(--font-heading);
   font-size: var(--text-tiny);
   font-weight: var(--font-weight-bold);
@@ -547,7 +547,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 
 .consultancy-cta-title {
   font-family: var(--font-heading);
-  font-size: var(--text-section-title);
+  font-size: var(--text-cta-title);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-title);
   color: #0a0a0a;
@@ -555,7 +555,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 }
 
 .consultancy-cta-text {
-  color: rgba(10, 10, 10, 0.85);
+  color: var(--color-text-muted-on-gold);
   font-size: var(--text-lead);
   line-height: var(--leading-body);
   margin-bottom: 26px;

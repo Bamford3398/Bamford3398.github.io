@@ -50,7 +50,7 @@
 }
 
 .home-cta-text {
-  color: rgba(10, 10, 10, 0.85);
+  color: var(--color-text-muted-on-gold);
   margin-bottom: 32px;
 }
 

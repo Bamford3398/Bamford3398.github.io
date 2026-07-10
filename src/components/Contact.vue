@@ -127,7 +127,7 @@ const handleSubmit = () => {
 }
 
 .contact-subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-body);
   margin-bottom: 48px;
 }
 

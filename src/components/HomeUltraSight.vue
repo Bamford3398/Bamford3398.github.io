@@ -55,7 +55,7 @@ import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
 }
 
 .home-ultrasight .hero-lead {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   max-width: 520px;
 }
 

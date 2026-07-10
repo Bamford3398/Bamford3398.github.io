@@ -287,7 +287,7 @@ const processSteps = [
 }
 
 .section--dark .body-text {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
 }
 
 .section--light {
@@ -300,7 +300,7 @@ const processSteps = [
 }
 
 .body-text--dark {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 /* Hero */
@@ -332,13 +332,13 @@ const processSteps = [
 
 .tech-hero .hero-lead {
   max-width: 690px;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .tech-hero .hero-text {
   max-width: 690px;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -573,11 +573,11 @@ const processSteps = [
 .tech-feature-label {
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.35;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #f4f4ee;
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -643,7 +643,7 @@ const processSteps = [
 }
 
 .tech-step-text {
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--color-text-body);
   margin: 0;
 }
 

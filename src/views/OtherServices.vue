@@ -482,7 +482,7 @@ const processSteps = [
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -494,7 +494,7 @@ const processSteps = [
 }
 
 .hero-text {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -603,7 +603,7 @@ const processSteps = [
 }
 
 .readiness-service-text {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-body-sm);
   line-height: var(--leading-relaxed);
   margin: 0;
@@ -620,7 +620,7 @@ const processSteps = [
 }
 
 .body-text--dark {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .when-used-section {
@@ -708,7 +708,7 @@ const processSteps = [
 }
 
 .os-process-text {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-body-sm);
   line-height: var(--leading-body);
   margin: 0;
@@ -757,7 +757,7 @@ const processSteps = [
 }
 
 .other-services-cta-text {
-  color: rgba(10, 10, 10, 0.85);
+  color: var(--color-text-muted-on-gold);
   font-size: var(--text-body);
   line-height: var(--leading-body);
   margin-bottom: 28px;
@@ -1068,7 +1068,7 @@ const processSteps = [
 .service-panel-title {
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: clamp(24px, 2.8vw, 32px);
+  font-size: var(--text-section-title);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-title);
   text-transform: uppercase;
@@ -1076,7 +1076,7 @@ const processSteps = [
 }
 
 .service-panel .body-text {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
 }
 
 .service-features {
@@ -1092,6 +1092,8 @@ const processSteps = [
   padding: 24px 18px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   min-height: 100%;
 }
 
@@ -1100,6 +1102,7 @@ const processSteps = [
   height: 40px;
   object-fit: contain;
   margin-bottom: 16px;
+  margin-inline: auto;
 }
 
 .service-feature-title {
@@ -1114,7 +1117,7 @@ const processSteps = [
 }
 
 .service-feature-text {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   font-size: var(--text-tiny);
   line-height: var(--leading-relaxed);
   margin: 0;
@@ -1194,7 +1197,7 @@ const processSteps = [
 }
 
 .service-sidebar-text {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   font-size: var(--text-tiny);
   line-height: var(--leading-body);
   margin: 0;
@@ -1206,7 +1209,7 @@ const processSteps = [
   width: 100%;
   justify-content: center;
   text-align: center;
-  font-size: 11px;
+  font-size: var(--text-tiny);
   padding-inline: 12px;
 }
 
@@ -1219,7 +1222,7 @@ const processSteps = [
 }
 
 .section-title {
-  color: #e7c73a;
+  color: var(--color-text);
 }
 
 .platform-block {
@@ -1240,7 +1243,7 @@ const processSteps = [
 }
 
 .body-text {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
 }
 
 .body-text:last-child {
@@ -1257,7 +1260,7 @@ const processSteps = [
   position: relative;
   padding-left: 24px;
   margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
 }
 
 .bullet-list li::before {
@@ -1534,7 +1537,7 @@ const processSteps = [
     max-width: none;
     align-self: auto;
     padding-inline: 12px;
-    font-size: 11px;
+    font-size: var(--text-tiny);
   }
 
   .other-services-page .service-panel-actions .btn {

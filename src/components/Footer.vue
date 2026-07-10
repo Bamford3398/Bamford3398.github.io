@@ -259,7 +259,7 @@ const LinkedInIcon = {
 
 .footer-intro {
   margin: 0 0 20px;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   font-size: var(--text-label);
   line-height: var(--leading-relaxed);
 }
@@ -301,7 +301,7 @@ const LinkedInIcon = {
 .footer-linkedin {
   display: block;
   padding: 12px 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-body);
   font-size: var(--text-label);
   line-height: var(--leading-normal);
   text-decoration: none;
@@ -334,7 +334,7 @@ const LinkedInIcon = {
   display: flex;
   gap: 10px;
   margin: 0 0 8px;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   font-style: normal;
   font-size: var(--text-label);
   line-height: var(--leading-relaxed);
@@ -384,7 +384,7 @@ const LinkedInIcon = {
 
 .footer-legal {
   margin: 0;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-legal);
   font-size: var(--text-tiny);
   line-height: var(--leading-normal);
 }
@@ -395,7 +395,7 @@ const LinkedInIcon = {
 }
 
 .footer-legal-link {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-legal);
   text-decoration: none;
   transition: color 0.2s ease;
 }

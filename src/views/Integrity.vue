@@ -53,10 +53,17 @@
             operating, what needs repair, and where further investigation is justified.
           </p>
           <p class="body-text body-text--dark">
-            API 579 and ASME B31.3 were written for new construction — they were never intended to evaluate a pipe with decades of corrosion or a weld with a developing crack. Fitness for Service exists to bridge that gap: using real inspection data to determine whether ageing or damaged equipment remains safe to operate, and for how long.
+            ASME B31.3 was written primarily for the design and construction of process piping, not
+            for assessing degraded equipment in service. API 579-1/ASME FFS-1, by contrast, was
+            specifically developed to evaluate the fitness-for-service of existing pressure equipment
+            containing corrosion, cracks, and other damage mechanisms, allowing engineers to
+            determine whether continued operation, repair, or replacement is appropriate.
           </p>
-          <p>
-            An UltraSight inspection generates exactly the high-density data FFS analysis depends on — every defect captured in DeepPulse feeds the assessment with position and dimensions already established. Integrity is also available standalone: we routinely assess data from third-party pigging, handheld UT surveys and historical inspection records.
+          <p class="body-text body-text--dark">
+            An UltraSight inspection generates exactly the high-density data FFS analysis depends on —
+            every defect captured in DeepPulse feeds the assessment with position and dimensions
+            already established. Integrity is also available standalone: we routinely assess data
+            from third-party pigging, handheld UT surveys and historical inspection records.
           </p>
         </div>
         <img
@@ -479,12 +486,12 @@ const supportItems = [
 }
 
 .hero-lead {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-lead);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-secondary);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -628,12 +635,12 @@ const supportItems = [
 }
 
 .body-text {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-body);
   line-height: var(--leading-copy);
 }
 
 .body-text--dark {
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .body-text:last-child {
@@ -666,6 +673,8 @@ const supportItems = [
   padding: 28px 24px 32px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 16px;
 }
 
@@ -673,6 +682,7 @@ const supportItems = [
   width: 48px;
   height: 48px;
   object-fit: contain;
+  margin-inline: auto;
 }
 
 .service-card-title {
@@ -681,7 +691,7 @@ const supportItems = [
 }
 
 .service-card-description {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -693,7 +703,7 @@ const supportItems = [
   font-size: var(--text-body-sm);
   font-weight: var(--font-weight-regular);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .process-section-grid {
@@ -715,7 +725,8 @@ const supportItems = [
   padding: 24px 18px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .process-icon-wrap--light {
@@ -723,6 +734,7 @@ const supportItems = [
   width: 88px;
   height: 88px;
   margin-bottom: 18px;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -799,7 +811,7 @@ const supportItems = [
 
 .assessment-answer {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .standards-list {
@@ -834,9 +846,9 @@ const supportItems = [
 
 .standards-subtitle {
   display: block;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--color-text-legal);
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: var(--text-caption);
   line-height: 1.45;
   letter-spacing: normal;
   text-transform: none;
@@ -872,7 +884,7 @@ const supportItems = [
   position: relative;
   padding-left: 22px;
   margin-bottom: 10px;
-  color: rgba(10, 10, 10, 0.82);
+  color: var(--color-text-body-on-light);
 }
 
 .check-list li::before {
@@ -919,7 +931,7 @@ const supportItems = [
 
 .info-detail {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 .support-grid {
@@ -953,11 +965,11 @@ const supportItems = [
   font-size: var(--text-body-sm);
   font-weight: var(--font-weight-regular);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-legal);
 }
 
 .support-description {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -988,7 +1000,7 @@ const supportItems = [
 }
 
 .integrity-cta-text {
-  color: rgba(10, 10, 10, 0.85);
+  color: var(--color-text-muted-on-gold);
   margin-bottom: 32px;
 }
 

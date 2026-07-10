@@ -14,7 +14,7 @@
 const features = [
   {
     id: 'measurements',
-    title: '30,000 measurements per linear foot',
+    title: 'Up to 30,000 measurements per linear foot',
     description:
       'High-density UT data captured continuously around the full 360° for unmatched detail and defect confidence.'
   },
@@ -26,7 +26,7 @@ const features = [
   },
   {
     id: 'ai-review',
-    title: 'AI-assisted review',
+    title: 'AI-driven analysis',
     description:
       'Machine learning prioritizes true indications and reduces noise—helping analysts review faster with greater accuracy.'
   },
@@ -59,8 +59,8 @@ const features = [
   padding: 8px 28px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
 .clarity-feature + .clarity-feature {
@@ -83,7 +83,7 @@ const features = [
   width: 40px;
   height: 3px;
   background-color: #e7c73a;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
 }
 
 .clarity-feature-text {
@@ -92,7 +92,7 @@ const features = [
   font-size: var(--text-body-sm);
   font-weight: var(--font-weight-regular);
   line-height: var(--leading-body);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
 }
 
 @media (max-width: 1024px) {

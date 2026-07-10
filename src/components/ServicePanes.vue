@@ -31,7 +31,7 @@ const panes = [
     id: 'inline-ut',
     title: 'INLINE UT INSPECTION',
     description:
-      'High-resolution ILI for fired heaters, HRSG boilers, transfer lines, process piping and pipelines. 30,000+ measurements per linear foot. Interactive 3D digital reports.',
+      'High-resolution ILI for fired heaters, HRSG boilers, transfer lines, process piping and pipelines. Up to 30,000+ measurements per linear foot. Interactive 3D digital reports.',
     to: '/inline-inspection',
     image: '/inline-inspection/hero.png',
     imageAlt: 'Inline UT inspection tool in pipeline'
@@ -107,7 +107,7 @@ const panes = [
 }
 
 .pane-description {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-muted);
   margin-bottom: 24px;
   flex: 1;
 }
