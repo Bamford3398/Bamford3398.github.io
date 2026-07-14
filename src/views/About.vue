@@ -1,6 +1,10 @@
 <template>
   <div class="about-page">
-    <HeroBackgroundLayout header-offset section-class="hero-section" image-placeholder>
+    <HeroBackgroundLayout
+      header-offset
+      section-class="hero-section"
+      image-src="/about/hero.png"
+    >
       <span class="hero-title-accent" aria-hidden="true"></span>
       <h1 class="hero-title">
         SPECIALIST INLINE INSPECTION.
@@ -8,7 +12,9 @@
       </h1>
 
       <p class="hero-lead">
-        WASP is a specialist intelligent pigging and integrity assessment company built around experienced inspection engineers, adaptable technology and practical reporting.", change it to "WASP is a specialist intelligent pigging and integrity assessment company based in Chester, United Kingdom. We arebuilt around experienced inspection engineers, adaptable technology and practical reporting.
+        WASP is a specialist intelligent pigging and integrity assessment company based in Chester,
+        United Kingdom. We are built around experienced inspection engineers, adaptable technology
+        and practical reporting.
       </p>
       <p class="hero-text">
         Our team has spent careers working across refining, petrochemical, power generation, pipeline
@@ -18,7 +24,7 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS YOUR NEEDS</router-link>
-        <router-link to="/inline-inspection" class="btn btn-secondary">OUR SERVICES</router-link>
+        <a href="/#services" class="btn btn-secondary">OUR SERVICES</a>
       </div>
 
       <template #after>
@@ -69,25 +75,6 @@
           <p class="about-objective-callout">
             Inspection data only has value when it supports the right engineering decision.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark about-what-we-do">
-      <div class="section-container">
-        <p class="eyebrow">WHAT WE DO</p>
-        <h2 class="section-heading">Inspection data with engineering context.</h2>
-        <span class="section-accent" aria-hidden="true"></span>
-        <p class="body-text about-what-we-do-intro">
-          WASP supports clients from initial inspection planning through to final reporting and
-          integrity assessment.
-        </p>
-        <div class="about-service-cards-grid">
-          <article v-for="card in whatWeDoCards" :key="card.title" class="about-service-card">
-            <img :src="card.icon" alt="" class="about-service-card-icon" aria-hidden="true" />
-            <h3 class="about-service-card-title">{{ card.title }}</h3>
-            <p class="about-service-card-description">{{ card.description }}</p>
-          </article>
         </div>
       </div>
     </section>
@@ -439,9 +426,37 @@ const teamMembers = [
   min-height: clamp(420px, 56vh, 620px);
 }
 
+.about-page > :deep(.hero-background) {
+  --image-overlap: min(140px, calc(var(--text-width) * 0.2));
+}
+
 .about-page > :deep(.hero-background .hero-image-wrap) {
   background-color: #0a0a0a;
-  margin-top: clamp(48px, 3rem + 1vw, 72px);
+  margin-top: clamp(24px, 1.5rem + 1vw, 48px);
+  align-self: stretch;
+  min-height: clamp(360px, 52vh, 560px);
+}
+
+.about-page > :deep(.hero-background .hero-image) {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(360px, 52vh, 560px);
+  object-fit: cover;
+  object-position: right center;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 8%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 8%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.about-page > :deep(.hero-background .hero-image-wrap::after) {
+  background:
+    linear-gradient(to right, #0a0a0a 0%, transparent 10%, transparent 94%, #0a0a0a 100%),
+    linear-gradient(to bottom, transparent 82%, rgba(10, 10, 10, 0.55) 94%, #0a0a0a 100%);
 }
 
 .feature-bar {
