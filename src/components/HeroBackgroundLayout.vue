@@ -246,30 +246,38 @@ defineProps({
   margin-left: auto;
   object-fit: contain;
   object-position: right top;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 62%,
-    rgba(0, 0, 0, 0.55) 78%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 62%,
-    rgba(0, 0, 0, 0.55) 78%,
-    transparent 100%
-  );
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 62%,
+      rgba(0, 0, 0, 0.55) 78%,
+      transparent 100%
+    ),
+    linear-gradient(to right, #000 0%, #000 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 62%,
+      rgba(0, 0, 0, 0.55) 78%,
+      transparent 100%
+    ),
+    linear-gradient(to right, #000 0%, #000 93%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .hero-background.home-hero .hero-image-wrap::after {
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(10, 10, 10, 0.35) 68%,
-    rgba(10, 10, 10, 0.75) 85%,
-    #0a0a0a 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(10, 10, 10, 0.35) 68%,
+      rgba(10, 10, 10, 0.75) 85%,
+      #0a0a0a 100%
+    ),
+    linear-gradient(to right, transparent 90%, rgba(10, 10, 10, 0.55) 96%, #0a0a0a 100%);
 }
 
 @media (max-width: 768px) {
