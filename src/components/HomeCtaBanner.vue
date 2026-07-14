@@ -7,8 +7,9 @@
           Send us your pipe details and we'll work with you to deliver the best inspection
           approach.
         </p>
-        <router-link to="/contact" class="home-cta-button">
+        <router-link to="/contact" class="home-cta-button btn-with-icon">
           DISCUSS AN INSPECTION
+          <BtnArrowIcon />
         </router-link>
       </div>
       <div class="home-cta-image-panel" aria-hidden="true">
@@ -21,6 +22,10 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import BtnArrowIcon from './icons/BtnArrowIcon.vue'
+</script>
 
 <style scoped>
 .home-cta-banner {

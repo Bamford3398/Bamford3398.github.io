@@ -11,7 +11,10 @@
         A patent pending, modular ILI platform built for pipework conventional tools can't inspect.
       </p>
       <div class="hero-actions">
-        <router-link to="/ultrasight" class="btn btn-primary">MEET ULTRASIGHT →</router-link>
+        <router-link to="/ultrasight" class="btn btn-primary btn-with-icon">
+          MEET ULTRASIGHT
+          <BtnArrowIcon />
+        </router-link>
       </div>
       <p class="home-ultrasight-specs">3–12” · untethered · bi-directional · ±0.1mm</p>
     </HeroBackgroundLayout>
@@ -20,6 +23,7 @@
 
 <script setup>
 import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
+import BtnArrowIcon from './icons/BtnArrowIcon.vue'
 </script>
 
 <style scoped>

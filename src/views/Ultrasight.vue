@@ -21,14 +21,18 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/contact" class="btn btn-primary">DISCUSS TOOL SUITABILITY</router-link>
+        <router-link to="/contact" class="btn btn-primary btn-with-icon">
+          DISCUSS TOOL SUITABILITY
+          <BtnArrowIcon />
+        </router-link>
         <a
           href="/ultrasight/UltraSight-Spec-Sheet.pdf"
-          class="btn btn-secondary"
+          class="btn btn-secondary btn-with-icon"
           target="_blank"
           rel="noopener noreferrer"
         >
           DOWNLOAD SPEC SHEET
+          <BtnDownloadIcon />
         </a>
       </div>
     </HeroBackgroundLayout>
@@ -243,7 +247,10 @@
             Send us your pipe details, drawings or inspection objective and we'll advise how
             UltraSight can be configured for the application.
           </p>
-          <router-link to="/contact" class="btn btn-primary">DISCUSS ULTRASIGHT &gt;</router-link>
+          <router-link to="/contact" class="btn btn-primary btn-with-icon">
+            DISCUSS ULTRASIGHT
+            <BtnArrowIcon />
+          </router-link>
         </div>
         <div class="cta-image-panel" aria-hidden="true">
           <img
@@ -259,6 +266,8 @@
 
 <script setup>
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
+import BtnDownloadIcon from '../components/icons/BtnDownloadIcon.vue'
 
 const modules = [
   {
@@ -732,14 +741,17 @@ const configRows = [
 }
 
 .stat-item {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .stat-icon {
   width: 48px;
   height: 48px;
   object-fit: contain;
-  margin: 0 auto 14px;
+  margin: 0 0 14px;
   display: block;
 }
 

@@ -6,16 +6,21 @@
       Specialist inline inspection for pipelines, fired heaters and process assets. WASP combines adaptable ultrasonic tooling, high-density data capture, AI-assisted review and digital reporting to help operators understand asset condition with confidence.
     </p>
     <div class="hero-actions">
-      <router-link to="/contact" class="btn btn-primary">
+      <router-link to="/contact" class="btn btn-primary btn-with-icon">
         DISCUSS YOUR NEEDS
+        <BtnArrowIcon />
       </router-link>
-      <a href="#services" class="btn btn-secondary">OUR SERVICES</a>
+      <a href="#services" class="btn btn-secondary btn-with-icon">
+        OUR SERVICES
+        <BtnArrowIcon />
+      </a>
     </div>
   </HeroBackgroundLayout>
 </template>
 
 <script setup>
 import HeroBackgroundLayout from './HeroBackgroundLayout.vue'
+import BtnArrowIcon from './icons/BtnArrowIcon.vue'
 </script>
 
 <style scoped>

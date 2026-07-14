@@ -23,8 +23,14 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/contact" class="btn btn-primary">DISCUSS YOUR NEEDS</router-link>
-        <a href="/#services" class="btn btn-secondary">OUR SERVICES</a>
+        <router-link to="/contact" class="btn btn-primary btn-with-icon">
+          DISCUSS YOUR NEEDS
+          <BtnArrowIcon />
+        </router-link>
+        <a href="/#services" class="btn btn-secondary btn-with-icon">
+          OUR SERVICES
+          <BtnArrowIcon />
+        </a>
       </div>
 
       <template #after>
@@ -178,8 +184,9 @@
             Send us your pipe details, drawings or inspection objective and we'll help define the
             right inspection and assessment approach.
           </p>
-          <router-link to="/contact" class="about-cta-button">
+          <router-link to="/contact" class="about-cta-button btn-with-icon">
             DISCUSS YOUR INSPECTION
+            <BtnArrowIcon />
           </router-link>
         </div>
         <div class="about-cta-image-panel" aria-hidden="true">
@@ -193,6 +200,7 @@
 <script setup>
 import { h } from 'vue'
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
 
 const iconProps = {
   viewBox: '0 0 64 64',
@@ -851,7 +859,10 @@ const teamMembers = [
 }
 
 .about-cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   align-self: flex-start;
   padding: 16px 32px;
   font-family: var(--font-body);

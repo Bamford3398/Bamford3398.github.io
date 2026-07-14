@@ -20,14 +20,18 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/contact" class="btn btn-primary">DISCUSS AN ASSESSMENT</router-link>
+        <router-link to="/contact" class="btn btn-primary btn-with-icon">
+          DISCUSS AN ASSESSMENT
+          <BtnArrowIcon />
+        </router-link>
         <a
           href="/integrity/wasp-integrity-brochure.pdf"
-          class="btn btn-secondary"
+          class="btn btn-secondary btn-with-icon"
           target="_blank"
           rel="noopener noreferrer"
         >
           DOWNLOAD OUR BROCHURE
+          <BtnDownloadIcon />
         </a>
       </div>
 
@@ -243,8 +247,9 @@
             Send us your inspection data, asset details or operating context and we'll advise how
             the findings can be assessed.
           </p>
-          <router-link to="/contact" class="integrity-cta-button">
+          <router-link to="/contact" class="integrity-cta-button btn-with-icon">
             DISCUSS AN INTEGRITY ASSESSMENT
+            <BtnArrowIcon />
           </router-link>
         </div>
         <div class="integrity-cta-image-panel" aria-hidden="true">
@@ -257,6 +262,8 @@
 
 <script setup>
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
+import BtnDownloadIcon from '../components/icons/BtnDownloadIcon.vue'
 
 const features = [
   {
@@ -1019,7 +1026,10 @@ const supportItems = [
 }
 
 .integrity-cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   align-self: flex-start;
   padding: 16px 32px;
   font-family: var(--font-body);

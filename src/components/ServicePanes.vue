@@ -18,7 +18,10 @@
         <div class="pane-body">
           <h3 class="pane-title">{{ pane.title }}</h3>
           <p class="pane-description">{{ pane.description }}</p>
-          <router-link :to="pane.to" class="pane-link">LEARN MORE &gt;</router-link>
+          <router-link :to="pane.to" class="pane-link btn-with-icon">
+            LEARN MORE
+            <BtnArrowIcon />
+          </router-link>
         </div>
       </article>
     </div>
@@ -26,6 +29,8 @@
 </template>
 
 <script setup>
+import BtnArrowIcon from './icons/BtnArrowIcon.vue'
+
 const panes = [
   {
     id: 'inline-ut',
@@ -113,6 +118,9 @@ const panes = [
 }
 
 .pane-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #e7c73a;
   transition: color 0.2s ease;
   align-self: flex-start;

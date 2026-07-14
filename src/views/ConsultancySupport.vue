@@ -22,7 +22,10 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/contact" class="btn btn-primary">DISCUSS A REQUIREMENT</router-link>
+        <router-link to="/contact" class="btn btn-primary btn-with-icon">
+          DISCUSS A REQUIREMENT
+          <BtnArrowIcon />
+        </router-link>
       </div>
     </HeroBackgroundLayout>
 
@@ -140,7 +143,10 @@
             Planning, cleaning management, software or equipment — tell us the requirement and we'll
             recommend the practical approach.
           </p>
-          <router-link to="/contact" class="consultancy-cta-button">Discuss a requirement</router-link>
+          <router-link to="/contact" class="consultancy-cta-button btn-with-icon">
+            Discuss a requirement
+            <BtnArrowIcon />
+          </router-link>
         </div>
         <div class="consultancy-cta-image-panel" aria-hidden="true">
           <img src="/home-cta-refinery.png" alt="" class="consultancy-cta-image" />
@@ -152,6 +158,7 @@
 
 <script setup>
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
 
 const consultancyItems = [
   'Inspection planning and feasibility',
@@ -568,7 +575,10 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 }
 
 .consultancy-cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   align-self: flex-start;
   padding: 16px 32px;
   background-color: #0a0a0a;

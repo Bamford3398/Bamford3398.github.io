@@ -583,7 +583,9 @@ p.hero-text {
 .cta-button,
 .submit-button,
 .home-cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-body);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-button);
@@ -616,6 +618,49 @@ p.hero-text {
 
 .btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  vertical-align: middle;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+
+.btn-icon-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.btn-primary.btn-with-icon .btn-icon {
+  filter: brightness(0);
+}
+
+.btn-secondary.btn-with-icon .btn-icon {
+  filter: brightness(0) invert(1);
+}
+
+.home-cta-button.btn-with-icon,
+.about-cta-button.btn-with-icon,
+.integrity-cta-button.btn-with-icon,
+.consultancy-cta-button.btn-with-icon,
+.camera-cta-button.btn-with-icon,
+.other-services-cta-button.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .btn-secondary--dark {

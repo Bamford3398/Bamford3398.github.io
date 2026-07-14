@@ -18,14 +18,18 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/ultrasight" class="btn btn-primary">OUR ULTRASIGHT TOOL</router-link>
+        <router-link to="/ultrasight" class="btn btn-primary btn-with-icon">
+          OUR ULTRASIGHT TOOL
+          <BtnArrowIcon />
+        </router-link>
         <a
           href="/inline-inspection/wasp-intelligent-pigging-brochure.pdf"
-          class="btn btn-secondary"
+          class="btn btn-secondary btn-with-icon"
           target="_blank"
           rel="noopener noreferrer"
         >
           DOWNLOAD BROCHURE
+          <BtnDownloadIcon />
         </a>
       </div>
 
@@ -90,7 +94,7 @@
           </p>
         </div>
         <img
-          src="/inline-inspection/c-scan-interface.png"
+          src="/inline-inspection/c-scan-interface2.png"
           alt="C-scan inspection software interface showing pipe wall thickness data"
           class="uncertainty-image"
         />
@@ -171,6 +175,8 @@
 
 <script setup>
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
+import BtnDownloadIcon from '../components/icons/BtnDownloadIcon.vue'
 const features = [
   { lines: ['WALL THICKNESS', 'DATA'], icon: '/inline-inspection/wall-thickness-data.png' },
   { lines: ['ANOMALY', 'DETECTION'], icon: '/inline-inspection/ai-anomaly-detection.png' },

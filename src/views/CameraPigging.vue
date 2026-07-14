@@ -22,14 +22,18 @@
       </p>
 
       <div class="hero-actions">
-        <router-link to="/contact" class="btn btn-primary">DISCUSS CAMERA PIGGING</router-link>
+        <router-link to="/contact" class="btn btn-primary btn-with-icon">
+          DISCUSS CAMERA PIGGING
+          <BtnArrowIcon />
+        </router-link>
         <a
           href="/camera-pigging/wasp-camera-pigging.pdf"
-          class="btn btn-secondary"
+          class="btn btn-secondary btn-with-icon"
           target="_blank"
           rel="noopener noreferrer"
         >
-          SPEC SHEET
+          DOWNLOAD SPEC SHEET
+          <BtnDownloadIcon />
         </a>
       </div>
     </HeroBackgroundLayout>
@@ -146,7 +150,10 @@
             Camera pigging answers “what is in there” — UltraSight answers “how thick is the wall.”
             Many inspection programmes run both.
           </p>
-          <router-link to="/ultrasight" class="btn btn-primary pairs-cta">Meet UltraSight</router-link>
+          <router-link to="/ultrasight" class="btn btn-primary pairs-cta btn-with-icon">
+            MEET ULTRASIGHT
+            <BtnArrowIcon />
+          </router-link>
         </div>
         <img
           src="/ultrasight/modular-tool.png"
@@ -165,7 +172,10 @@
             Send us the asset details and we'll advise whether camera pigging, ultrasonic inspection
             or both is the right approach.
           </p>
-          <router-link to="/contact" class="camera-cta-button">Discuss camera pigging</router-link>
+          <router-link to="/contact" class="camera-cta-button btn-with-icon">
+            Discuss camera pigging
+            <BtnArrowIcon />
+          </router-link>
         </div>
         <div class="camera-cta-image-panel" aria-hidden="true">
           <img src="/home-cta-refinery.png" alt="" class="camera-cta-image" />
@@ -177,6 +187,8 @@
 
 <script setup>
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
+import BtnDownloadIcon from '../components/icons/BtnDownloadIcon.vue'
 
 const platforms = [
   {
@@ -712,7 +724,10 @@ const whenUsedItems = [
 }
 
 .camera-cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   align-self: flex-start;
   padding: 16px 32px;
   background-color: #0a0a0a;

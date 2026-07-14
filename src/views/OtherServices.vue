@@ -18,7 +18,7 @@
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary btn-with-icon">
           Discuss a service requirement
-          <ArrowIcon class="btn-icon" />
+          <BtnArrowIcon />
         </router-link>
         <a
           href="/camera-pigging/wasp-camera-pigging.pdf"
@@ -27,7 +27,7 @@
           rel="noopener noreferrer"
         >
           Download camera pig specification
-          <img src="/other-services/icons/download.png" alt="" class="btn-icon" aria-hidden="true" />
+          <BtnDownloadIcon />
         </a>
       </div>
     </HeroBackgroundLayout>
@@ -126,14 +126,14 @@
                 rel="noopener noreferrer"
               >
                 Download camera pig specification
-                <img src="/other-services/icons/download.png" alt="" class="btn-icon" aria-hidden="true" />
+                <BtnDownloadIcon />
               </a>
             </aside>
           </div>
 
           <router-link to="/contact" class="btn btn-primary btn-with-icon service-panel-cta">
             Discuss cleaning requirements
-            <ArrowIcon class="btn-icon" />
+            <BtnArrowIcon />
           </router-link>
         </div>
 
@@ -195,11 +195,11 @@
                 rel="noopener noreferrer"
               >
                 Download camera pig spec sheet
-                <img src="/other-services/icons/download.png" alt="" class="btn-icon" aria-hidden="true" />
+                <BtnDownloadIcon />
               </a>
               <router-link to="/contact" class="btn btn-secondary btn-with-icon">
                 Discuss camera pigging
-                <ArrowIcon class="btn-icon" />
+                <BtnArrowIcon />
               </router-link>
             </div>
           </div>
@@ -286,7 +286,7 @@
           </p>
           <router-link to="/contact" class="other-services-cta-button btn-with-icon">
             Contact WASP
-            <ArrowIcon class="btn-icon other-services-cta-arrow" />
+            <BtnArrowIcon class="other-services-cta-arrow" />
           </router-link>
         </div>
         <div class="other-services-cta-image-panel" aria-hidden="true">
@@ -298,34 +298,10 @@
 </template>
 
 <script setup>
-import { h, ref } from 'vue'
+import { ref } from 'vue'
 import HeroBackgroundLayout from '../components/HeroBackgroundLayout.vue'
-
-const ArrowIcon = {
-  render() {
-    return h(
-      'svg',
-      {
-        class: 'btn-icon-svg',
-        width: 18,
-        height: 18,
-        viewBox: '0 0 24 24',
-        fill: 'none',
-        xmlns: 'http://www.w3.org/2000/svg',
-        'aria-hidden': 'true'
-      },
-      [
-        h('path', {
-          d: 'M5 12h14M13 6l6 6-6 6',
-          stroke: 'currentColor',
-          'stroke-width': '2.2',
-          'stroke-linecap': 'round',
-          'stroke-linejoin': 'round'
-        })
-      ]
-    )
-  }
-}
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
+import BtnDownloadIcon from '../components/icons/BtnDownloadIcon.vue'
 
 const activeTab = ref('mechanical')
 
@@ -550,12 +526,14 @@ const processSteps = [
   height: 18px;
   flex-shrink: 0;
   object-fit: contain;
+  display: block;
 }
 
 .btn-icon-svg {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  display: block;
 }
 
 .btn-primary.btn-with-icon {
@@ -780,6 +758,9 @@ const processSteps = [
 
 .other-services-cta-button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   align-self: flex-start;
   padding: 16px 28px;
   font-family: var(--font-body);
@@ -801,11 +782,11 @@ const processSteps = [
 }
 
 .other-services-cta-arrow {
-  filter: brightness(0) invert(1);
+  color: inherit;
 }
 
 .other-services-cta-button:hover .other-services-cta-arrow {
-  filter: brightness(0);
+  color: inherit;
 }
 
 .other-services-cta-image-panel {

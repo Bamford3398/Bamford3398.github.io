@@ -21,7 +21,7 @@
           <div class="hero-actions">
             <router-link to="/contact" class="btn btn-primary btn-with-icon">
               DISCUSS A TECHNICAL REQUIREMENT
-              <ArrowIcon class="btn-icon" />
+              <BtnArrowIcon />
             </router-link>
           </div>
         </div>
@@ -191,7 +191,7 @@
           </p>
           <router-link to="/contact" class="home-cta-button btn-with-icon">
             Speak to our technical team
-            <ArrowIcon class="btn-icon" />
+            <BtnArrowIcon />
           </router-link>
         </div>
       </div>
@@ -200,33 +200,7 @@
 </template>
 
 <script setup>
-import { h } from 'vue'
-
-const ArrowIcon = {
-  render() {
-    return h(
-      'svg',
-      {
-        class: 'btn-icon-svg',
-        width: 18,
-        height: 18,
-        viewBox: '0 0 24 24',
-        fill: 'none',
-        xmlns: 'http://www.w3.org/2000/svg',
-        'aria-hidden': 'true'
-      },
-      [
-        h('path', {
-          d: 'M5 12h14M13 6l6 6-6 6',
-          stroke: 'currentColor',
-          'stroke-width': '2.2',
-          'stroke-linecap': 'round',
-          'stroke-linejoin': 'round'
-        })
-      ]
-    )
-  }
-}
+import BtnArrowIcon from '../components/icons/BtnArrowIcon.vue'
 
 const supportBullets = [
   'Inspection planning and feasibility',
