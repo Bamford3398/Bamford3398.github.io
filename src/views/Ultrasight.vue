@@ -13,7 +13,7 @@
       </h1>
 
       <p class="hero-lead">
-        A patented, modular inline inspection platform designed to adapt to challenging pipework,
+        A patent pending, modular inline inspection platform designed to adapt to challenging pipework,
         complex geometries and demanding inspection requirements.
       </p>
       <p class="hero-body">
@@ -22,7 +22,14 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS TOOL SUITABILITY</router-link>
-        <a href="#capabilities" class="btn btn-secondary">VIEW CAPABILITIES</a>
+        <a
+          href="/ultrasight/UltraSight-Spec-Sheet.pdf"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DOWNLOAD SPEC SHEET
+        </a>
       </div>
     </HeroBackgroundLayout>
 
@@ -308,7 +315,7 @@ const technicalSpecs = [
   { label: 'Deployment', value: 'Untethered' },
   { label: 'Direction', value: 'Bi-directional' },
   { label: 'Bend capability', value: 'Short-radius 1D bends' },
-  { label: 'Tube compatibility', value: 'Finned and studded tubes, where suitable' },
+  { label: 'Pipe compatibility', value: 'Finned and studded tubes, where suitable' },
   {
     label: 'Drive / centring',
     value: 'Brushes, polymer discs or combined configuration'
@@ -476,19 +483,19 @@ const configRows = [
   object-fit: contain;
   object-position: right top;
   -webkit-mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   mask-composite: intersect;
 }
 
 .ultrasight-page > :deep(.hero-background .hero-image-wrap::after) {
   background:
-    linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.45) 90%, #0a0a0a 100%),
-    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
+    linear-gradient(to right, #0a0a0a 0%, transparent 3%, transparent 97%, #0a0a0a 100%),
+    linear-gradient(to bottom, #0a0a0a 0%, transparent 4%, transparent 94%, #0a0a0a 100%);
 }
 
 @media (max-width: 768px) {
@@ -508,8 +515,14 @@ const configRows = [
     min-height: 0;
     max-height: min(52vh, 420px);
     object-position: top center;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    mask-composite: intersect;
   }
 }
 

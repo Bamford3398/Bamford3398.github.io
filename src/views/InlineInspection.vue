@@ -19,7 +19,14 @@
 
       <div class="hero-actions">
         <router-link to="/ultrasight" class="btn btn-primary">OUR ULTRASIGHT TOOL</router-link>
-        <a href="#" class="btn btn-secondary">DOWNLOAD BROCHURE</a>
+        <a
+          href="/ultrasight/UltraSight-Spec-Sheet.pdf"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DOWNLOAD BROCHURE
+        </a>
       </div>
 
       <template #after>
@@ -50,7 +57,6 @@
             </div>
             <div class="application-body">
               <h3 class="application-title">{{ app.title }}</h3>
-              <p class="application-description">{{ app.description }}</p>
             </div>
           </article>
         </div>
@@ -182,33 +188,23 @@ const features = [
 
 const applications = [
   {
-    title: 'Fired heaters',
-    description:
-      'Inspection of heater coils, bends and associated tubing where remaining wall thickness, localised degradation or fouling-related concerns need to be understood.',
+    title: 'Fired Heaters',
     icon: '/inline-inspection/applications/fired-heaters.png'
   },
   {
-    title: 'Transfer lines',
-    description:
-      'Inspection support for process and utility transfer lines where external inspection access may be limited or where internal condition is uncertain.',
+    title: 'Transfer Lines',
     icon: '/inline-inspection/applications/transfer-lines.png'
   },
   {
-    title: 'HRSG boilers',
-    description:
-      'Condition assessment support for boiler tubing and related assets where wall thickness information is required.',
+    title: 'HRSG Boilers',
     icon: '/inline-inspection/applications/hrsg-boilers.png'
   },
   {
-    title: 'Process piping',
-    description:
-      'Inspection of critical plant piping, spools and process lines to support maintenance planning and integrity review.',
+    title: 'Process Piping',
     icon: '/inline-inspection/applications/process-piping.png'
   },
   {
     title: 'Pipelines',
-    description:
-      'Inline inspection data for pipeline sections where anomaly detection, wall thickness measurement and practical integrity reporting are required.',
     icon: '/inline-inspection/applications/pipelines.png'
   }
 ]
@@ -358,19 +354,19 @@ const deliverablesRight = [
   object-fit: contain;
   object-position: right top;
   -webkit-mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
   mask-composite: intersect;
 }
 
 .inline-inspection-page > :deep(.hero-background .hero-image-wrap::after) {
   background:
-    linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.45) 90%, #0a0a0a 100%),
-    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
+    linear-gradient(to right, #0a0a0a 0%, transparent 3%, transparent 97%, #0a0a0a 100%),
+    linear-gradient(to bottom, transparent 88%, rgba(10, 10, 10, 0.5) 96%, #0a0a0a 100%);
 }
 
 @media (max-width: 768px) {
@@ -390,8 +386,14 @@ const deliverablesRight = [
     min-height: 0;
     max-height: min(52vh, 420px);
     object-position: top center;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
+    mask-composite: intersect;
   }
 }
 
@@ -528,11 +530,6 @@ const deliverablesRight = [
 
 .application-title {
   color: #e7c73a;
-  margin-bottom: 10px;
-}
-
-.application-description {
-  color: var(--color-text-muted);
   margin: 0;
 }
 

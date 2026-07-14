@@ -8,8 +8,7 @@
       </h1>
 
       <p class="hero-lead">
-        WASP is a specialist intelligent pigging and integrity assessment company built around
-        experienced inspection engineers, adaptable technology and practical reporting.
+        WASP is a specialist intelligent pigging and integrity assessment company built around experienced inspection engineers, adaptable technology and practical reporting.", change it to "WASP is a specialist intelligent pigging and integrity assessment company based in Chester, United Kingdom. We arebuilt around experienced inspection engineers, adaptable technology and practical reporting.
       </p>
       <p class="hero-text">
         Our team has spent careers working across refining, petrochemical, power generation, pipeline

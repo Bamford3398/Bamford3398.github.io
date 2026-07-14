@@ -31,14 +31,16 @@
 .home-cta-layout {
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(0, 1.15fr);
+  height: 360px;
   min-height: 360px;
+  max-height: 360px;
 }
 
 .home-cta-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 64px 48px 64px max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
+  padding: 48px 48px 48px max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2));
   max-width: 620px;
   position: relative;
   z-index: 2;
@@ -83,7 +85,9 @@
 @media (max-width: 900px) {
   .home-cta-layout {
     grid-template-columns: 1fr;
+    height: auto;
     min-height: 0;
+    max-height: none;
   }
 
   .home-cta-content {

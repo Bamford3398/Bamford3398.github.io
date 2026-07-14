@@ -40,15 +40,6 @@
           </ul>
         </nav>
 
-        <nav class="footer-column" aria-label="Resources">
-          <h2 class="footer-heading">Resources</h2>
-          <ul class="footer-links">
-            <li v-for="link in resourceLinks" :key="link.label">
-              <router-link :to="link.to" class="footer-link">{{ link.label }}</router-link>
-            </li>
-          </ul>
-        </nav>
-
         <div class="footer-column footer-contact">
           <h2 class="footer-heading">Contact</h2>
           <address class="footer-address">
@@ -107,7 +98,6 @@
           <span class="footer-legal-sep" aria-hidden="true">|</span>
           <a href="#" class="footer-legal-link">Sitemap</a>
         </p>
-        <p class="footer-tagline-bottom">PREPARE. INSPECT. PROTECT.</p>
       </div>
     </div>
   </footer>
@@ -129,14 +119,7 @@ const serviceLinks = [
 const aboutLinks = [
   { label: 'Who We Are', to: '/about' },
   { label: 'Our Team', to: '/about' },
-  { label: 'Why WASP', to: '/about' },
-  { label: 'Careers', to: '/contact' }
-]
-
-const resourceLinks = [
-  { label: 'Case Studies', to: '/contact' },
-  { label: 'News & Insights', to: '/contact' },
-  { label: 'Downloads', to: '/contact' }
+  { label: 'Why WASP', to: '/about' }
 ]
 
 const iconProps = {
@@ -225,7 +208,7 @@ const LinkedInIcon = {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 1.35fr) repeat(4, minmax(0, 1fr)) minmax(220px, 1.15fr);
+  grid-template-columns: minmax(220px, 1.35fr) repeat(3, minmax(0, 1fr)) minmax(220px, 1.15fr);
   gap: 32px 28px;
   align-items: start;
 }

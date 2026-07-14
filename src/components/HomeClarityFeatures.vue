@@ -69,6 +69,7 @@ const features = [
 
 .clarity-feature-heading {
   margin: 0 0 var(--gap-heading-to-accent);
+  min-height: calc(var(--text-pane-title) * var(--leading-normal) * 3);
   font-family: var(--font-heading);
   font-size: var(--text-pane-title);
   font-weight: var(--font-weight-bold);
@@ -126,6 +127,10 @@ const features = [
   .clarity-feature:nth-child(2n + 1) {
     border-left: none;
     padding: 20px 0;
+  }
+
+  .clarity-feature-heading {
+    min-height: 0;
   }
 
   .clarity-feature + .clarity-feature,

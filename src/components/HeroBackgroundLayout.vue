@@ -67,8 +67,8 @@ defineProps({
 
 <style scoped>
 .hero-background {
-  --text-gutter: max(var(--site-gutter), calc((100vw - var(--site-max-width)) / 2 + var(--site-gutter)));
-  --text-width: min(700px, calc(100vw - 2 * var(--text-gutter)));
+  --text-gutter: var(--site-gutter);
+  --text-width: min(680px, calc(100% - 2 * var(--site-gutter)));
   --image-overlap: min(288px, calc(var(--text-width) * 0.42));
   --image-start: calc(var(--text-gutter) + var(--text-width) - var(--image-overlap));
 
@@ -85,6 +85,9 @@ defineProps({
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
 }
 
 .hero-layout::before {
@@ -113,7 +116,7 @@ defineProps({
   grid-row: 1;
   align-self: start;
   justify-self: end;
-  width: calc(100vw - var(--image-start));
+  width: calc(100% - var(--image-start));
   line-height: 0;
   position: relative;
   z-index: 1;
@@ -124,8 +127,8 @@ defineProps({
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, transparent 55%, rgba(10, 10, 10, 0.6) 80%, #0a0a0a 100%),
-    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
+    linear-gradient(to right, #0a0a0a 0%, transparent 3%, transparent 97%, #0a0a0a 100%),
+    linear-gradient(to bottom, #0a0a0a 0%, transparent 4%, transparent 94%, #0a0a0a 100%);
   pointer-events: none;
 }
 
@@ -137,12 +140,12 @@ defineProps({
   object-position: right top;
   pointer-events: none;
   -webkit-mask-image:
-    linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   mask-composite: intersect;
 }
 
@@ -208,14 +211,14 @@ defineProps({
   display: none;
 }
 
-/* Homepage hero — 800px image, top-right, content layers above */
+/* Homepage hero — contained layout, image top-right within max width */
 .hero-background.home-hero {
   --image-overlap: min(327px, calc(var(--text-width) * 0.465));
-  overflow: visible;
+  overflow: hidden;
 }
 
 .hero-background.home-hero .hero-layout {
-  position: static;
+  position: relative;
 }
 
 .hero-background.home-hero .hero-copy {
@@ -228,12 +231,13 @@ defineProps({
   position: absolute;
   top: 0;
   right: 0;
-  width: min(800px, calc(100vw - var(--site-gutter)));
+  width: min(800px, calc(100% - var(--text-gutter)));
   z-index: 1;
   grid-column: unset;
   grid-row: unset;
   align-self: unset;
   justify-self: unset;
+  overflow: hidden;
 }
 
 .hero-background.home-hero .hero-image {
@@ -242,12 +246,36 @@ defineProps({
   margin-left: auto;
   object-fit: contain;
   object-position: right top;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 62%,
+    rgba(0, 0, 0, 0.55) 78%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 62%,
+    rgba(0, 0, 0, 0.55) 78%,
+    transparent 100%
+  );
+}
+
+.hero-background.home-hero .hero-image-wrap::after {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(10, 10, 10, 0.35) 68%,
+    rgba(10, 10, 10, 0.75) 85%,
+    #0a0a0a 100%
+  );
 }
 
 @media (max-width: 768px) {
   .hero-background {
     --text-gutter: var(--site-gutter);
-    --text-width: calc(100vw - 2 * var(--site-gutter));
+    --text-width: calc(100% - 2 * var(--site-gutter));
     --image-overlap: 0;
     --image-start: var(--site-gutter);
   }
@@ -309,7 +337,9 @@ defineProps({
   }
 
   .hero-image-wrap::after {
-    background: linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.55) 90%, #0a0a0a 100%);
+    background:
+      linear-gradient(to right, #0a0a0a 0%, transparent 4%, transparent 96%, #0a0a0a 100%),
+      linear-gradient(to bottom, #0a0a0a 0%, transparent 4%, transparent 94%, #0a0a0a 100%);
   }
 
   .hero-image {
@@ -317,8 +347,14 @@ defineProps({
     max-height: min(52vh, 420px);
     object-fit: contain;
     object-position: center center;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    mask-composite: intersect;
   }
 
   .hero-image-placeholder {

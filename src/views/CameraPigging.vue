@@ -39,9 +39,21 @@
         </p>
 
         <div class="platforms-grid">
-          <article v-for="platform in platforms" :key="platform.title" class="platform-card">
-            <div class="platform-media">
-              <img :src="platform.image" :alt="platform.imageAlt" class="platform-image" decoding="async" />
+          <article
+            v-for="platform in platforms"
+            :key="platform.title"
+            class="platform-card"
+            :class="{ 'platform-card--text-only': !platform.images?.length }"
+          >
+            <div v-if="platform.images?.length" class="platform-media">
+              <img
+                v-for="image in platform.images"
+                :key="image.src"
+                :src="image.src"
+                :alt="image.alt"
+                class="platform-image"
+                decoding="async"
+              />
             </div>
             <div class="platform-body">
               <h3 class="platform-title">{{ platform.title }}</h3>
@@ -164,8 +176,12 @@ const platforms = [
     title: 'RVIX 4K — Advanced Optical Pig',
     tagline:
       'Miniaturised and highly manoeuvrable — reaches lines conventional camera tools cannot.',
-    image: '/camera-pigging/rvix-4k.png',
-    imageAlt: 'RVIX 4K camera pig',
+    images: [
+      {
+        src: '/camera-pigging/optical-still.png',
+        alt: 'Interior pipe view captured by advanced optical pig'
+      }
+    ],
     specs: [
       '4K up to 240fps (720P) · 2.7K / 1080P / 720P',
       '2.5–12 inch (63–300mm) diameter',
@@ -178,8 +194,12 @@ const platforms = [
   {
     title: 'RVIX-VR — Virtual Reality Pig',
     tagline: '206° immersive VR review — the engineer is, in effect, inside the pipe.',
-    image: '/camera-pigging/rvix-vr.png',
-    imageAlt: 'RVIX-VR camera pig',
+    images: [
+      {
+        src: '/camera-pigging/rvix-4k.png',
+        alt: 'RVIX-VR camera pig'
+      }
+    ],
     specs: [
       '206° VR 4K field of view',
       'Up to 36 inch (900mm) diameter · 12 hrs run time',
@@ -230,11 +250,11 @@ const capabilities = [
 const proofStills = [
   {
     image: '/camera-pigging/still-bore.png',
-    alt: 'Camera pig footage — concentric view down the pipe bore'
+    alt: 'Camera pig footage — view looking down the pipe bore'
   },
   {
     image: '/camera-pigging/still-travel.png',
-    alt: 'Camera pig footage taken while travelling through the line'
+    alt: 'Camera pig footage — close detail of the internal pipe surface'
   }
 ]
 
@@ -264,7 +284,7 @@ const whenUsedItems = [
 }
 
 .camera-pigging-page > :deep(.hero-background) {
-  --text-width: min(680px, calc(100vw - 2 * var(--text-gutter)));
+  --text-width: min(680px, calc(100% - 2 * var(--text-gutter)));
   --image-overlap: min(280px, calc(var(--text-width) * 0.41));
 }
 
@@ -297,19 +317,19 @@ const whenUsedItems = [
   object-fit: contain;
   object-position: center top;
   -webkit-mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   mask-composite: intersect;
 }
 
 .camera-pigging-page > :deep(.hero-background .hero-image-wrap::after) {
   background:
-    linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.45) 90%, #0a0a0a 100%),
-    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
+    linear-gradient(to right, #0a0a0a 0%, transparent 3%, transparent 97%, #0a0a0a 100%),
+    linear-gradient(to bottom, #0a0a0a 0%, transparent 4%, transparent 94%, #0a0a0a 100%);
 }
 
 .hero-title {
@@ -360,8 +380,14 @@ const whenUsedItems = [
     max-width: min(100%, 540px);
     margin-inline: auto;
     object-position: top center;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    mask-composite: intersect;
   }
 }
 
@@ -417,8 +443,15 @@ const whenUsedItems = [
   border-radius: 10px;
 }
 
+.platform-card--text-only {
+  grid-template-columns: 1fr;
+}
+
 .platform-media {
   align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .platform-image {

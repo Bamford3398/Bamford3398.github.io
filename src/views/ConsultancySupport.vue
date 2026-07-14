@@ -82,8 +82,7 @@
             <h3 class="card-title">Flowsense — decoking run monitoring</h3>
             <p class="product-name">WASP-built pressure &amp; flow tracking</p>
             <p class="card-text">
-              Flowsense tracks pressure and flow through decoking runs — live visibility of pig
-              behaviour and run progress.
+              Flowsense tracks pressure and flow through decoking runs — live visibility of pig behaviour and run progress." - change to "Flowsense tracks pressure and flow through all pigging runs, whether mechanical or ILI. Flowsense provised live visibility of pig behaviour and run progress.
             </p>
             <p class="proof-line">Already in commercial use by other pigging companies.</p>
           </article>
@@ -193,8 +192,8 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 }
 
 .consultancy-support-page > :deep(.hero-background) {
-  --text-width: min(680px, calc(100vw - 2 * var(--text-gutter)));
-  --image-overlap: min(280px, calc(var(--text-width) * 0.41));
+  --text-width: min(680px, calc(100% - 2 * var(--text-gutter)));
+  --image-overlap: min(96px, calc(var(--text-width) * 0.14));
 }
 
 .consultancy-support-page > :deep(.hero-background .hero-layout > .hero-copy) {
@@ -207,7 +206,7 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
 
 .consultancy-support-page > :deep(.hero-background .hero-image-wrap) {
   align-self: stretch;
-  width: calc(100vw - var(--image-start) - 200px);
+  width: calc(100% - var(--image-start));
   margin-top: 0;
   min-height: clamp(380px, 56vh, 580px);
 }
@@ -221,19 +220,19 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
   object-fit: cover;
   object-position: right top;
   -webkit-mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.6) 18%, #000 28%);
+    linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
   mask-composite: intersect;
 }
 
 .consultancy-support-page > :deep(.hero-background .hero-image-wrap::after) {
   background:
-    linear-gradient(to bottom, transparent 72%, rgba(10, 10, 10, 0.45) 90%, #0a0a0a 100%),
-    linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.15) 8%, transparent 20%);
+    linear-gradient(to right, #0a0a0a 0%, transparent 3%, transparent 97%, #0a0a0a 100%),
+    linear-gradient(to bottom, #0a0a0a 0%, transparent 4%, transparent 94%, #0a0a0a 100%);
 }
 
 .consultancy-support-page .eyebrow {
@@ -288,8 +287,14 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
     max-height: min(52vh, 420px);
     object-fit: cover;
     object-position: top center;
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+    mask-composite: intersect;
   }
 }
 

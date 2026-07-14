@@ -13,7 +13,7 @@
       </h1>
 
       <p class="hero-lead">
-        Level 1, 2 and 3 Fitness for Service assessments to API 579-1 / ASME FFS-1 - a clear, defensible answer on ageing or damaged equipment: run, repair, or replace.”
+        Level 1, 2 and 3 Fitness for Service assessments to API 579-1 / ASME FFS-1 - a clear, defensible answer on ageing or damaged equipment: run, repair, or replace.
       </p>
       <p class="hero-text">
         Inspection tells you what condition your asset is in. Integrity assessment tells you what to do about it. WASP assesses whether ageing or damaged pressure equipment, piping and pipelines are fit for continued operation — and on what terms — backed by full engineering justification.
@@ -500,32 +500,56 @@ const supportItems = [
 }
 
 .integrity-page > :deep(.hero-background .hero-layout) {
-  min-height: clamp(420px, 56vh, 620px);
+  min-height: clamp(420px, 50vh, 560px);
+}
+
+.integrity-page > :deep(.hero-background) {
+  --image-overlap: min(120px, calc(var(--text-width) * 0.18));
+}
+
+.integrity-page > :deep(.hero-background .hero-layout::before) {
+  width: calc(var(--text-gutter) + var(--text-width) + var(--image-overlap) * 0.2);
+  background: linear-gradient(
+    to right,
+    #0a0a0a 0%,
+    #0a0a0a 62%,
+    rgba(10, 10, 10, 0.45) 85%,
+    transparent 100%
+  );
+}
+
+.integrity-page > :deep(.hero-background .hero-copy::before) {
+  right: calc(-1 * var(--image-overlap) * 0.15);
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.72) 0%,
+    rgba(10, 10, 10, 0.28) 70%,
+    transparent 100%
+  );
 }
 
 .integrity-page > :deep(.hero-background .hero-image-wrap) {
   background-color: #0a0a0a;
-  margin-top: clamp(48px, 3rem + 1vw, 72px);
+  margin-top: clamp(32px, 2rem + 1vw, 56px);
+  align-self: center;
+  max-width: 1024px;
 }
 
 .integrity-page > :deep(.hero-background .hero-image) {
-  min-height: clamp(380px, 56vh, 580px);
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-width: 1024px;
+  max-height: none;
   object-fit: contain;
-  object-position: right top;
-  -webkit-mask-image:
-    linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.45) 5%, #000 12%, #000 84%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 8%, rgba(0, 0, 0, 0.75) 18%, #000 30%, #000 96%, rgba(0, 0, 0, 0.5) 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.45) 5%, #000 12%, #000 84%, transparent 100%),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 8%, rgba(0, 0, 0, 0.75) 18%, #000 30%, #000 96%, rgba(0, 0, 0, 0.5) 100%);
-  mask-composite: intersect;
+  object-position: right center;
+  image-rendering: auto;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .integrity-page > :deep(.hero-background .hero-image-wrap::after) {
-  background:
-    linear-gradient(to bottom, #0a0a0a 0%, rgba(10, 10, 10, 0.55) 5%, transparent 14%, transparent 68%, rgba(10, 10, 10, 0.45) 88%, #0a0a0a 100%),
-    linear-gradient(to right, #0a0a0a 0%, rgba(10, 10, 10, 0.8) 7%, rgba(10, 10, 10, 0.35) 16%, transparent 30%);
+  background: linear-gradient(to bottom, transparent 78%, rgba(10, 10, 10, 0.45) 92%, #0a0a0a 100%);
 }
 
 @media (max-width: 768px) {
@@ -546,31 +570,11 @@ const supportItems = [
 
   .integrity-page > :deep(.hero-background .hero-image) {
     min-height: 0;
-    width: 118%;
-    max-width: 118%;
-    object-fit: cover;
-    object-position: 68% 42%;
-    max-height: min(50vh, 360px);
-    -webkit-mask-image:
-      linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 5%, #000 14%, #000 84%, transparent 100%),
-      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 6%, #000 14%, #000 86%, rgba(0, 0, 0, 0.25) 94%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 5%, #000 14%, #000 84%, transparent 100%),
-      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 6%, #000 14%, #000 86%, rgba(0, 0, 0, 0.25) 94%, transparent 100%);
-    mask-composite: intersect;
-  }
-
-  .integrity-page > :deep(.hero-background .hero-image-wrap::after) {
-    background: linear-gradient(
-      to bottom,
-      #0a0a0a 0%,
-      rgba(10, 10, 10, 0.75) 6%,
-      transparent 16%,
-      transparent 72%,
-      rgba(10, 10, 10, 0.55) 90%,
-      #0a0a0a 100%
-    );
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center center;
+    max-height: min(52vh, 420px);
   }
 }
 
@@ -944,6 +948,8 @@ const supportItems = [
 .support-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 16px;
 }
 
@@ -951,6 +957,7 @@ const supportItems = [
   width: 48px;
   height: 48px;
   object-fit: contain;
+  margin-inline: auto;
 }
 
 .support-title {
