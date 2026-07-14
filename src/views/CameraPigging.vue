@@ -660,22 +660,23 @@ const whenUsedItems = [
 
 .pairs-section {
   border-top: 3px solid #e7c73a;
+  padding-block: 20px;
 }
 
 .pairs-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 16px;
   align-items: center;
 }
 
 .pairs-copy {
-  justify-self: end;
-  width: min(100%, 34rem);
+  justify-self: stretch;
+  width: 100%;
 }
 
 .pairs-copy .body-text {
-  max-width: none;
+  max-width: 52ch;
   margin-bottom: 28px;
 }
 
@@ -685,7 +686,8 @@ const whenUsedItems = [
 
 .pairs-image {
   justify-self: start;
-  width: min(100%, 36rem);
+  width: min(100%, 40rem);
+  margin-left: -6%;
   height: auto;
   display: block;
   object-fit: contain;
@@ -791,6 +793,7 @@ const whenUsedItems = [
   .pairs-image {
     justify-self: stretch;
     width: 100%;
+    margin-left: 0;
   }
 
   .camera-cta-layout {
