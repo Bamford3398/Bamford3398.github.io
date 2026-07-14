@@ -156,7 +156,7 @@
           </router-link>
         </div>
         <img
-          src="/ultrasight/modular-tool.png"
+          src="/camera-pigging/ultrasight-pairs.png"
           alt="UltraSight modular inline inspection tool"
           class="pairs-image"
           decoding="async"
@@ -664,13 +664,18 @@ const whenUsedItems = [
 
 .pairs-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
   align-items: center;
 }
 
+.pairs-copy {
+  justify-self: end;
+  width: min(100%, 34rem);
+}
+
 .pairs-copy .body-text {
-  max-width: 52ch;
+  max-width: none;
   margin-bottom: 28px;
 }
 
@@ -679,7 +684,8 @@ const whenUsedItems = [
 }
 
 .pairs-image {
-  width: 100%;
+  justify-self: start;
+  width: min(100%, 36rem);
   height: auto;
   display: block;
   object-fit: contain;
@@ -779,6 +785,12 @@ const whenUsedItems = [
   .pairs-grid,
   .camera-cta-layout {
     grid-template-columns: 1fr;
+  }
+
+  .pairs-copy,
+  .pairs-image {
+    justify-self: stretch;
+    width: 100%;
   }
 
   .camera-cta-layout {

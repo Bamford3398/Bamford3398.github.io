@@ -118,7 +118,13 @@
               Designed and manufactured by WASP. Available to buy, and deployable by WASP on managed
               jobs — confirm pig location and movement throughout the line.
             </p>
-            <div class="photo-slot">Photo of WASP signaller unit to follow</div>
+            <img
+              src="/consultancy-support/pig-signaller.png"
+              alt="WASP pig signaller unit mounted on an industrial pipe"
+              class="signaller-image"
+              loading="lazy"
+              decoding="async"
+            />
           </article>
 
           <article class="service-card">
@@ -506,14 +512,13 @@ const pigTypes = ['Cleaning', 'Sealing', 'Gauging']
   background-color: #0f0f0d;
 }
 
-.photo-slot {
+.signaller-image {
+  display: block;
+  width: 100%;
+  height: auto;
   margin-top: 20px;
-  padding: 22px;
-  border: 2px dashed #e7c73a;
   border-radius: 6px;
-  color: rgba(255, 255, 255, 0.45);
-  font-size: var(--text-caption);
-  text-align: center;
+  object-fit: contain;
 }
 
 .pig-types {
