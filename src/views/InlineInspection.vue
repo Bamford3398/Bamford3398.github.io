@@ -20,7 +20,7 @@
       <div class="hero-actions">
         <router-link to="/ultrasight" class="btn btn-primary">OUR ULTRASIGHT TOOL</router-link>
         <a
-          href="/ultrasight/UltraSight-Spec-Sheet.pdf"
+          href="/inline-inspection/wasp-intelligent-pigging-brochure.pdf"
           class="btn btn-secondary"
           target="_blank"
           rel="noopener noreferrer"

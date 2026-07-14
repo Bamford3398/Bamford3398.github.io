@@ -23,7 +23,14 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS CAMERA PIGGING</router-link>
-        <a href="#" class="btn btn-secondary">SPEC SHEET</a>
+        <a
+          href="/camera-pigging/wasp-camera-pigging.pdf"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          SPEC SHEET
+        </a>
       </div>
     </HeroBackgroundLayout>
 

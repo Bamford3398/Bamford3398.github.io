@@ -20,7 +20,12 @@
           Discuss a service requirement
           <ArrowIcon class="btn-icon" />
         </router-link>
-        <a href="#" class="btn btn-secondary btn-with-icon">
+        <a
+          href="/camera-pigging/wasp-camera-pigging.pdf"
+          class="btn btn-secondary btn-with-icon"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Download camera pig specification
           <img src="/other-services/icons/download.png" alt="" class="btn-icon" aria-hidden="true" />
         </a>
@@ -114,7 +119,12 @@
                 />
               </div>
               <p class="service-sidebar-text">{{ camera.previewText }}</p>
-              <a href="#" class="btn btn-secondary btn-with-icon service-sidebar-cta">
+              <a
+                href="/camera-pigging/wasp-camera-pigging.pdf"
+                class="btn btn-secondary btn-with-icon service-sidebar-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download camera pig specification
                 <img src="/other-services/icons/download.png" alt="" class="btn-icon" aria-hidden="true" />
               </a>
@@ -178,7 +188,12 @@
             </div>
 
             <div class="service-panel-actions">
-              <a href="#" class="btn btn-primary btn-with-icon">
+              <a
+                href="/camera-pigging/wasp-camera-pigging.pdf"
+                class="btn btn-primary btn-with-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download camera pig spec sheet
                 <img src="/other-services/icons/download.png" alt="" class="btn-icon" aria-hidden="true" />
               </a>

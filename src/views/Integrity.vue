@@ -21,7 +21,14 @@
 
       <div class="hero-actions">
         <router-link to="/contact" class="btn btn-primary">DISCUSS AN ASSESSMENT</router-link>
-        <router-link to="/contact" class="btn btn-secondary">DOWNLOAD OUR BROCHURE</router-link>
+        <a
+          href="/integrity/wasp-integrity-brochure.pdf"
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DOWNLOAD OUR BROCHURE
+        </a>
       </div>
 
       <template #after>
